@@ -107,11 +107,19 @@ export const SolutionsOverviewSection = () => {
                   borderRadius: "17.47px",
                   overflow: "hidden",
                   position: "relative",
-                  background:
-                    "linear-gradient(180deg, rgba(111,141,247,1) 0%, rgba(84,107,186,1) 28%, rgba(18,36,99,1) 88%)",
-                  padding: "3.49px",
+                  border: "2px solid #6F8DF7", // Borde delgado azul
+                  background: "transparent", // Interior completamente transparente
+                  padding: "31px 29px",
                   opacity: 0,
                   transform: "translateY(-1rem)",
+                  "&:hover": {
+                    "& .solution-title": { // Hover específico para el título
+                      color: "#00bfff !important",
+                    },
+                    "& .solution-description": { // Hover específico para la descripción
+                      color: "#00bfff !important",
+                    },
+                  },
                 }}
                 className="animate-fade-in"
                 style={{ "--animation-delay": `${400 + index * 200}ms` }}
@@ -120,7 +128,7 @@ export const SolutionsOverviewSection = () => {
                   sx={{
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(18,36,99,1)",
+                    backgroundColor: "transparent", // Interior transparente
                     borderRadius: "14px",
                     position: "relative",
                     display: "flex",
@@ -143,6 +151,7 @@ export const SolutionsOverviewSection = () => {
                   <Stack spacing={4} alignItems="center" sx={{ mt: 4 }}>
                     <Typography
                       variant="h5"
+                      className="solution-title" // Clase para el hover específico
                       sx={{
                         fontFamily: "Montserrat, Helvetica",
                         fontWeight: 700,
@@ -150,12 +159,14 @@ export const SolutionsOverviewSection = () => {
                         fontSize: "30.2px",
                         textAlign: "center",
                         lineHeight: "50.3px",
+                        transition: "color 0.3s ease", // Transición suave
                       }}
                       dangerouslySetInnerHTML={{ __html: solution.title }}
                     />
 
                     <Typography
                       variant="body1"
+                      className="solution-description" // Clase para el hover específico
                       sx={{
                         fontFamily: "Montserrat, Helvetica",
                         fontWeight: 500,
@@ -164,6 +175,7 @@ export const SolutionsOverviewSection = () => {
                         textAlign: "center",
                         lineHeight: "41px",
                         width: "301px",
+                        transition: "color 0.3s ease", // Transición suave
                       }}
                       dangerouslySetInnerHTML={{ __html: solution.description }}
                     />
@@ -203,14 +215,14 @@ export const SolutionsOverviewSection = () => {
         <Button
           variant="outlined"
           sx={{
-            width: "232.56px",
-            height: "54.22px",
+            minWidth: { xs: "15rem", md: "20rem", lg: "30.5rem" }, // 489px ≈ 30.5rem
+            height: { xs: "5rem", md: "6rem", lg: "7.9rem" }, // 127px ≈ 7.9rem
             borderRadius: "5.17px",
             border: "3px solid #00bfff",
             fontFamily: "Montserrat, Helvetica",
             fontWeight: 700,
             color: "white",
-            fontSize: "22px",
+            fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
             lineHeight: "21.7px",
             "&:hover": {
               border: "3px solid #00bfff",

@@ -96,7 +96,7 @@ export const SolutionsSection = () => {
                     sx={{
                       width: "100%",
                       height: "100%",
-                      backgroundColor: "rgba(18,36,99,1)",
+                      backgroundColor: "transparent", // Background transparente
                       borderRadius: "0.875rem",
                       display: "flex",
                       flexDirection: "column",
@@ -126,6 +126,10 @@ export const SolutionsSection = () => {
                           color: "white",
                           fontSize: { xs: "1.25rem", md: "1.5rem", lg: "1.75rem" },
                           lineHeight: 1.3,
+                          transition: "color 0.3s ease", // Transición suave
+                          ".MuiBox-root:hover &": { // Cambio de color en hover
+                            color: "#00bfff",
+                          },
                         }}
                       >
                         {solution.title}
@@ -138,6 +142,10 @@ export const SolutionsSection = () => {
                           color: "white",
                           fontSize: { xs: "0.875rem", md: "1rem", lg: "1.125rem" },
                           lineHeight: 1.5,
+                          transition: "color 0.3s ease", // Transición suave
+                          ".MuiBox-root:hover &": { // Cambio de color en hover
+                            color: "#00bfff",
+                          },
                         }}
                       >
                         {solution.description}
@@ -173,10 +181,11 @@ export const SolutionsSection = () => {
               fontFamily: "Montserrat, Helvetica",
               fontWeight: 700,
               color: "white",
-              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
+              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" }, // Letra sin cambios
               textTransform: "none",
-              px: { xs: 3, md: 4 },
-              py: { xs: 1.5, md: 2 },
+              px: { xs: 3.6, md: 4.8, lg: 6 }, // Reducido 40% (era 6, 8, 10)
+              py: { xs: 0.9, md: 1.2, lg: 1.5 }, // Reducido 40% (era 1.5, 2, 2.5)
+              minWidth: { xs: "9rem", md: "12rem", lg: "15rem" }, // Reducido 40% (era 15, 20, 25)
               "&:hover": {
                 border: "0.1875rem solid #00bfff",
                 backgroundColor: "rgba(0, 191, 255, 0.1)",

@@ -1,5 +1,6 @@
 import { AppBar, Box, Button, Stack, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import WorldmapImage from "../../../../assets/Worldmap.png";
 
 const navigationItems = [
   { label: "ABOUT US", active: true },
@@ -133,8 +134,7 @@ export const GlobalPresenceSection = () => {
             height: "704px",
             mx: "auto",
             mt: 4,
-            backgroundImage:
-              "url(https://c.animaapp.com/mek1km8sOiUotz/img/vector.svg)",
+            backgroundImage: `url(${WorldmapImage})`, // Tu nueva imagen del mapa
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             opacity: 0,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
-import CheckCircle from "@mui/icons-material/CheckCircle";
+import BlueTick from "../../../../assets/BlueTick.png";
 
 const benefitCards = [
   {
@@ -49,7 +49,7 @@ export const WhyBlueBullTech = () => {
                 fontFamily: "Montserrat, Helvetica",
                 fontWeight: 600,
                 color: "white",
-                fontSize: { xs: "2rem", md: "3rem", lg: "3.75rem" },
+                fontSize: { xs: "1.8rem", md: "2.7rem", lg: "3.375rem" }, // Reducido 10%
                 lineHeight: 1.2,
               }}
             >
@@ -116,15 +116,18 @@ export const WhyBlueBullTech = () => {
             <Grid item xs={12} md={6} key={index}>
               <Stack 
                 direction="row" 
-                spacing={{ xs: 2, md: 3 }} 
+                spacing={{ xs: 4, md: 5 }} 
                 alignItems="flex-start"
                 sx={{ textAlign: "left" }}
               >
-                <CheckCircle
+                <Box
+                  component="img"
+                  src={BlueTick}
+                  alt="Blue Tick"
                   sx={{
-                    color: "white",
-                    fontSize: { xs: "2rem", md: "2.5rem", lg: "2.6875rem" },
-                    mt: 0.5,
+                    width: { xs: "1.5rem", md: "1.9rem", lg: "2rem" }, // Más ancho (+35%)
+                    height: { xs: "1.12rem", md: "1.4rem", lg: "1.5rem" }, // Altura igual
+                    transform: "translateY(36px)", // Mover 8px hacia abajo
                     flexShrink: 0,
                   }}
                 />
