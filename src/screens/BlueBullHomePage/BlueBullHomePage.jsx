@@ -9,13 +9,19 @@ import { WorldMapImage } from "./sections/WorldMapImage";
 import { StrategicPartners } from "./sections/StrategicPartners";
 import { HeroImageContent } from "./sections/HeroImageContent";
 import { MainMarketsSection } from "./sections/MainMarketsSection/MainMarketsSection";
+import backgroundGradient from "../../assets/background-gradient.png";
 
 export const BlueBullHomePage = () => {
   return (
     <Box
       className="blue-bull-home-page"
       sx={{
-        backgroundColor: "#010815",
+        background: `url(${backgroundGradient})`,
+        backgroundSize: '100%', // Tamaño original
+        backgroundPosition: 'top center', // Muestra la parte superior
+        backgroundRepeat: 'no-repeat',
+        // Mantiene el fondo fijo al hacer scroll
+        backgroundColor: '#010815', // Fallback color
         minHeight: "100vh",
         width: "100%",
         overflow: "hidden",
@@ -34,71 +40,57 @@ export const BlueBullHomePage = () => {
           zIndex: -1,
         }}
       >
-        {/* Gradient Ellipses */}
+        {/* Subtle additional gradients for depth */}
         <Box
           sx={{
             position: "absolute",
-            backgroundColor: "#040622",
+            backgroundColor: "rgba(59, 130, 246, 0.1)",
+            borderRadius: "50%",
+            filter: "blur(8rem)",
+            width: { xs: "70vw", md: "50vw", lg: "35vw" },
+            height: { xs: "35vh", md: "25vh", lg: "18vh" },
+            top: "65%",
+            left: "5%",
+            transform: "rotate(165deg)",
+          }}
+        />
+
+        <Box
+          sx={{
+            position: "absolute",
+            backgroundColor: "rgba(79, 172, 254, 0.08)",
+            borderRadius: "50%",
+            filter: "blur(12rem)",
+            width: { xs: "55vw", md: "35vw", lg: "25vw" },
+            height: { xs: "55vw", md: "35vw", lg: "25vw" },
+            top: "8%",
+            right: "8%",
+          }}
+        />
+
+        <Box
+          sx={{
+            position: "absolute",
+            backgroundColor: "rgba(30, 58, 138, 0.12)",
+            borderRadius: "50%",
+            filter: "blur(15rem)",
+            width: { xs: "65vw", md: "45vw", lg: "30vw" },
+            height: { xs: "30vh", md: "22vh", lg: "18vh" },
+            top: "12%",
+            left: "-8%",
+          }}
+        />
+
+        <Box
+          sx={{
+            position: "absolute",
+            backgroundColor: "rgba(99, 102, 241, 0.06)",
             borderRadius: "50%",
             filter: "blur(10rem)",
-            width: { xs: "80vw", md: "60vw", lg: "40vw" },
-            height: { xs: "40vh", md: "30vh", lg: "20vh" },
-            top: "60%",
-            left: "10%",
-            transform: "rotate(168deg)",
-          }}
-        />
-
-        <Box
-          sx={{
-            position: "absolute",
-            backgroundColor: "#1955d866",
-            borderRadius: "50%",
-            filter: "blur(25rem)",
-            width: { xs: "60vw", md: "40vw", lg: "30vw" },
-            height: { xs: "60vw", md: "40vw", lg: "30vw" },
-            top: "5%",
-            right: "5%",
-          }}
-        />
-
-        <Box
-          sx={{
-            position: "absolute",
-            backgroundColor: "#414bb666",
-            borderRadius: "50%",
-            filter: "blur(25rem)",
-            width: { xs: "70vw", md: "50vw", lg: "35vw" },
-            height: { xs: "40vh", md: "30vh", lg: "25vh" },
-            top: "10%",
-            left: "-10%",
-          }}
-        />
-
-        <Box
-          sx={{
-            position: "absolute",
-            backgroundColor: "#8f41b666",
-            borderRadius: "50%",
-            filter: "blur(25rem)",
-            width: { xs: "60vw", md: "40vw", lg: "30vw" },
-            height: { xs: "60vw", md: "40vw", lg: "30vw" },
-            top: "0%",
-            right: "0%",
-          }}
-        />
-
-        <Box
-          sx={{
-            position: "absolute",
-            backgroundColor: "#87f3ff99",
-            borderRadius: "50%",
-            filter: "blur(9rem)",
-            width: { xs: "40vw", md: "25vw", lg: "15vw" },
-            height: { xs: "60vh", md: "40vh", lg: "30vh" },
+            width: { xs: "45vw", md: "30vw", lg: "20vw" },
+            height: { xs: "45vw", md: "30vw", lg: "20vw" },
             top: "2%",
-            right: "8%",
-            transform: "rotate(-115deg)",
+            right: "2%",
           }}
         />
       </Box>
