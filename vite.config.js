@@ -7,5 +7,5 @@ import { screenGraphPlugin } from "@animaapp/vite-plugin-screen-graph";
 export default defineConfig(({ mode }) => ({
   plugins: [react(), mode === "development" && screenGraphPlugin()],
   publicDir: "./static",
-  base: "./",
+  base: mode === "production" ? "/BlueBullWeb/" : "./",
 }));
