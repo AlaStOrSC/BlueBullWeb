@@ -84,7 +84,7 @@ export const WorldMapImage = () => {
         sx={{
           top: 0,
           left: 0,
-          right: 0,
+          width: "calc(100vw - 17px)", // Resta el ancho típico de la barra de scroll
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(10px)",
           boxShadow: "none",
