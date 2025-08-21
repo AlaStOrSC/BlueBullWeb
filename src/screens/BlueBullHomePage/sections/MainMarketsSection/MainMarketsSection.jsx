@@ -90,29 +90,36 @@ export const MainMarketsSection = () => {
             position: "absolute",
             width: { xs: "6px", md: "10px", lg: "16px" }, // Más pequeño en móvil
             height: { xs: "6px", md: "10px", lg: "16px" },
-            backgroundColor: "#00bfff", // Azul claro original
+            backgroundColor: "white", // Color blanco por defecto
             borderRadius: "50%",
             top: { xs: "45%", md: "47%", lg: "48%" }, // Ajustado para mobile
             left: { xs: "15%", md: "16%", lg: "17%" }, // Ajustado para mobile
-            boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)", // Sombra más intensa
-            animation: "pulse 2s infinite",
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
             cursor: "pointer",
+            transition: "all 0.3s ease", // Transición suave
+            animation: "pulse 2s infinite", // Animación de pulso
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(1.3)", // Escala más grande
-                opacity: 0.8,
-                boxShadow: "0 0 25px rgba(0, 191, 255, 1), 0 0 35px rgba(0, 191, 255, 0.6)", // Brillo más intenso
+                transform: "scale(1.2)", // Escala más grande
+                opacity: 0.9,
+                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
               },
               "100%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
+            },
+            "&:hover": {
+              backgroundColor: "#00bfff", // Azul en hover
+              transform: "scale(1.4)", // Crece al hacer hover
+              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
+              animation: "none", // Detiene la animación en hover
             },
           }}
           onMouseEnter={handlePointHover}
@@ -124,28 +131,36 @@ export const MainMarketsSection = () => {
             position: "absolute",
             width: { xs: "6px", md: "10px", lg: "16px" },
             height: { xs: "6px", md: "10px", lg: "16px" },
-            backgroundColor: "#00bfff", // Azul claro original
+            backgroundColor: "white", // Color blanco por defecto
             borderRadius: "50%",
             top: { xs: "68%", md: "70%", lg: "72%" }, // Ajustado para mobile
             left: { xs: "26%", md: "28%", lg: "29%" }, // Ajustado para mobile
-            boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)", // Sombra más intensa
-            animation: "pulse 2s infinite 0.5s",
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
+            cursor: "pointer",
+            transition: "all 0.3s ease", // Transición suave
+            animation: "pulse 2s infinite 0.5s", // Animación de pulso con delay
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(1.3)", // Escala más grande
-                opacity: 0.8,
-                boxShadow: "0 0 25px rgba(0, 191, 255, 1), 0 0 35px rgba(0, 191, 255, 0.6)", // Brillo más intenso
+                transform: "scale(1.2)", // Escala más grande
+                opacity: 0.9,
+                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
               },
               "100%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
+            },
+            "&:hover": {
+              backgroundColor: "#00bfff", // Azul en hover
+              transform: "scale(1.4)", // Crece al hacer hover
+              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
+              animation: "none", // Detiene la animación en hover
             },
           }}
         />
@@ -156,28 +171,36 @@ export const MainMarketsSection = () => {
             position: "absolute",
             width: { xs: "6px", md: "10px", lg: "16px" },
             height: { xs: "6px", md: "10px", lg: "16px" },
-            backgroundColor: "#00bfff", // Azul claro original
+            backgroundColor: "white", // Color blanco por defecto
             borderRadius: "50%",
             top: { xs: "76%", md: "78%", lg: "80%" }, // Ajustado para mobile
             left: { xs: "27%", md: "29%", lg: "30%" }, // Ajustado para mobile
-            boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)", // Sombra más intensa
-            animation: "pulse 2s infinite 1s",
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
+            cursor: "pointer",
+            transition: "all 0.3s ease", // Transición suave
+            animation: "pulse 2s infinite 1s", // Animación de pulso con delay
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(1.3)", // Escala más grande
-                opacity: 0.8,
-                boxShadow: "0 0 25px rgba(0, 191, 255, 1), 0 0 35px rgba(0, 191, 255, 0.6)", // Brillo más intenso
+                transform: "scale(1.2)", // Escala más grande
+                opacity: 0.9,
+                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
               },
               "100%": {
                 transform: "scale(1)",
                 opacity: 1,
-                boxShadow: "0 0 15px rgba(0, 191, 255, 0.8)",
+                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
+            },
+            "&:hover": {
+              backgroundColor: "#00bfff", // Azul en hover
+              transform: "scale(1.4)", // Crece al hacer hover
+              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
+              animation: "none", // Detiene la animación en hover
             },
           }}
         />
@@ -190,14 +213,26 @@ export const MainMarketsSection = () => {
               width: { xs: "90%", md: "65%", lg: "38rem" },
               height: { xs: "auto", md: "auto", lg: "39rem" },
               top: { xs: "5%", md: "3%", lg: "0.5rem" },
-              left: "50%",
+              left: "30%",
               transform: "translateX(-50%)",
-              maxWidth: "38rem",
+              maxWidth: "36rem",
               backgroundColor: "rgba(0, 0, 0, 0.4)",
               backdropFilter: "blur(6px)",
               borderRadius: "12px",
               zIndex: 998,
-              transition: "all 0.3s ease",
+              transition: "opacity 0.3s ease",
+              animation: "popupPulse 2s ease-in-out infinite", // Misma animación que la card
+              "@keyframes popupPulse": {
+                "0%": {
+                  transform: "translateX(-50%) scale(1)",
+                },
+                "50%": {
+                  transform: "translateX(-50%) scale(1.05)", // Crece un poco
+                },
+                "100%": {
+                  transform: "translateX(-50%) scale(1)",
+                },
+              },
             }}
             onMouseEnter={handlePopupHover}
             onMouseLeave={handlePopupLeave}
@@ -214,13 +249,25 @@ export const MainMarketsSection = () => {
             width: { xs: "85%", md: "60%", lg: "36.625rem" },
             height: { xs: "auto", lg: "37.9375rem" },
             top: { xs: "8%", md: "5%", lg: "1.1875rem" },
-            left: "50%",
+            left: "30%",
             transform: "translateX(-50%)",
             maxWidth: "36.625rem",
             opacity: showPopup ? 1 : 0,
             visibility: showPopup ? "visible" : "hidden",
-            transition: "all 0.3s ease",
+            transition: "opacity 0.3s ease, visibility 0.3s ease",
             zIndex: 999,
+            animation: showPopup ? "popupPulse 2s ease-in-out infinite" : "none", // Animación de pulso solo cuando está visible
+            "@keyframes popupPulse": {
+              "0%": {
+                transform: "translateX(-50%) scale(1)",
+              },
+              "50%": {
+                transform: "translateX(-50%) scale(1.05)", // Crece un poco
+              },
+              "100%": {
+                transform: "translateX(-50%) scale(1)",
+              },
+            },
           }}
           onMouseEnter={handlePopupHover}
           onMouseLeave={handlePopupLeave}
