@@ -136,7 +136,7 @@ export const Footer = () => {
                 textAlign: "center",
               }}
             >
-              2925 All rights reserved.
+              2025 All rights reserved.
             </Typography>
           </Grid>
 
