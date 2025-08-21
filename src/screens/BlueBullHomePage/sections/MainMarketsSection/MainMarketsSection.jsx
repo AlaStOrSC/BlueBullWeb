@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography } from "@mui/material";
-import WorldmapImage from "../../../../assets/Worldmap.png";
+import WorldmapImage from "../../../../assets/WorldMap.png";
 
 export const MainMarketsSection = () => {
   const [showPopup, setShowPopup] = useState(false);
