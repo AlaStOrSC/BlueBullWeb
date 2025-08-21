@@ -60,8 +60,8 @@ export const FooterSection = () => {
             src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
             alt="Line"
             sx={{
-              width: "88px",
-              height: "7px",
+              width: { xs: "4rem", md: "5.5rem" },
+              height: { xs: "0.3rem", md: "0.4375rem" },
             }}
           />
         </Box>

@@ -47,12 +47,11 @@ export const AboutHeaderInfo = () => {
         </Typography>
 
         <Box
-          component="img"
-          src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1.svg"
-          alt="Line"
           sx={{
             width: { xs: "2rem", md: "3.1rem" },
             height: { xs: "0.25rem", md: "0.43rem" },
+            background: "linear-gradient(90deg, #8F41B6 0%, #01BEFF 100%)",
+            borderRadius: "2px",
           }}
         />
 

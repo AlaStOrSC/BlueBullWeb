@@ -31,7 +31,7 @@ export const StrategicPartners = () => {
           
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-7.svg"
+            src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
             alt="Line"
             sx={{
               width: { xs: "4rem", md: "5.5rem" },
