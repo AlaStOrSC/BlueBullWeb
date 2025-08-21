@@ -110,37 +110,37 @@ export const Footer = () => {
         <Grid 
           container 
           alignItems="center" 
-          justifyContent="space-between"
-          spacing={{ xs: 2, md: 0 }}
           sx={{ maxWidth: "80rem", mx: "auto" }}
         >
-          <Grid item xs={12} md={4}>
-            <Typography
-              sx={{
-                fontFamily: "Montserrat, Helvetica",
-                fontWeight: 500,
-                fontSize: { xs: "0.875rem", md: "1rem", lg: "1.25rem" },
-                textAlign: { xs: "center", md: "left" },
-              }}
-            >
-              Blue Bull Ltd
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
             <Typography
               sx={{
                 fontFamily: "Montserrat, Helvetica",
                 fontWeight: 500,
                 fontSize: { xs: "0.875rem", md: "1rem", lg: "1.25rem" },
                 textAlign: "center",
+                width: "100%",
+              }}
+            >
+              Blue Bull Ltd
+            </Typography>
+          </Grid>
+
+          <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
+            <Typography
+              sx={{
+                fontFamily: "Montserrat, Helvetica",
+                fontWeight: 500,
+                fontSize: { xs: "0.875rem", md: "1rem", lg: "1.25rem" },
+                textAlign: "center",
+                width: "100%",
               }}
             >
               2025 All rights reserved.
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: { xs: "center", md: "flex-end" } }}>
+          <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
             <Box
               sx={{
                 width: { xs: "2.5rem", md: "3.625rem" },
