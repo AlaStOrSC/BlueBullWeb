@@ -3,7 +3,7 @@ import { Box, Grid, Stack, Typography } from "@mui/material";
 import BlueTick from "../../../../assets/BlueTick.png";
 import Separator from "../../../../assets/Separator.png";
 import Latam from "../../../../assets/Latam.png";
-import Platform from "../../../../assets/Platform.png";
+import Platform from "../../../../assets/platform.png";
 import IGaming from "../../../../assets/iGaming.png";
 
 const benefitCards = [
