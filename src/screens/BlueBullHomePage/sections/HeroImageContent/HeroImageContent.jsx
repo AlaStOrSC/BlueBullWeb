@@ -12,7 +12,7 @@ export const HeroImageContent = () => {
         position: "relative",
         minHeight: { xs: "20rem", md: "30rem", lg: "40rem" },
         marginRight: { xs: "5%", md: "5%", lg: "5%" }, // Misma separación que AboutHeaderInfo del izquierdo
-        marginTop: "100px", // Desplazar 100px hacia abajo
+        marginTop: "50px", // Desplazar 100px hacia abajo
       }}
     >
       <Box

@@ -9,7 +9,7 @@ export const AboutHeaderInfo = () => {
         maxWidth: { xs: "100%", lg: "50rem" },
         zIndex: 2,
         marginLeft: { xs: "5%", md: "5%", lg: "5%" }, // Separación del margen izquierdo
-        marginTop: "200px", // Subido 50px (era 250px)
+        marginTop: "-200px", // Subido 200px más desde la posición actual
       }}
     >
       <Stack 
@@ -38,7 +38,7 @@ export const AboutHeaderInfo = () => {
             color: "#01beff",
             fontFamily: "var(--headline-header-2-font-family)",
             fontSize: "var(--headline-header-2-font-size)",
-            fontWeight: "var(--headline-header-2-font-weight)",
+            fontWeight: 600, // Semi-bold en vez de bold
             lineHeight: "var(--headline-header-2-line-height)",
             letterSpacing: "var(--headline-header-2-letter-spacing)",
           }}

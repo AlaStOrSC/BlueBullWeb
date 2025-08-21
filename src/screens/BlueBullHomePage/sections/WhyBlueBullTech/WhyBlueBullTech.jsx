@@ -70,20 +70,20 @@ export const WhyBlueBullTech = () => {
           {/* Benefit Cards */}
           <Grid 
             container 
-            spacing={{ xs: 4, md: 8 }} 
+            spacing={{ xs: 3, md: 5 }} 
             justifyContent="center"
-            sx={{ maxWidth: "80rem" }}
+            sx={{ maxWidth: "85rem" }}
           >
             {benefitCards.map((card, index) => (
               <Grid item xs={12} md={4} key={index}>
-                <Stack spacing={{ xs: 3, md: 4 }} alignItems="center">
+                <Stack spacing={{ xs: 2, md: 3 }} alignItems="center">
                   <Box
                     component="img"
                     src={card.icon}
                     alt="Frame"
                     sx={{
-                      width: { xs: "6rem", md: "8rem", lg: "10rem" },
-                      height: { xs: "6rem", md: "8rem", lg: "10rem" },
+                      width: { xs: "12rem", md: "16rem", lg: "20rem" },
+                      height: { xs: "12rem", md: "16rem", lg: "10rem" },
                     }}
                   />
 
@@ -92,7 +92,7 @@ export const WhyBlueBullTech = () => {
                       fontFamily: "Montserrat, Helvetica",
                       fontWeight: 600,
                       color: "white",
-                      fontSize: { xs: "1.5rem", md: "2rem", lg: "2.5rem" },
+                      fontSize: { xs: "1.2rem", md: "1.6rem", lg: "2rem" }, // Reducido 20%
                       lineHeight: 1.4,
                       textAlign: "center",
                       whiteSpace: "pre-line",

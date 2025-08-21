@@ -218,19 +218,29 @@ export const SolutionsOverviewSection = () => {
             minWidth: { xs: "15rem", md: "20rem", lg: "30.5rem" }, // 489px ≈ 30.5rem
             height: { xs: "5rem", md: "6rem", lg: "7.9rem" }, // 127px ≈ 7.9rem
             borderRadius: "5.17px",
-            border: "3px solid #00bfff",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 700,
-            color: "white",
-            fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
-            lineHeight: "21.7px",
+            border: "3px solid white",
             "&:hover": {
               border: "3px solid #00bfff",
               backgroundColor: "rgba(0, 191, 255, 0.1)",
+              "& .MuiTypography-root": {
+                color: "#00bfff",
+              },
             },
           }}
         >
-          READ MORE
+          <Typography
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 700,
+              color: "white",
+              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
+              lineHeight: "21.7px",
+              textTransform: "none",
+              transition: "color 0.3s ease",
+            }}
+          >
+            READ MORE
+          </Typography>
         </Button>
       </Stack>
     </Box>

@@ -1,5 +1,5 @@
 import React from "react";
-import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer } from "@mui/material";
+import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { MainMarketsSection } from "../MainMarketsSection";
 
@@ -45,22 +45,32 @@ export const WorldMapImage = () => {
         <Button
           variant="outlined"
           sx={{
-            color: "#f5f7fa",
-            borderColor: "#00bfff",
-            borderWidth: "2px",
-            borderRadius: "0.5rem",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: "bold",
-            fontSize: "1rem",
-            textTransform: "none",
+            height: { xs: "3rem", md: "4.3125rem" },
+            px: { xs: 3, md: 6 },
+            border: "0.25rem solid white",
+            borderRadius: 1,
             mt: 2,
             "&:hover": {
-              borderColor: "#00bfff",
+              border: "0.25rem solid #00bfff",
               backgroundColor: "rgba(0, 191, 255, 0.1)",
+              "& .MuiTypography-root": {
+                color: "#00bfff",
+              },
             },
           }}
         >
-          CONTACT US
+          <Typography
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 700,
+              fontSize: { xs: "0.8rem", md: "1.2rem", lg: "1.44rem" },
+              color: "white",
+              textTransform: "none",
+              transition: "color 0.3s ease",
+            }}
+          >
+            CONTACT US
+          </Typography>
         </Button>
       </Stack>
     </Box>
@@ -138,25 +148,33 @@ export const WorldMapImage = () => {
               <Button
                 variant="outlined"
                 sx={{
-                  color: "#f5f7fa",
-                  borderColor: "#00bfff",
-                  borderWidth: "0.25rem",
+                  border: "0.25rem solid white",
                   borderRadius: "0.35rem",
-                  fontFamily: "Montserrat, Helvetica",
-                  fontWeight: "bold",
-                  fontSize: { xs: "1rem", md: "1.5rem" },
-                  textTransform: "none",
                   px: { xs: 2, md: 3 },
                   py: { xs: 1, md: 2 },
                   minWidth: { xs: "8rem", md: "12.875rem" },
                   height: { xs: "2.5rem", md: "3.6875rem" },
                   "&:hover": {
-                    borderColor: "#00bfff",
+                    border: "0.25rem solid #00bfff",
                     backgroundColor: "rgba(0, 191, 255, 0.1)",
+                    "& .MuiTypography-root": {
+                      color: "#00bfff",
+                    },
                   },
                 }}
               >
-                CONTACT US
+                <Typography
+                  sx={{
+                    fontFamily: "Montserrat, Helvetica",
+                    fontWeight: "bold",
+                    fontSize: { xs: "1rem", md: "1.5rem" },
+                    color: "white",
+                    textTransform: "none",
+                    transition: "color 0.3s ease",
+                  }}
+                >
+                  CONTACT US
+                </Typography>
               </Button>
             </>
           )}

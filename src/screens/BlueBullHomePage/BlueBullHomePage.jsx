@@ -103,7 +103,7 @@ export const BlueBullHomePage = () => {
         maxWidth={false}
         sx={{
           px: { xs: 2, sm: 4, md: 6, lg: 8 },
-          pt: { xs: 12, md: 15 },
+          pt: { xs: 3, md: 4 },
           pb: { xs: 8, md: 12 },
         }}
       >
@@ -123,7 +123,7 @@ export const BlueBullHomePage = () => {
         </Box>
 
         {/* Who We Are Section */}
-        <Box sx={{ mb: { xs: 12, md: 20 } }}>
+        <Box sx={{ mb: { xs: 12, md: 20 }, mt: { xs: -8, md: -16 } }}>
           <WhoWeAreSection />
         </Box>
 

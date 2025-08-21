@@ -85,7 +85,7 @@ export const SolutionsSection = () => {
                     borderRadius: "1.09rem",
                     position: "relative",
                     backgroundColor: "transparent",
-                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    transition: "color 0.3s ease",
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -102,8 +102,6 @@ export const SolutionsSection = () => {
                       WebkitMaskComposite: "xor",
                     },
                     "&:hover": {
-                      transform: "translateY(-0.5rem)",
-                      boxShadow: "0 1rem 2rem rgba(0, 191, 255, 0.2)",
                       "& .solution-icon": {
                         filter: "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(3044%) hue-rotate(182deg) brightness(101%) contrast(101%)",
                       },
@@ -207,21 +205,30 @@ export const SolutionsSection = () => {
             variant="outlined"
             sx={{
               borderRadius: "0.32rem",
-              border: "0.1875rem solid #00bfff",
-              fontFamily: "Montserrat, Helvetica",
-              fontWeight: 700,
-              color: "white",
-              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
-              textTransform: "none",
+              border: "0.1875rem solid white",
               width: "244.5px",
               height: "63.5px",
               "&:hover": {
                 border: "0.1875rem solid #00bfff",
                 backgroundColor: "rgba(0, 191, 255, 0.1)",
+                "& .MuiTypography-root": {
+                  color: "#00bfff",
+                },
               },
             }}
           >
-            READ MORE
+            <Typography
+              sx={{
+                fontFamily: "Montserrat, Helvetica",
+                fontWeight: 700,
+                color: "white",
+                fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
+                textTransform: "none",
+                transition: "color 0.3s ease",
+              }}
+            >
+              READ MORE
+            </Typography>
           </Button>
         </Stack>
       </Stack>
