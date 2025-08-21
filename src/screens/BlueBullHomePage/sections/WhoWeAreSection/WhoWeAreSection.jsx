@@ -1,19 +1,23 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import Separator from "../../../../assets/Separator.png";
+import Vision from "../../../../assets/Vision.png";
+import Mission from "../../../../assets/Mission.png";
+import Culture from "../../../../assets/Culture.png";
 
 const teamData = [
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3637.svg",
+    icon: Vision,
     title: "Vision",
     description: "Our goal is to be the leading digital force in iGaming and customer acquisition, known for fearless creativity and results",
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638-1.svg",
+    icon: Mission,
     title: "Mission",
     description: "To engage, retain, and excite players with personalized, innovative campaigns that make every experience count",
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638.svg",
+    icon: Culture,
     title: "Culture & values",
     description: "Creativity meets execution speed & agility data-driven decisions accountability & ownership. Work Hard, Play Fair",
   },
@@ -47,8 +51,8 @@ export const WhoWeAreSection = () => {
           
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-            alt="Line"
+            src={Separator}
+            alt="Separator"
             sx={{
               width: { xs: "4rem", md: "5.5rem" },
               height: { xs: "0.3rem", md: "0.4375rem" },
@@ -97,14 +101,27 @@ export const WhoWeAreSection = () => {
                 }}
               >
                 <Box
-                  component="img"
-                  src={item.icon}
-                  alt="Frame"
                   sx={{
                     width: { xs: "4rem", md: "5rem" },
                     height: { xs: "4rem", md: "5rem" },
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
-                />
+                >
+                  <Box
+                    component="img"
+                    src={item.icon}
+                    alt={`${item.title} icon - representing our company's ${item.title.toLowerCase()}`}
+                    sx={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain", // Mantener proporciones originales
+                    }}
+                  />
+                </Box>
 
                 <Typography
                   variant="h4"

@@ -1,26 +1,31 @@
 import React from "react";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import Separator from "../../../../assets/Separator.png";
+import GraphicIcon from "../../../../assets/GraphicIcon.png";
+import MessageIcon from "../../../../assets/MessageIcon.png";
+import PorcentageIcon from "../../../../assets/PorcentageIcon.png";
+import HeartIcon from "../../../../assets/HeartIcon.png";
 
 const solutionsData = [
   {
     title: "360° Marketing Management",
     description: "From strategy to execution: digital, affiliate, retention, cross-channel",
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-3.svg",
+    icon: GraphicIcon,
   },
   {
     title: "Acquisition & CRM",
     description: "Campaign setup, journey automation, customer segmentation, email/SMS",
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-2.svg",
+    icon: MessageIcon,
   },
   {
     title: "Promotions & campaigns",
     description: "Custom calendars, daily/weekly/monthly promos, cashback and tournaments",
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636.svg",
+    icon: PorcentageIcon,
   },
   {
     title: "Social Media & Content",
     description: "Custom calendars, daily/weekly/monthly promos, cashback and tournaments",
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-1.svg",
+    icon: HeartIcon,
   },
 ];
 
@@ -53,8 +58,8 @@ export const SolutionsSection = () => {
             
             <Box
               component="img"
-              src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-              alt="Line"
+              src={Separator}
+              alt="Separator line under Solutions title"
               sx={{
                 width: { xs: "4rem", md: "5.5rem" },
                 height: { xs: "0.3rem", md: "0.4375rem" },
@@ -140,17 +145,29 @@ export const SolutionsSection = () => {
                     }}
                   >
                     <Box
-                      component="img"
-                      src={solution.icon}
-                      alt="Frame"
-                      className="solution-icon"
                       sx={{
-                        width: "2.875rem",
-                        height: "2.875rem",
+                        width: "3.5rem",
+                        height: "3.5rem",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                         mb: 1.5,
-                        alignSelf: "center",
                       }}
-                    />
+                    >
+                      <Box
+                        component="img"
+                        src={solution.icon}
+                        alt={`${solution.title} icon - representing ${solution.title.toLowerCase()} services`}
+                        className="solution-icon"
+                        sx={{
+                          maxWidth: "100%",
+                          maxHeight: "100%",
+                          width: "auto",
+                          height: "auto",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Box>
 
                     <Box sx={{ 
                       display: "flex", 

@@ -1,6 +1,7 @@
 import { AppBar, Box, Button, Stack, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import WorldmapImage from "../../../../assets/Worldmap.png";
+import BlueBullLogo from "../../../../assets/BlueBullLogo.png";
 
 const navigationItems = [
   { label: "ABOUT US", active: true },
@@ -38,8 +39,8 @@ export const GlobalPresenceSection = () => {
           {/* Logo */}
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/frame-3661.svg"
-            alt="Logo"
+            src={BlueBullLogo}
+            alt="BlueBull Logo"
             sx={{ width: "164px", height: "60px" }}
           />
 

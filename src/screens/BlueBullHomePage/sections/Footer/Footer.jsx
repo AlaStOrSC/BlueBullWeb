@@ -1,21 +1,26 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import Separator from "../../../../assets/Separator.png";
+import EmailIcon from "../../../../assets/EmailIcon.png";
+import LinkedinIcon from "../../../../assets/LinkedinIcon.png";
+import InstagramIcon from "../../../../assets/InstagramIcon.png";
+import GoogleMapsIcon from "../../../../assets/GoogleMapsIcon.png";
 
 const contactData = [
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3723.svg",
+    icon: EmailIcon,
     text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3723-2.svg",
+    icon: LinkedinIcon,
     text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3723-1.svg",
+    icon: InstagramIcon,
     text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3723-3.svg",
+    icon: GoogleMapsIcon,
     text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
   },
 ];
@@ -59,8 +64,8 @@ export const Footer = () => {
           
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-            alt="Line"
+            src={Separator}
+            alt="Separator line under Contacts title"
             sx={{
               width: { xs: "4rem", md: "5.5rem" },
               height: { xs: "0.3rem", md: "0.4375rem" },
@@ -94,14 +99,28 @@ export const Footer = () => {
                 }}
               >
                 <Box
-                  component="img"
-                  src={contact.icon}
-                  alt="Contact Icon"
                   sx={{
                     width: { xs: "4rem", md: "6.4375rem" },
                     height: { xs: "3.5rem", md: "5.75rem" },
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    mb: { xs: "1rem", md: "1.5rem" },
                   }}
-                />
+                >
+                  <Box
+                    component="img"
+                    src={contact.icon}
+                    alt={`Contact icon ${index + 1} - ${index === 0 ? 'Email' : index === 1 ? 'LinkedIn' : index === 2 ? 'Instagram' : 'Google Maps'} contact method`}
+                    sx={{
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                      width: "auto",
+                      height: "auto",
+                      objectFit: "contain",
+                    }}
+                  />
+                </Box>
                 
                 <Typography
                   sx={{

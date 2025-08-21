@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import WorldmapImage from "../../../../assets/WorldMap.png";
+import Separator from "../../../../assets/Separator.png";
+import PopUpImage from "../../../../assets/Pop-Up.png";
 
 export const MainMarketsSection = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -59,8 +61,8 @@ export const MainMarketsSection = () => {
       </Typography>
       <Box
         component="img"
-        src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-        alt="Underline"
+        src={Separator}
+        alt="Separator line under Main Markets title"
         sx={{ 
           width: { xs: "4rem", md: "5.5rem" }, 
           height: { xs: "0.3rem", md: "0.4375rem" } 
@@ -203,8 +205,8 @@ export const MainMarketsSection = () => {
 
         <Box
           component="img"
-          src="https://c.animaapp.com/mek1km8sOiUotz/img/pop-up.svg"
-          alt="Global Presence Popup"
+          src={PopUpImage}
+          alt="Global Presence information popup displaying market details"
           className="popup-image"
           sx={{
             position: "absolute",

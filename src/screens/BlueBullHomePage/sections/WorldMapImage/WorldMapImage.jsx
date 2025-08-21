@@ -2,6 +2,7 @@ import React from "react";
 import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { MainMarketsSection } from "../MainMarketsSection";
+import BlueBullLogo from "../../../../assets/BlueBullLogo.png";
 
 const navigationItems = [
   { label: "ABOUT US", active: true },
@@ -105,8 +106,8 @@ export const WorldMapImage = () => {
           {/* Logo */}
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/frame-3661.svg"
-            alt="Frame"
+            src={BlueBullLogo}
+            alt="BlueBull Logo"
             sx={{
               height: { xs: "2.5rem", md: "3.75rem" },
               width: { xs: "6.8rem", md: "10.25rem" },

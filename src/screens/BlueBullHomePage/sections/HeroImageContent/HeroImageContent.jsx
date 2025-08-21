@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import BlueBullElegant from "../../../../assets/BlueBull-Elegant.png";
 
 export const HeroImageContent = () => {
   return (
@@ -19,8 +20,8 @@ export const HeroImageContent = () => {
     >
       <Box
         component="img"
-        src="https://c.animaapp.com/mek1km8sOiUotz/img/bull-2---faded-1.png"
-        alt="Bull faded"
+        src={BlueBullElegant}
+        alt="BlueBull Elegant"
         sx={{
           width: { xs: "100%", md: "80%", lg: "90%" },
           height: "auto",

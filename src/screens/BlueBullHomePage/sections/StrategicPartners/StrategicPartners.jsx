@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import Separator from "../../../../assets/Separator.png";
 
 const strategicPartners = [
   { id: 1, name: "Partner 1" },
@@ -38,8 +39,8 @@ export const StrategicPartners = () => {
           
           <Box
             component="img"
-            src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-            alt="Line"
+            src={Separator}
+            alt="Separator line under Strategic partners title"
             sx={{
               width: { xs: "4rem", md: "5.5rem" },
               height: { xs: "0.3rem", md: "0.4375rem" },

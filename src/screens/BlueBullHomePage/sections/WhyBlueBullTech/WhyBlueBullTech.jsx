@@ -1,18 +1,22 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import BlueTick from "../../../../assets/BlueTick.png";
+import Separator from "../../../../assets/Separator.png";
+import Latam from "../../../../assets/Latam.png";
+import Platform from "../../../../assets/Platform.png";
+import IGaming from "../../../../assets/iGaming.png";
 
 const benefitCards = [
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3674-1.svg",
+    icon: Latam,
     title: "LATAM\nmarkets-first",
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3674.svg",
+    icon: Platform,
     title: "Fully platform\nagnostic",
   },
   {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3674-2.svg",
+    icon: IGaming,
     title: "iGaming managed\nservices",
   },
 ];
@@ -65,8 +69,8 @@ export const WhyBlueBullTech = () => {
             
             <Box
               component="img"
-              src="https://c.animaapp.com/mek1km8sOiUotz/img/line-1-1.svg"
-              alt="Line"
+              src={Separator}
+              alt="Separator line under Why BlueBull Tech title"
               sx={{
                 width: { xs: "4rem", md: "5.5rem" },
                 height: { xs: "0.3rem", md: "0.4375rem" },
@@ -100,14 +104,28 @@ export const WhyBlueBullTech = () => {
                   }}
                 >
                   <Box
-                    component="img"
-                    src={card.icon}
-                    alt="Frame"
                     sx={{
-                      width: { xs: "12rem", md: "16rem", lg: "20rem" },
-                      height: { xs: "12rem", md: "16rem", lg: "10rem" },
+                      width: { xs: "12rem", md: "16rem", lg: "18rem" },
+                      height: { xs: "8rem", md: "10rem", lg: "12rem" },
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mb: { xs: "1rem", md: "1.5rem" },
                     }}
-                  />
+                  >
+                    <Box
+                      component="img"
+                      src={card.icon}
+                      alt={`${card.title.replace('\n', ' ')} icon - representing our ${card.title.replace('\n', ' ').toLowerCase()} approach`}
+                      sx={{
+                        maxWidth: "100%",
+                        maxHeight: "100%",
+                        width: "auto",
+                        height: "auto",
+                        objectFit: "contain",
+                      }}
+                    />
+                  </Box>
 
                   <Typography
                     sx={{
