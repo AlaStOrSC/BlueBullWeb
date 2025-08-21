@@ -8,6 +8,8 @@ export const AboutHeaderInfo = () => {
         flex: { xs: "none", lg: 1 },
         maxWidth: { xs: "100%", lg: "50rem" },
         zIndex: 2,
+        marginLeft: { xs: "5%", md: "5%", lg: "5%" }, // Separación del margen izquierdo
+        marginTop: "200px", // Subido 50px (era 250px)
       }}
     >
       <Stack 
@@ -21,7 +23,7 @@ export const AboutHeaderInfo = () => {
           sx={{
             color: "#ffffff",
             fontFamily: "var(--headline-header-1-font-family)",
-            fontSize: "var(--headline-header-1-font-size)",
+            fontSize: { xs: "2.8rem", md: "3.92rem", lg: "4.48rem" }, // Escalado proporcionalmente
             fontWeight: "var(--headline-header-1-font-weight)",
             lineHeight: "var(--headline-header-1-line-height)",
             letterSpacing: "var(--headline-header-1-letter-spacing)",
@@ -58,7 +60,7 @@ export const AboutHeaderInfo = () => {
           sx={{
             color: "#ffffff",
             fontFamily: "Montserrat, Helvetica",
-            fontSize: { xs: "1.25rem", md: "1.75rem", lg: "2.25rem" },
+            fontSize: { xs: "1rem", md: "1.4rem", lg: "1.8rem" }, // Reducido 20%
             fontWeight: 500,
             lineHeight: 1.4,
             maxWidth: { xs: "100%", lg: "90%" },
@@ -90,7 +92,7 @@ export const AboutHeaderInfo = () => {
             sx={{
               fontFamily: "Montserrat, Helvetica",
               fontWeight: 700,
-              fontSize: { xs: "1rem", md: "1.5rem", lg: "1.8rem" },
+              fontSize: { xs: "0.8rem", md: "1.2rem", lg: "1.44rem" }, // Reducido 20%
               color: "white",
               textTransform: "none",
               transition: "color 0.3s ease",

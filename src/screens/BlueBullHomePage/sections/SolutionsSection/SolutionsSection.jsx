@@ -3,14 +3,14 @@ import { Box, Button, Grid, Stack, Typography } from "@mui/material";
 
 const solutionsData = [
   {
-    title: "Acquisition & CRM",
-    description: "Campaign setup, journey automation, customer segmentation, email/SMS",
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-2.svg",
-  },
-  {
     title: "360° Marketing Management",
     description: "From strategy to execution: digital, affiliate, retention, cross-channel",
     icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-3.svg",
+  },
+  {
+    title: "Acquisition & CRM",
+    description: "Campaign setup, journey automation, customer segmentation, email/SMS",
+    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3636-2.svg",
   },
   {
     title: "Promotions & campaigns",
@@ -78,17 +78,41 @@ export const SolutionsSection = () => {
             {solutionsData.map((solution, index) => (
               <Grid item xs={12} sm={6} lg={3} key={index}>
                 <Box
+                  className="solution-card"
                   sx={{
-                    height: { xs: "auto", md: "26.375rem" },
+                    width: "237px",
+                    height: "274px",
                     borderRadius: "1.09rem",
-                    overflow: "hidden",
                     position: "relative",
-                    background: "linear-gradient(180deg, rgba(111,141,247,1) 0%, rgba(84,107,186,1) 28%, rgba(18,36,99,1) 88%)",
-                    padding: "0.22rem",
+                    backgroundColor: "transparent",
                     transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      borderRadius: "1.09rem",
+                      padding: "3px",
+                      background: "linear-gradient(180deg, rgba(111,141,247,1) 0%, rgba(84,107,186,1) 28%, rgba(18,36,99,1) 88%)",
+                      mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      maskComposite: "xor",
+                      WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                    },
                     "&:hover": {
                       transform: "translateY(-0.5rem)",
                       boxShadow: "0 1rem 2rem rgba(0, 191, 255, 0.2)",
+                      "& .solution-icon": {
+                        filter: "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(3044%) hue-rotate(182deg) brightness(101%) contrast(101%)",
+                      },
+                      "& .solution-title": {
+                        color: "#01beff",
+                      },
+                      "& .solution-description": {
+                        color: "#01beff",
+                      },
                     },
                   }}
                 >
@@ -96,61 +120,67 @@ export const SolutionsSection = () => {
                     sx={{
                       width: "100%",
                       height: "100%",
-                      backgroundColor: "transparent", // Background transparente
-                      borderRadius: "0.875rem",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "center",
-                      justifyContent: "center",
-                      padding: { xs: "1.5rem", md: "2rem" },
-                      minHeight: { xs: "20rem", md: "auto" },
+                      padding: "1.25rem",
                     }}
                   >
                     <Box
                       component="img"
                       src={solution.icon}
                       alt="Frame"
+                      className="solution-icon"
                       sx={{
-                        width: { xs: "3rem", md: "4.375rem" },
-                        height: { xs: "3rem", md: "4.375rem" },
-                        mb: { xs: 2, md: 3 },
+                        width: "2.875rem",
+                        height: "2.875rem",
+                        mb: 1.5,
+                        alignSelf: "center",
                       }}
                     />
 
-                    <Stack spacing={{ xs: 2, md: 3 }} alignItems="center" sx={{ textAlign: "center" }}>
+                    <Box sx={{ 
+                      display: "flex", 
+                      flexDirection: "column", 
+                      alignItems: "center", 
+                      textAlign: "center",
+                      flex: 1,
+                      justifyContent: "space-between"
+                    }}>
                       <Typography
                         variant="h5"
+                        className="solution-title"
                         sx={{
                           fontFamily: "Montserrat, Helvetica",
                           fontWeight: 700,
                           color: "white",
-                          fontSize: { xs: "1.25rem", md: "1.5rem", lg: "1.75rem" },
+                          fontSize: "1.22rem",
                           lineHeight: 1.3,
-                          transition: "color 0.3s ease", // Transición suave
-                          ".MuiBox-root:hover &": { // Cambio de color en hover
-                            color: "#00bfff",
-                          },
+                          height: "3rem",
+                          display: "flex",
+                          alignItems: "center",
+                          mb: 1.5,
                         }}
                       >
                         {solution.title}
                       </Typography>
 
                       <Typography
+                        className="solution-description"
                         sx={{
                           fontFamily: "Montserrat, Helvetica",
                           fontWeight: 500,
                           color: "white",
-                          fontSize: { xs: "0.875rem", md: "1rem", lg: "1.125rem" },
-                          lineHeight: 1.5,
-                          transition: "color 0.3s ease", // Transición suave
-                          ".MuiBox-root:hover &": { // Cambio de color en hover
-                            color: "#00bfff",
-                          },
+                          fontSize: "0.89rem",
+                          lineHeight: 1.4,
+                          flex: 1,
+                          display: "flex",
+                          alignItems: "flex-start",
                         }}
                       >
                         {solution.description}
                       </Typography>
-                    </Stack>
+                    </Box>
                   </Box>
                 </Box>
               </Grid>
@@ -181,11 +211,10 @@ export const SolutionsSection = () => {
               fontFamily: "Montserrat, Helvetica",
               fontWeight: 700,
               color: "white",
-              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" }, // Letra sin cambios
+              fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
               textTransform: "none",
-              px: { xs: 3.6, md: 4.8, lg: 6 }, // Reducido 40% (era 6, 8, 10)
-              py: { xs: 0.9, md: 1.2, lg: 1.5 }, // Reducido 40% (era 1.5, 2, 2.5)
-              minWidth: { xs: "9rem", md: "12rem", lg: "15rem" }, // Reducido 40% (era 15, 20, 25)
+              width: "244.5px",
+              height: "63.5px",
               "&:hover": {
                 border: "0.1875rem solid #00bfff",
                 backgroundColor: "rgba(0, 191, 255, 0.1)",
