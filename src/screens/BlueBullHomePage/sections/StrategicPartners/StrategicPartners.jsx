@@ -12,7 +12,14 @@ const strategicPartners = [
 
 export const StrategicPartners = () => {
   return (
-    <Box sx={{ width: "100%", textAlign: "center" }}>
+    <Box 
+      sx={{ 
+        width: "100%", 
+        textAlign: "center",
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
+        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+      }}
+    >
       <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
         {/* Header */}
         <Stack spacing={{ xs: 3, md: 4 }} alignItems="center">
@@ -43,12 +50,19 @@ export const StrategicPartners = () => {
         {/* Partner Logos */}
         <Grid 
           container 
-          spacing={{ xs: 2, md: 4 }} 
+          spacing={{ xs: 2, md: 3 }} 
           justifyContent="center"
-          sx={{ maxWidth: "80rem" }}
+          sx={{ 
+            maxWidth: "80rem",
+            px: 0, // Sin padding horizontal
+            mx: 0, // Sin margin horizontal
+            width: "100%",
+            position: "relative", // Agregar position relative
+            left: { xs: "-5px", md: "-7px", lg: 0 }, // Reducir el ajuste hacia la izquierda
+          }}
         >
           {strategicPartners.map((partner) => (
-            <Grid item xs={6} sm={4} md={2} key={partner.id}>
+            <Grid item xs={6} sm={4} md={2} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 sx={{
                   backgroundColor: "#282729",
@@ -58,6 +72,8 @@ export const StrategicPartners = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   transition: "transform 0.3s ease, background-color 0.3s ease",
+                  mx: "auto", // Centrado automático
+                  width: "100%", // Usar todo el ancho disponible
                   "&:hover": {
                     transform: "translateY(-0.25rem)",
                     backgroundColor: "#3a3a3c",

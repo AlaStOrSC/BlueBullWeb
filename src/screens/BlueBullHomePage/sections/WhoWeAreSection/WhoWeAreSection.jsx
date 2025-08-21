@@ -21,7 +21,14 @@ const teamData = [
 
 export const WhoWeAreSection = () => {
   return (
-    <Box sx={{ width: "100%", textAlign: "center" }}>
+    <Box 
+      sx={{ 
+        width: "100%", 
+        textAlign: "center",
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Margin negativo más agresivo para compensar
+        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Padding más balanceado
+      }}
+    >
       <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
         {/* Header */}
         <Stack spacing={{ xs: 3, md: 4 }} alignItems="center">
@@ -65,19 +72,28 @@ export const WhoWeAreSection = () => {
         {/* Team Cards */}
         <Grid 
           container 
-          spacing={{ xs: 4, md: 6, lg: 8 }} 
+          spacing={{ xs: 2, md: 4, lg: 6 }} 
           justifyContent="center"
-          sx={{ mt: { xs: 4, md: 6 } }}
+          sx={{ 
+            mt: { xs: 4, md: 6 },
+            px: 0,
+            mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
+            width: "100%",
+            position: "relative",
+            left: { xs: 0, lg: "-16px" }, // Mover más hacia la izquierda en desktop
+          }}
         >
           {teamData.map((item, index) => (
-            <Grid item xs={12} md={4} key={index}>
+            <Grid item xs={12} md={4} key={index} sx={{ display: "flex", justifyContent: "center" }}>
               <Stack
                 spacing={{ xs: 3, md: 4 }}
                 alignItems="center"
                 sx={{
                   maxWidth: "28rem",
-                  mx: "auto",
                   textAlign: "center",
+                  px: 0, // Eliminar padding horizontal
+                  mx: 0, // Eliminar margin horizontal
+                  width: "100%", // Usar todo el ancho disponible
                 }}
               >
                 <Box
@@ -98,6 +114,9 @@ export const WhoWeAreSection = () => {
                     color: "white",
                     fontSize: { xs: "1.5rem", md: "2rem", lg: "2.5rem" },
                     lineHeight: 1.2,
+                    textAlign: "center",
+                    width: "100%",
+                    mx: "auto", // Centrado automático
                   }}
                 >
                   {item.title}
@@ -110,6 +129,10 @@ export const WhoWeAreSection = () => {
                     color: "white",
                     fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
                     lineHeight: 1.6,
+                    textAlign: "center",
+                    width: "100%",
+                    mx: "auto", // Centrado automático
+                    px: { xs: 1, md: 0 }, // Padding horizontal mínimo en móvil
                   }}
                 >
                   {item.description}

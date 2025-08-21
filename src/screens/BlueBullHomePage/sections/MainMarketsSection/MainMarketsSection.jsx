@@ -84,16 +84,16 @@ export const MainMarketsSection = () => {
       >
         {/* Custom Map Points - Puedes ajustar el tamaño cambiando width y height */}
         
-        {/* Punto 1 - América con hover para mostrar pop-up */}
+        {/* Punto 1 - Mexico */}
         <Box
           sx={{
             position: "absolute",
-            width: { xs: "6px", md: "10px", lg: "16px" }, // Más pequeño en móvil
-            height: { xs: "6px", md: "10px", lg: "16px" },
+            width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" }, // Tamaño progresivo: móvil, tablet, desktop pequeño, desktop grande
+            height: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
             backgroundColor: "white", // Color blanco por defecto
             borderRadius: "50%",
-            top: { xs: "45%", md: "47%", lg: "48%" }, // Ajustado para mobile
-            left: { xs: "15%", md: "16%", lg: "17%" }, // Ajustado para mobile
+            top: { xs: "46%", sm: "46.5%", md: "47%", lg: "48%" }, // Posición específica para cada tamaño: móvil, tablet, desktop pequeño, desktop grande
+            left: { xs: "15%", sm: "20.5%", md: "16%", lg: "17%" }, // Posición específica para cada tamaño
             boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
             cursor: "pointer",
             transition: "all 0.3s ease", // Transición suave
@@ -125,16 +125,16 @@ export const MainMarketsSection = () => {
           onMouseEnter={handlePointHover}
         />
 
-        {/* Punto 2 - Europa */}
+        {/* Punto 2 - Argentina */}
         <Box
           sx={{
             position: "absolute",
-            width: { xs: "6px", md: "10px", lg: "16px" },
-            height: { xs: "6px", md: "10px", lg: "16px" },
+            width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
+            height: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
             backgroundColor: "white", // Color blanco por defecto
             borderRadius: "50%",
-            top: { xs: "68%", md: "70%", lg: "72%" }, // Ajustado para mobile
-            left: { xs: "26%", md: "28%", lg: "29%" }, // Ajustado para mobile
+            top: { xs: "70%", sm: "84%", md: "70%", lg: "72%" }, // Posición específica para cada tamaño
+            left: { xs: "27%", sm: "31%", md: "28%", lg: "29%" }, // Posición específica para cada tamaño
             boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
             cursor: "pointer",
             transition: "all 0.3s ease", // Transición suave
@@ -165,59 +165,21 @@ export const MainMarketsSection = () => {
           }}
         />
 
-        {/* Punto 3 - Asia */}
-        <Box
-          sx={{
-            position: "absolute",
-            width: { xs: "6px", md: "10px", lg: "16px" },
-            height: { xs: "6px", md: "10px", lg: "16px" },
-            backgroundColor: "white", // Color blanco por defecto
-            borderRadius: "50%",
-            top: { xs: "76%", md: "78%", lg: "80%" }, // Ajustado para mobile
-            left: { xs: "27%", md: "29%", lg: "30%" }, // Ajustado para mobile
-            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
-            cursor: "pointer",
-            transition: "all 0.3s ease", // Transición suave
-            animation: "pulse 2s infinite 1s", // Animación de pulso con delay
-            "@keyframes pulse": {
-              "0%": {
-                transform: "scale(1)",
-                opacity: 1,
-                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
-              },
-              "50%": {
-                transform: "scale(1.2)", // Escala más grande
-                opacity: 0.9,
-                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
-              },
-              "100%": {
-                transform: "scale(1)",
-                opacity: 1,
-                boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
-              },
-            },
-            "&:hover": {
-              backgroundColor: "#00bfff", // Azul en hover
-              transform: "scale(1.4)", // Crece al hacer hover
-              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
-              animation: "none", // Detiene la animación en hover
-            },
-          }}
-        />
+       
 
         {/* Fondo con blur solo para el área del popup */}
         {showPopup && (
           <Box
             sx={{
               position: "absolute",
-              width: { xs: "90%", md: "65%", lg: "38rem" },
+              width: { xs: "81%", sm: "69%", md: "65%", lg: "38rem" }, // Tablet: ajustado para coincidir con popup más pequeño
               height: { xs: "auto", md: "auto", lg: "39rem" },
-              top: { xs: "5%", md: "3%", lg: "0.5rem" },
-              left: "30%",
+              top: { xs: "5%", sm: "calc(5% - 150px)", md: "3%", lg: "0.5rem" }, // Tablet: 150px más arriba
+              left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha como el popup
               transform: "translateX(-50%)",
               maxWidth: "36rem",
-              backgroundColor: "rgba(0, 0, 0, 0.4)",
-              backdropFilter: "blur(6px)",
+              backgroundColor: { xs: "rgba(0, 0, 0, 0.6)", sm: "rgba(0, 0, 0, 0.6)", md: "rgba(0, 0, 0, 0.4)", lg: "rgba(0, 0, 0, 0.4)" }, // Más opaco en móvil y tablet
+              backdropFilter: { xs: "blur(8px)", sm: "blur(8px)", md: "blur(6px)", lg: "blur(6px)" }, // Más blur en móvil y tablet
               borderRadius: "12px",
               zIndex: 998,
               transition: "opacity 0.3s ease",
@@ -246,10 +208,10 @@ export const MainMarketsSection = () => {
           className="popup-image"
           sx={{
             position: "absolute",
-            width: { xs: "85%", md: "60%", lg: "36.625rem" },
+            width: { xs: "76.5%", sm: "65%", md: "60%", lg: "36.625rem" }, // Tablet: 15% más pequeño que móvil (76.5% -> 65%)
             height: { xs: "auto", lg: "37.9375rem" },
-            top: { xs: "8%", md: "5%", lg: "1.1875rem" },
-            left: "30%",
+            top: { xs: "8%", sm: "calc(8% - 150px)", md: "5%", lg: "1.1875rem" }, // Tablet: 150px más arriba
+            left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha en móvil y tablet
             transform: "translateX(-50%)",
             maxWidth: "36.625rem",
             opacity: showPopup ? 1 : 0,

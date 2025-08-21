@@ -9,7 +9,9 @@ export const AboutUsSection = () => {
         width: "100%",
         display: "flex",
         alignItems: "center",
+        justifyContent: { xs: "center", md: "center", lg: "flex-start" }, // Centrado en móvil y tablet, izquierda en desktop
         minHeight: "665px",
+        px: { xs: 2, md: 4, lg: 0 }, // Padding lateral para móviles y tablets
       }}
     >
       <Stack
@@ -17,7 +19,8 @@ export const AboutUsSection = () => {
         sx={{
           maxWidth: "862px",
           zIndex: 2,
-          pl: 4,
+          pl: { xs: 0, md: 0, lg: 4 }, // Sin padding left en móvil y tablet, padding en desktop
+          textAlign: { xs: "center", md: "center", lg: "left" }, // Texto centrado en móvil y tablet, izquierda en desktop
         }}
         className="translate-y-[-1rem] animate-fade-in opacity-0"
       >

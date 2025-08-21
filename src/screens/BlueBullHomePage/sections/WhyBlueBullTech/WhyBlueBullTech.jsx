@@ -38,7 +38,14 @@ const benefitPoints = [
 
 export const WhyBlueBullTech = () => {
   return (
-    <Box sx={{ width: "100%", textAlign: "center" }}>
+    <Box 
+      sx={{ 
+        width: "100%", 
+        textAlign: "center",
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
+        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+      }}
+    >
       <Stack spacing={{ xs: 12, md: 20 }} alignItems="center">
         {/* Header Section */}
         <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
@@ -70,13 +77,28 @@ export const WhyBlueBullTech = () => {
           {/* Benefit Cards */}
           <Grid 
             container 
-            spacing={{ xs: 3, md: 5 }} 
+            spacing={{ xs: 2, md: 4 }} 
             justifyContent="center"
-            sx={{ maxWidth: "85rem" }}
+            sx={{ 
+              maxWidth: "85rem",
+              px: 0,
+              mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
+              width: "100%",
+              position: "relative",
+              left: { xs: "-5px", md: "-7px", lg: "-16px" }, // Mover más hacia la izquierda en desktop
+            }}
           >
             {benefitCards.map((card, index) => (
-              <Grid item xs={12} md={4} key={index}>
-                <Stack spacing={{ xs: 2, md: 3 }} alignItems="center">
+              <Grid item xs={12} md={4} key={index} sx={{ display: "flex", justifyContent: "center" }}>
+                <Stack 
+                  spacing={{ xs: 2, md: 3 }} 
+                  alignItems="center"
+                  sx={{
+                    width: "100%",
+                    maxWidth: "300px", // Limitar ancho máximo
+                    mx: "auto", // Centrado automático
+                  }}
+                >
                   <Box
                     component="img"
                     src={card.icon}
@@ -96,6 +118,8 @@ export const WhyBlueBullTech = () => {
                       lineHeight: 1.4,
                       textAlign: "center",
                       whiteSpace: "pre-line",
+                      width: "100%", // Usar todo el ancho disponible
+                      mx: "auto", // Centrado automático
                     }}
                   >
                     {card.title}

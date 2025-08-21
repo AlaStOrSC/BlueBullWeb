@@ -26,7 +26,14 @@ const solutionsData = [
 
 export const SolutionsSection = () => {
   return (
-    <Box sx={{ width: "100%", textAlign: "center" }}>
+    <Box 
+      sx={{ 
+        width: "100%", 
+        textAlign: "center",
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
+        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+      }}
+    >
       <Stack spacing={{ xs: 8, md: 12 }} alignItems="center">
         {/* Header */}
         <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
@@ -71,12 +78,19 @@ export const SolutionsSection = () => {
           {/* Solution Cards */}
           <Grid 
             container 
-            spacing={{ xs: 3, md: 4 }} 
+            spacing={{ xs: 2, md: 3 }} 
             justifyContent="center"
-            sx={{ maxWidth: "80rem" }}
+            sx={{ 
+              maxWidth: "80rem",
+              px: 0,
+              mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
+              width: "100%",
+              position: "relative",
+              left: { xs: 0, lg: "-16px" }, // Mover más hacia la izquierda en desktop
+            }}
           >
             {solutionsData.map((solution, index) => (
-              <Grid item xs={12} sm={6} lg={3} key={index}>
+              <Grid item xs={12} sm={6} lg={3} key={index} sx={{ display: "flex", justifyContent: "center" }}>
                 <Box
                   className="solution-card"
                   sx={{
@@ -86,6 +100,7 @@ export const SolutionsSection = () => {
                     position: "relative",
                     backgroundColor: "transparent",
                     transition: "color 0.3s ease",
+                    mx: "auto", // Centrado automático
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -208,6 +223,7 @@ export const SolutionsSection = () => {
               border: "0.1875rem solid white",
               width: "244.5px",
               height: "63.5px",
+              transform: { xs: "translateX(10px)", sm: "translateX(15px)", lg: "translateX(0)" }, // Mover ligeramente a la derecha
               "&:hover": {
                 border: "0.1875rem solid #00bfff",
                 backgroundColor: "rgba(0, 191, 255, 0.1)",

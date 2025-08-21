@@ -30,12 +30,17 @@ export const Footer = () => {
         py: { xs: 8, md: 12 },
         px: { xs: 2, md: 4 },
         mt: { xs: 8, md: 12 },
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
       }}
     >
       <Stack
         spacing={{ xs: 8, md: 12 }}
         alignItems="center"
-        sx={{ maxWidth: "80rem", mx: "auto" }}
+        sx={{ 
+          maxWidth: "80rem", 
+          mx: "auto",
+          px: { xs: "6px", sm: "12px", md: "16px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+        }}
       >
         {/* Header */}
         <Stack spacing={{ xs: 3, md: 4 }} alignItems="center">
@@ -66,12 +71,28 @@ export const Footer = () => {
         {/* Contact Cards */}
         <Grid 
           container 
-          spacing={{ xs: 4, md: 6 }} 
+          spacing={{ xs: 3, md: 4 }} 
           justifyContent="center"
+          sx={{
+            px: 0,
+            mx: 0,
+            width: "100%",
+            position: "relative", // Agregar position relative
+            left: { xs: "-10px", md: "-15px", lg: 0 }, // Mover hacia la izquierda para compensar el desbalance
+          }}
         >
           {contactData.map((contact, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <Stack spacing={{ xs: 2, md: 3 }} alignItems="center" sx={{ textAlign: "center" }}>
+            <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: "flex", justifyContent: "center" }}>
+              <Stack 
+                spacing={{ xs: 2, md: 3 }} 
+                alignItems="center" 
+                sx={{ 
+                  textAlign: "center",
+                  width: "100%",
+                  maxWidth: "250px",
+                  mx: "auto",
+                }}
+              >
                 <Box
                   component="img"
                   src={contact.icon}
@@ -89,6 +110,9 @@ export const Footer = () => {
                     fontSize: { xs: "0.875rem", md: "1rem", lg: "1.25rem" },
                     lineHeight: 1.4,
                     whiteSpace: "pre-line",
+                    textAlign: "center", // Forzar centrado del texto
+                    width: "100%", // Usar todo el ancho disponible
+                    mx: "auto", // Centrado automático
                   }}
                 >
                   {contact.text}
@@ -105,12 +129,20 @@ export const Footer = () => {
           borderTop: "1px solid rgba(255, 255, 255, 0.1)",
           mt: { xs: 6, md: 8 },
           pt: { xs: 4, md: 6 },
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
         }}
       >
         <Grid 
           container 
           alignItems="center" 
-          sx={{ maxWidth: "80rem", mx: "auto" }}
+          spacing={{ xs: 4, md: 6 }}
+          justifyContent="space-evenly"
+          sx={{ 
+            maxWidth: "80rem",
+            width: "100%",
+          }}
         >
           <Grid item xs={12} md={4} sx={{ display: "flex", justifyContent: "center", textAlign: "center" }}>
             <Typography

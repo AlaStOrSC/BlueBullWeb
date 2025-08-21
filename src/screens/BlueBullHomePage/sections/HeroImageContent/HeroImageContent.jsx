@@ -11,8 +11,10 @@ export const HeroImageContent = () => {
         alignItems: "center",
         position: "relative",
         minHeight: { xs: "20rem", md: "30rem", lg: "40rem" },
-        marginRight: { xs: "5%", md: "5%", lg: "5%" }, // Misma separación que AboutHeaderInfo del izquierdo
-        marginTop: "50px", // Desplazar 100px hacia abajo
+        marginRight: { xs: "auto", md: "auto", lg: "5%" }, // Centrado automático en móvil y tablet, margen derecho en desktop
+        marginLeft: { xs: "auto", md: "auto", lg: "0" }, // Centrado automático en móvil y tablet
+        marginTop: "50px", // Desplazar 50px hacia abajo
+        px: { xs: 2, md: 4, lg: 0 }, // Padding horizontal para móviles y tablets
       }}
     >
       <Box

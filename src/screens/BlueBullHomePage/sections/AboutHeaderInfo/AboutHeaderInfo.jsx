@@ -8,8 +8,10 @@ export const AboutHeaderInfo = () => {
         flex: { xs: "none", lg: 1 },
         maxWidth: { xs: "100%", lg: "50rem" },
         zIndex: 2,
-        marginLeft: { xs: "5%", md: "5%", lg: "5%" }, // Separación del margen izquierdo
-        marginTop: "-200px", // Subido 200px más desde la posición actual
+        marginLeft: { xs: "auto", md: "auto", lg: "5%" }, // Centrado automático en móvil y tablet, margen izquierdo en desktop
+        marginRight: { xs: "auto", md: "auto", lg: "0" }, // Centrado automático en móvil y tablet
+        marginTop: { xs: "100px", md: "100px", lg: "-200px" }, // Responsive: positivo en móvil para bajar contenido, menos en tablet, negativo en desktop
+        px: { xs: 2, md: 4, lg: 0 }, // Padding horizontal para móviles y tablets
       }}
     >
       <Stack 
