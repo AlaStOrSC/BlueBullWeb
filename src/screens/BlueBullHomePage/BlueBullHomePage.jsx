@@ -5,7 +5,7 @@ import { Footer } from "./sections/Footer";
 import { SolutionsSection } from "./sections/SolutionsSection";
 import { WhoWeAreSection } from "./sections/WhoWeAreSection";
 import { WhyBlueBullTech } from "./sections/WhyBlueBullTech";
-import { WorldMapImage } from "./sections/WorldMapImage";
+import { Navbar } from "./sections/Navbar";
 import { StrategicPartners } from "./sections/StrategicPartners";
 import { HeroImageContent } from "./sections/HeroImageContent";
 import { MainMarketsSection } from "./sections/MainMarketsSection/MainMarketsSection";
@@ -96,7 +96,7 @@ export const BlueBullHomePage = () => {
       </Box>
 
       {/* Navigation */}
-      <WorldMapImage />
+      <Navbar />
 
       {/* Main Content */}
       <Container

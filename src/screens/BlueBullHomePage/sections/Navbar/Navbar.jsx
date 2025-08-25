@@ -1,7 +1,6 @@
 import React from "react";
 import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { MainMarketsSection } from "../MainMarketsSection";
 import BlueBullLogo from "../../../../assets/BlueBullLogo.png";
 
 const navigationItems = [
@@ -13,7 +12,7 @@ const navigationItems = [
   { label: "CHARITY", active: false },
 ];
 
-export const WorldMapImage = () => {
+export const Navbar = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -216,7 +215,6 @@ export const WorldMapImage = () => {
         {drawer}
       </Drawer>
 
-      {/* Main Markets Section */}
      
     </>
   );

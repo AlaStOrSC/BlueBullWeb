@@ -1,4 +1,12 @@
 {
-  "nodes": [],
+  "nodes": [
+    {
+      "id": "src/screens/BlueBullHomePage/BlueBullHomePage.jsx",
+      "label": "BlueBullHomePage",
+      "routes": [
+        "*"
+      ]
+    }
+  ],
   "edges": []
 }
