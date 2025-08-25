@@ -16,7 +16,7 @@ const benefitCards = [
   },
   {
     icon: IGaming,
-    title: "iGaming managed\nservices",
+    title: "iGaming\nmanaged services",
   },
 ];
 

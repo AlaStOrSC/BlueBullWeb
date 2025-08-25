@@ -163,6 +163,7 @@ export const Navbar = () => {
             component="img"
             src={BlueBullLogo}
             alt="BlueBull Logo"
+            onClick={() => navigate(ROUTES.HOME)}
             sx={{
               height: { 
                 xs: "2.5rem", 
@@ -175,6 +176,11 @@ export const Navbar = () => {
                 md: "8.2rem", 
                 lg: "9.2rem", 
                 xl: "10.25rem" 
+              },
+              cursor: "pointer",
+              transition: "opacity 0.2s ease",
+              "&:hover": {
+                opacity: 0.8,
               },
             }}
           />
