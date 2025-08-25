@@ -8,10 +8,15 @@ export const AboutHeaderInfo = () => {
         flex: { xs: "none", lg: 1 },
         maxWidth: { xs: "100%", lg: "50rem" },
         zIndex: 2,
-        marginLeft: { xs: "auto", md: "auto", lg: "5%" }, // Centrado automático en móvil y tablet, margen izquierdo en desktop
-        marginRight: { xs: "auto", md: "auto", lg: "0" }, // Centrado automático en móvil y tablet
-        marginTop: { xs: "100px", md: "100px", lg: "-200px" }, // Responsive: positivo en móvil para bajar contenido, menos en tablet, negativo en desktop
-        px: { xs: 2, md: 4, lg: 0 }, // Padding horizontal para móviles y tablets
+        marginLeft: { xs: "auto", md: "auto", lg: "5%" },
+        marginRight: { xs: "auto", md: "auto", lg: "0" },
+        marginTop: {
+          xs: "calc(4rem + 2rem)",      // Altura navbar (4rem) + separación (2rem) = 6rem
+          md: "calc(4.5rem + 1.5rem)",  // Altura navbar (4.5rem) + separación (1.5rem) = 6rem
+          lg: "calc(5rem + 0rem)",      // Altura navbar (5rem) + separación (0rem) = 5rem (posición más alta)
+          xl: "calc(5.625rem + -7rem)"  // Altura navbar (5.625rem) + separación negativa = overlay
+        },
+        px: { xs: 2, md: 4, lg: 0 },
       }}
     >
       <Stack 
@@ -25,7 +30,7 @@ export const AboutHeaderInfo = () => {
           sx={{
             color: "#ffffff",
             fontFamily: "var(--headline-header-1-font-family)",
-            fontSize: { xs: "2.8rem", md: "3.92rem", lg: "4.48rem" }, // Escalado proporcionalmente
+            fontSize: "clamp(2.8rem, 4vw + 1rem, 4.48rem)", // Escalado continuo basado en viewport
             fontWeight: "var(--headline-header-1-font-weight)",
             lineHeight: "var(--headline-header-1-line-height)",
             letterSpacing: "var(--headline-header-1-letter-spacing)",
@@ -50,8 +55,8 @@ export const AboutHeaderInfo = () => {
 
         <Box
           sx={{
-            width: { xs: "2rem", md: "3.1rem" },
-            height: { xs: "0.25rem", md: "0.43rem" },
+            width: "clamp(2rem, 2vw + 1rem, 3.1rem)", // Escalado continuo del ancho
+            height: "clamp(0.25rem, 0.5vw + 0.1rem, 0.43rem)", // Escalado continuo del alto
             background: "linear-gradient(90deg, #8F41B6 0%, #01BEFF 100%)",
             borderRadius: "2px",
           }}
@@ -61,7 +66,7 @@ export const AboutHeaderInfo = () => {
           sx={{
             color: "#ffffff",
             fontFamily: "Montserrat, Helvetica",
-            fontSize: { xs: "1rem", md: "1.4rem", lg: "1.8rem" }, // Reducido 20%
+            fontSize: "clamp(1rem, 1.5vw + 0.5rem, 1.8rem)", // Escalado continuo
             fontWeight: 500,
             lineHeight: 1.4,
             maxWidth: { xs: "100%", lg: "90%" },
@@ -75,7 +80,7 @@ export const AboutHeaderInfo = () => {
         <Button
           variant="outlined"
           sx={{
-            height: { xs: "3rem", md: "4.3125rem" },
+            height: "clamp(3rem, 2vw + 2rem, 4.3125rem)", // Escalado continuo del botón
             px: { xs: 3, md: 6 },
             border: "0.25rem solid white",
             borderRadius: 1,
@@ -93,7 +98,7 @@ export const AboutHeaderInfo = () => {
             sx={{
               fontFamily: "Montserrat, Helvetica",
               fontWeight: 700,
-              fontSize: { xs: "0.8rem", md: "1.2rem", lg: "1.44rem" }, // Reducido 20%
+              fontSize: "clamp(0.8rem, 1vw + 0.5rem, 1.44rem)", // Escalado continuo del texto del botón
               color: "white",
               textTransform: "none",
               transition: "color 0.3s ease",
