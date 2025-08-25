@@ -1,34 +1,54 @@
 import React from "react";
 import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useLocation, useNavigate } from "react-router-dom";
 import BlueBullLogo from "../../../../assets/BlueBullLogo.png";
+import { ROUTES } from "../../../../routes/routes";
 
 const navigationItems = [
-  { label: "ABOUT US", active: true },
-  { label: "PORTFOLIO", active: false },
-  { label: "CASE STUDIES", active: false },
-  { label: "GALLERY", active: false },
-  { label: "CAREERS", active: false },
-  { label: "CHARITY", active: false },
+  { id: "home", label: "HOME", route: ROUTES.HOME },
+  { id: "about", label: "ABOUT US", route: ROUTES.ABOUT },
+  { id: "solutions", label: "SOLUTIONS", route: ROUTES.SOLUTIONS },
+  { id: "case-studies", label: "CASE STUDIES", route: ROUTES.CASE_STUDIES },
+  { id: "events", label: "EVENTS", route: "/events" },
+  { id: "careers", label: "CAREERS", route: ROUTES.CAREERS },
+  { id: "charity", label: "CHARITY", route: ROUTES.CHARITY },
 ];
 
 export const Navbar = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg')); // Cambiado de 'md' a 'lg'
+  const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
+  const isSmallDesktop = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleNavigation = (route) => {
+    navigate(route);
+    if (isMobile) {
+      setMobileOpen(false); // Cerrar drawer en mobile después de navegar
+    }
+  };
+
+  // Función para determinar si un item está activo
+  const isActive = (route) => {
+    return location.pathname === route;
+  };
+
   const drawer = (
     <Box sx={{ p: 2, backgroundColor: "#010815", height: "100%" }}>
       <Stack spacing={2}>
-        {navigationItems.map((item, index) => (
+        {navigationItems.map((item) => (
           <Button
-            key={index}
+            key={item.id}
+            onClick={() => handleNavigation(item.route)}
             sx={{
-              color: item.active ? "#00bfff" : "#ffffff",
+              color: isActive(item.route) ? "#00bfff" : "#ffffff",
               fontFamily: "Montserrat, Helvetica",
               fontWeight: 700,
               fontSize: "1rem",
@@ -88,7 +108,12 @@ export const Navbar = () => {
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(10px)",
           boxShadow: "none",
-          height: { xs: "4rem", md: "5.625rem" },
+          height: { 
+            xs: "4rem", 
+            md: "4.5rem", 
+            lg: "5rem", 
+            xl: "5.625rem" 
+          },
           zIndex: 1000,
         }}
       >
@@ -98,7 +123,12 @@ export const Navbar = () => {
             maxWidth: "1650px",
             width: "100%",
             mx: "auto",
-            px: { xs: 2, md: 4 },
+            px: { 
+              xs: 2, 
+              md: 3, 
+              lg: 4, 
+              xl: 4 
+            },
             justifyContent: "space-between",
           }}
         >
@@ -108,8 +138,18 @@ export const Navbar = () => {
             src={BlueBullLogo}
             alt="BlueBull Logo"
             sx={{
-              height: { xs: "2.5rem", md: "3.75rem" },
-              width: { xs: "6.8rem", md: "10.25rem" },
+              height: { 
+                xs: "2.5rem", 
+                md: "3rem", 
+                lg: "3.5rem", 
+                xl: "3.75rem" 
+              },
+              width: { 
+                xs: "6.8rem", 
+                md: "8.2rem", 
+                lg: "9.2rem", 
+                xl: "10.25rem" 
+              },
             }}
           />
 
@@ -121,20 +161,31 @@ export const Navbar = () => {
                 sx={{
                   alignItems: "center",
                   height: "100%",
+                  display: { xs: "none", lg: "flex" }, // Mostrar solo en lg y xl
                 }}
               >
-                {navigationItems.map((item, index) => (
+                {navigationItems.map((item) => (
                   <Button
-                    key={index}
+                    key={item.id}
+                    onClick={() => handleNavigation(item.route)}
                     sx={{
-                      color: item.active ? "#00bfff" : "#ffffff",
+                      color: isActive(item.route) ? "#00bfff" : "#ffffff",
                       fontFamily: "Montserrat, Helvetica",
                       fontWeight: 700,
-                      fontSize: { xs: "0.875rem", md: "1.125rem" },
+                      fontSize: { 
+                        md: "0.7rem", 
+                        lg: "0.9rem", 
+                        xl: "1.1rem" 
+                      },
                       textTransform: "none",
-                      px: { xs: 1.5, md: 2.5 },
+                      px: { 
+                        md: 0.8, 
+                        lg: 1.5, 
+                        xl: 2.5 
+                      },
                       py: 2.5,
                       minWidth: "auto",
+                      whiteSpace: "nowrap",
                       "&:hover": {
                         backgroundColor: "rgba(255, 255, 255, 0.1)",
                       },
@@ -150,10 +201,26 @@ export const Navbar = () => {
                 sx={{
                   border: "0.25rem solid white",
                   borderRadius: "0.35rem",
-                  px: { xs: 2, md: 3 },
-                  py: { xs: 1, md: 2 },
-                  minWidth: { xs: "8rem", md: "12.875rem" },
-                  height: { xs: "2.5rem", md: "3.6875rem" },
+                  px: { 
+                    md: 1, 
+                    lg: 2, 
+                    xl: 3 
+                  },
+                  py: { 
+                    md: 0.8, 
+                    lg: 1.5, 
+                    xl: 2 
+                  },
+                  minWidth: { 
+                    md: "6rem", 
+                    lg: "8rem", 
+                    xl: "12.875rem" 
+                  },
+                  height: { 
+                    md: "2rem", 
+                    lg: "2.8rem", 
+                    xl: "3.6875rem" 
+                  },
                   "&:hover": {
                     border: "0.25rem solid #00bfff",
                     backgroundColor: "rgba(0, 191, 255, 0.1)",
@@ -167,10 +234,15 @@ export const Navbar = () => {
                   sx={{
                     fontFamily: "Montserrat, Helvetica",
                     fontWeight: "bold",
-                    fontSize: { xs: "1rem", md: "1.5rem" },
+                    fontSize: { 
+                      md: "0.6rem", 
+                      lg: "0.9rem", 
+                      xl: "1.5rem" 
+                    },
                     color: "white",
                     textTransform: "none",
                     transition: "color 0.3s ease",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   CONTACT US

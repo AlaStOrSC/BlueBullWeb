@@ -1,11 +1,9 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
 import { AboutHeaderInfo } from "./sections/AboutHeaderInfo";
-import { Footer } from "./sections/Footer";
 import { SolutionsSection } from "./sections/SolutionsSection";
 import { WhoWeAreSection } from "./sections/WhoWeAreSection";
 import { WhyBlueBullTech } from "./sections/WhyBlueBullTech";
-import { Navbar } from "./sections/Navbar";
 import { StrategicPartners } from "./sections/StrategicPartners";
 import { HeroImageContent } from "./sections/HeroImageContent";
 import { MainMarketsSection } from "./sections/MainMarketsSection/MainMarketsSection";
@@ -95,9 +93,6 @@ export const BlueBullHomePage = () => {
         />
       </Box>
 
-      {/* Navigation */}
-      <Navbar />
-
       {/* Main Content */}
       <Container
         maxWidth={false}
@@ -145,9 +140,6 @@ export const BlueBullHomePage = () => {
           <StrategicPartners />
         </Box>
       </Container>
-
-      {/* Footer */}
-      <Footer />
     </Box>
   );
 };

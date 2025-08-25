@@ -6,11 +6,11 @@ export const SolutionsPage = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundColor: "#0a0a0a",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         position: "relative",
+        pt: { xs: "5rem", md: "6rem" }, // Padding top para compensar navbar fijo
       }}
     >
       {/* Background Elements */}
