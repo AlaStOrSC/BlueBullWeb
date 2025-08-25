@@ -26,8 +26,8 @@ export const WhyBlueBullTech = () => {
       sx={{ 
         width: "100%", 
         textAlign: "center",
-        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
-        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+        mx: { xs: "-0.25rem", sm: "-0.5rem", md: "-0.75rem", lg: 0 }, // Convertido a rem
+        px: { xs: "0.25rem", sm: "0.5rem", md: "0.75rem", lg: 0 }, // Convertido a rem
       }}
     >
       <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
@@ -59,36 +59,37 @@ export const WhyBlueBullTech = () => {
         {/* Benefit Cards */}
         <Grid 
           container 
-          spacing={{ xs: 2, md: 4 }} 
+          spacing={{ xs: 3, md: 6, lg: 8 }} 
           justifyContent="center"
           sx={{ 
-            maxWidth: "85rem",
+            maxWidth: "90rem",
             px: 0,
-            mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
+            mx: { xs: 0, lg: "-1.5rem" }, // Margin negativo en rem
             width: "100%",
             position: "relative",
-            left: { xs: "-5px", md: "-7px", lg: "-16px" }, // Mover más hacia la izquierda en desktop
+            left: { xs: "-0.3125rem", md: "-0.4375rem", lg: "-1rem" }, // Convertido a rem
           }}
         >
           {benefitCards.map((card, index) => (
             <Grid item xs={12} md={4} key={index} sx={{ display: "flex", justifyContent: "center" }}>
               <Stack 
-                spacing={{ xs: 2, md: 3 }} 
+                spacing={{ xs: 2, md: 3, lg: 4 }} 
                 alignItems="center"
                 sx={{
                   width: "100%",
-                  maxWidth: "300px", // Limitar ancho máximo
+                  maxWidth: { xs: "18.75rem", md: "22rem", lg: "25rem" }, // Convertido a rem y aumentado
                   mx: "auto", // Centrado automático
+                  px: { xs: "0.5rem", md: "1rem" }, // Padding interno para mejor espaciado
                 }}
               >
                 <Box
                   sx={{
-                    width: { xs: "12rem", md: "16rem", lg: "18rem" },
-                    height: { xs: "8rem", md: "10rem", lg: "12rem" },
+                    width: { xs: "12rem", md: "18rem", lg: "22rem" },
+                    height: { xs: "8rem", md: "12rem", lg: "15rem" },
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    mb: { xs: "1rem", md: "1.5rem" },
+                    mb: { xs: "1rem", md: "2rem", lg: "2.5rem" },
                   }}
                 >
                   <Box
@@ -110,12 +111,13 @@ export const WhyBlueBullTech = () => {
                     fontFamily: "Montserrat, Helvetica",
                     fontWeight: 600,
                     color: "white",
-                    fontSize: { xs: "1.2rem", md: "1.6rem", lg: "2rem" }, // Reducido 20%
-                    lineHeight: 1.4,
+                    fontSize: { xs: "1.1rem", md: "1.5rem", lg: "1.875rem" }, // Reducido ligeramente
+                    lineHeight: { xs: 1.3, md: 1.4, lg: 1.5 }, // Línea más espaciada
                     textAlign: "center",
                     whiteSpace: "pre-line",
                     width: "100%", // Usar todo el ancho disponible
                     mx: "auto", // Centrado automático
+                    px: { xs: "0.5rem", md: "1rem" }, // Padding lateral para evitar cortes
                   }}
                 >
                   {card.title}
