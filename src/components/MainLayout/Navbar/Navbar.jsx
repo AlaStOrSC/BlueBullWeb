@@ -2,18 +2,10 @@ import React from "react";
 import { AppBar, Box, Button, Stack, Toolbar, useMediaQuery, useTheme, IconButton, Drawer, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import BlueBullLogo from "../../../assets/BlueBullLogo.png";
 import { ROUTES } from "../../../routes/routes";
-
-const navigationItems = [
-  { id: "home", label: "HOME", route: ROUTES.HOME },
-  { id: "about", label: "ABOUT US", route: ROUTES.ABOUT },
-  { id: "solutions", label: "SOLUTIONS", route: ROUTES.SOLUTIONS },
-  { id: "case-studies", label: "CASE STUDIES", route: ROUTES.CASE_STUDIES },
-  { id: "events", label: "EVENTS", route: "/events" },
-  { id: "careers", label: "CAREERS", route: ROUTES.CAREERS },
-  { id: "charity", label: "CHARITY", route: ROUTES.CHARITY },
-];
+import { LanguageSwitcher } from "../../LanguageSwitcher";
 
 export const Navbar = () => {
   const theme = useTheme();
@@ -24,6 +16,17 @@ export const Navbar = () => {
   const [scrollbarWidth, setScrollbarWidth] = React.useState(0);
   const location = useLocation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const navigationItems = [
+    { id: "home", label: t('navbar.home'), route: ROUTES.HOME },
+    { id: "about", label: t('navbar.about'), route: ROUTES.ABOUT },
+    { id: "solutions", label: t('navbar.solutions'), route: ROUTES.SOLUTIONS },
+    { id: "case-studies", label: t('navbar.caseStudies'), route: ROUTES.CASE_STUDIES },
+    { id: "events", label: t('navbar.events'), route: "/events" },
+    { id: "careers", label: t('navbar.careers'), route: ROUTES.CAREERS },
+    { id: "charity", label: t('navbar.charity'), route: ROUTES.CHARITY },
+  ];
 
   // Detectar el ancho de la barra de scroll
   React.useEffect(() => {
@@ -115,9 +118,14 @@ export const Navbar = () => {
               transition: "color 0.3s ease",
             }}
           >
-            CONTACT US
+            {t('navbar.contactUs')}
           </Typography>
         </Button>
+
+        {/* Language Switcher - Mobile Drawer */}
+        <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center' }}>
+          <LanguageSwitcher />
+        </Box>
       </Stack>
     </Box>
   );
@@ -277,23 +285,31 @@ export const Navbar = () => {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  CONTACT US
+                  {t('navbar.contactUs')}
                 </Typography>
               </Button>
+
+              {/* Language Switcher - Desktop */}
+              <Box sx={{ ml: { md: 1, lg: 2, xl: 3 } }}>
+                <LanguageSwitcher />
+              </Box>
             </>
           )}
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button and Language Switcher */}
           {isMobile && (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ color: "white" }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <Stack direction="row" alignItems="center" spacing={1}>
+              <LanguageSwitcher />
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ color: "white" }}
+              >
+                <MenuIcon />
+              </IconButton>
+            </Stack>
           )}
         </Toolbar>
       </AppBar>

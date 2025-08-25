@@ -1,8 +1,10 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
 
 export const WhoWeAreSection = () => {
+  const { t } = useTranslation();
   return (
     <Box 
       sx={{ 
@@ -25,7 +27,7 @@ export const WhoWeAreSection = () => {
               lineHeight: 1.2,
             }}
           >
-            Who we are?
+            {t('aboutUs.whoWeAreTitle')}
           </Typography>
           
           <Box
@@ -49,7 +51,7 @@ export const WhoWeAreSection = () => {
             maxWidth: { xs: "100%", md: "80%", lg: "60rem" },
           }}
         >
-          We combine data-driven strategy, creative storytelling and performance tech to drive player engagement and business growth
+          {t('aboutUs.whoWeAreDescription')}
         </Typography>
       </Stack>
     </Box>

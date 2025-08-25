@@ -14,7 +14,7 @@ export const HeroImageContent = () => {
         minHeight: { xs: "20rem", md: "30rem", lg: "40rem" },
         marginRight: { xs: "auto", md: "auto", lg: "5%" }, // Centrado automático en móvil y tablet, margen derecho en desktop
         marginLeft: { xs: "auto", md: "auto", lg: "0" }, // Centrado automático en móvil y tablet
-        marginTop: "50px", // Desplazar 50px hacia abajo
+        marginTop: "100px", // Desplazar 50px hacia abajo
         px: { xs: 2, md: 4, lg: 0 }, // Padding horizontal para móviles y tablets
       }}
     >

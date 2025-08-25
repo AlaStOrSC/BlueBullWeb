@@ -1,7 +1,9 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export const AboutUsSection = () => {
+  const { t } = useTranslation();
   return (
     <Box
       sx={{
@@ -37,8 +39,7 @@ export const AboutUsSection = () => {
             }}
             className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:200ms]"
           >
-            A PARTNER <br />
-            WITH CHARGE
+            {t('hero.title')}
           </Typography>
 
           <Typography
@@ -54,7 +55,7 @@ export const AboutUsSection = () => {
             }}
             className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:400ms]"
           >
-            IN THE LATAM & EU MARKETS
+            {t('hero.subtitle')}
           </Typography>
 
           <Box
@@ -79,9 +80,7 @@ export const AboutUsSection = () => {
             }}
             className="translate-y-[-1rem] animate-fade-in opacity-0 [--animation-delay:800ms]"
           >
-            A bold, fast-growing iGaming <br />
-            and digital marketing venture <br />
-            based in southern Spain
+            {t('hero.description')}
           </Typography>
 
           <Button
@@ -112,7 +111,7 @@ export const AboutUsSection = () => {
                 transition: "color 0.3s ease",
               }}
             >
-              SEE CASE STUDIES
+              {t('hero.caseStudiesButton')}
             </Typography>
           </Button>
         </Stack>

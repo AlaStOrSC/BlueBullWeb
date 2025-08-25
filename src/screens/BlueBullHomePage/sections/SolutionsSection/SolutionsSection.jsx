@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
 import GraphicIcon from "../../../../assets/GraphicIcon.png";
 import MessageIcon from "../../../../assets/MessageIcon.png";
@@ -7,30 +8,31 @@ import PorcentageIcon from "../../../../assets/PorcentageIcon.png";
 import HeartIcon from "../../../../assets/HeartIcon.png";
 import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
-const solutionsData = [
-  {
-    title: "360° Marketing Management",
-    description: "From strategy to execution: digital, affiliate, retention, cross-channel",
-    icon: GraphicIcon,
-  },
-  {
-    title: "Acquisition & CRM",
-    description: "Campaign setup, journey automation, customer segmentation, email/SMS",
-    icon: MessageIcon,
-  },
-  {
-    title: "Promotions & campaigns",
-    description: "Custom calendars, daily/weekly/monthly promos, cashback and tournaments",
-    icon: PorcentageIcon,
-  },
-  {
-    title: "Social Media & Content",
-    description: "Custom calendars, daily/weekly/monthly promos, cashback and tournaments",
-    icon: HeartIcon,
-  },
-];
-
 export const SolutionsSection = () => {
+  const { t } = useTranslation();
+
+  const solutionsData = [
+    {
+      title: t('solutions.marketing360.title'),
+      description: t('solutions.marketing360.description'),
+      icon: GraphicIcon,
+    },
+    {
+      title: t('solutions.acquisition.title'),
+      description: t('solutions.acquisition.description'),
+      icon: MessageIcon,
+    },
+    {
+      title: t('solutions.promotions.title'),
+      description: t('solutions.promotions.description'),
+      icon: PorcentageIcon,
+    },
+    {
+      title: t('solutions.socialMedia.title'),
+      description: t('solutions.socialMedia.description'),
+      icon: HeartIcon,
+    },
+  ];
   return (
     <Box 
       sx={{ 
@@ -54,7 +56,7 @@ export const SolutionsSection = () => {
                 lineHeight: 1.2,
               }}
             >
-              Solutions
+              {t('solutions.title')}
             </Typography>
             
             <Box
@@ -78,7 +80,7 @@ export const SolutionsSection = () => {
               maxWidth: { xs: "100%", md: "80%", lg: "60rem" },
             }}
           >
-            At BlueBull, we specialise in integrating seamlessly with your existing tech stack to deliver high-performance managed services tailored for growth
+            {t('solutions.subtitle')}
           </Typography>
 
           {/* Solution Cards */}
@@ -220,7 +222,7 @@ export const SolutionsSection = () => {
               textAlign: "center",
             }}
           >
-            We're agile, bold, and battle-tested
+            {t('solutions.ctaText')}
           </Typography>
 
           <ReadMoreButton 

@@ -1,28 +1,27 @@
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import React from "react";
-
-const teamData = [
-  {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3637.svg",
-    title: "Vision",
-    description:
-      "Our goal is to be the leading digital force in iGaming and customer acquisition, known for fearless creativity and results",
-  },
-  {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638-1.svg",
-    title: "Mission",
-    description:
-      "To engage, retain, and excite players with personalized, innovative campaigns that make every experience count",
-  },
-  {
-    icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638.svg",
-    title: "Culture & values",
-    description:
-      "Creativity meets execution speed & agility data-driven decisions accountability & ownership. Work Hard, Play Fair",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const OurTeamSection = () => {
+  const { t } = useTranslation();
+
+  const teamData = [
+    {
+      icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3637.svg",
+      title: t('aboutUs.vision.title'),
+      description: t('aboutUs.vision.description'),
+    },
+    {
+      icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638-1.svg",
+      title: t('aboutUs.mission.title'),
+      description: t('aboutUs.mission.description'),
+    },
+    {
+      icon: "https://c.animaapp.com/mek1km8sOiUotz/img/frame-3638.svg",
+      title: t('aboutUs.culture.title'),
+      description: t('aboutUs.culture.description'),
+    },
+  ];
   return (
     <Box sx={{ width: "100%", position: "relative", py: 8 }}>
       <Stack spacing={7} alignItems="center">
@@ -42,7 +41,7 @@ export const OurTeamSection = () => {
                 mb: 2,
               }}
             >
-              Who we are?
+              {t('ourTeam.title')}
             </Typography>
             <Box
               component="img"

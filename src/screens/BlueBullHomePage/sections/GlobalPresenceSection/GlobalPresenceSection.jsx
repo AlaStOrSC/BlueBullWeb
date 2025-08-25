@@ -1,5 +1,6 @@
 import { AppBar, Box, Button, Stack, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import WorldmapImage from "../../../../assets/Worldmap.png";
 import BlueBullLogo from "../../../../assets/BlueBullLogo.png";
 
@@ -13,6 +14,7 @@ const navigationItems = [
 ];
 
 export const GlobalPresenceSection = () => {
+  const { t } = useTranslation();
   return (
     <Box sx={{ position: "relative", width: "100%", minHeight: "994px" }}>
       {/* Navigation Bar */}
@@ -118,7 +120,7 @@ export const GlobalPresenceSection = () => {
               mb: 2,
             }}
           >
-            Main Markets
+            {t('mainMarkets.title')}
           </Typography>
           <Box
             component="img"

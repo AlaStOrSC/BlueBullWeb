@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
 import AxionLogo from "../../../../assets/AXION (2).png";
 import AleaLogo from "../../../../assets/ALEA (2).png";
@@ -15,6 +16,7 @@ const strategicPartners = [
 ];
 
 export const StrategicPartners = () => {
+  const { t } = useTranslation();
   return (
     <Box 
       sx={{ 
@@ -37,7 +39,7 @@ export const StrategicPartners = () => {
               lineHeight: 1.2,
             }}
           >
-            Strategic partners
+            {t('strategicPartners.title')}
           </Typography>
           
           <Box

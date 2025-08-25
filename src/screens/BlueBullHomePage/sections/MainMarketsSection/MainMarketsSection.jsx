@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import WorldmapImage from "../../../../assets/WorldMap.png";
 import Separator from "../../../../assets/Separator.png";
 import PopUpImage from "../../../../assets/Pop-Up.png";
 
 export const MainMarketsSection = () => {
+  const { t } = useTranslation();
   const [showPopup, setShowPopup] = useState(false);
   const timeoutRef = useRef(null);
 
@@ -57,7 +59,7 @@ export const MainMarketsSection = () => {
           mb: 2,
         }}
       >
-        Main Markets
+        {t('mainMarkets.title')}
       </Typography>
       <Box
         component="img"

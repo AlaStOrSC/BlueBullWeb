@@ -1,31 +1,33 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
 import EmailIcon from "../../../../assets/EmailIcon.png";
 import LinkedinIcon from "../../../../assets/LinkedinIcon.png";
 import InstagramIcon from "../../../../assets/InstagramIcon.png";
 import GoogleMapsIcon from "../../../../assets/GoogleMapsIcon.png";
 
-const contactData = [
-  {
-    icon: EmailIcon,
-    text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
-  },
-  {
-    icon: LinkedinIcon,
-    text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
-  },
-  {
-    icon: InstagramIcon,
-    text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
-  },
-  {
-    icon: GoogleMapsIcon,
-    text: '"Sed ut perspiciatis unde "Sed\nut perspiciatis unde',
-  },
-];
-
 export const Footer = () => {
+  const { t } = useTranslation();
+
+  const contactData = [
+    {
+      icon: EmailIcon,
+      text: t('footer.contactInfo.email'),
+    },
+    {
+      icon: LinkedinIcon,
+      text: t('footer.contactInfo.linkedin'),
+    },
+    {
+      icon: InstagramIcon,
+      text: t('footer.contactInfo.instagram'),
+    },
+    {
+      icon: GoogleMapsIcon,
+      text: t('footer.contactInfo.location'),
+    },
+  ];
   return (
     <Box
       component="footer"
@@ -59,7 +61,7 @@ export const Footer = () => {
               textAlign: "center",
             }}
           >
-            Contacts
+            {t('footer.contactsTitle')}
           </Typography>
           
           <Box
@@ -173,7 +175,7 @@ export const Footer = () => {
                 width: "100%",
               }}
             >
-              Blue Bull Ltd
+              {t('footer.blueBullLtd')}
             </Typography>
           </Grid>
 
@@ -187,7 +189,7 @@ export const Footer = () => {
                 width: "100%",
               }}
             >
-              2025 All rights reserved.
+              {t('footer.allRightsReserved')}
             </Typography>
           </Grid>
 

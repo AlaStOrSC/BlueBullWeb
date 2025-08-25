@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export const AboutHeaderInfo = () => {
+  const { t } = useTranslation();
+  
   return (
     <Box
       sx={{
@@ -36,8 +39,7 @@ export const AboutHeaderInfo = () => {
             letterSpacing: "var(--headline-header-1-letter-spacing)",
           }}
         >
-          A PARTNER <br />
-          WITH CHARGE
+          {t('hero.title')}
         </Typography>
 
         <Typography
@@ -50,7 +52,7 @@ export const AboutHeaderInfo = () => {
             letterSpacing: "var(--headline-header-2-letter-spacing)",
           }}
         >
-          IN THE LATAM & EU MARKETS
+          {t('hero.subtitle')}
         </Typography>
 
         <Box
@@ -72,9 +74,7 @@ export const AboutHeaderInfo = () => {
             maxWidth: { xs: "100%", lg: "90%" },
           }}
         >
-          A bold, fast-growing iGaming <br />
-          and digital marketing venture <br />
-          based in southern Spain
+          {t('hero.description')}
         </Typography>
 
         <Button
@@ -104,7 +104,7 @@ export const AboutHeaderInfo = () => {
               transition: "color 0.3s ease",
             }}
           >
-            SEE CASE STUDIES
+            {t('hero.caseStudiesButton')}
           </Typography>
         </Button>
       </Stack>

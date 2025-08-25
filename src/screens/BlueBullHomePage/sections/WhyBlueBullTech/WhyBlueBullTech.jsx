@@ -1,26 +1,28 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
 import Latam from "../../../../assets/Latam.png";
 import Platform from "../../../../assets/platform.png";
 import IGaming from "../../../../assets/iGaming.png";
 
-const benefitCards = [
-  {
-    icon: Latam,
-    title: "LATAM\nmarkets-first",
-  },
-  {
-    icon: Platform,
-    title: "Fully platform\nagnostic",
-  },
-  {
-    icon: IGaming,
-    title: "iGaming\nmanaged services",
-  },
-];
-
 export const WhyBlueBullTech = () => {
+  const { t } = useTranslation();
+
+  const benefitCards = [
+    {
+      icon: Latam,
+      title: t('whyBlueBull.latamMarkets'),
+    },
+    {
+      icon: Platform,
+      title: t('whyBlueBull.fullyPlatform'),
+    },
+    {
+      icon: IGaming,
+      title: t('whyBlueBull.iGaming'),
+    },
+  ];
   return (
     <Box 
       sx={{ 
@@ -42,7 +44,7 @@ export const WhyBlueBullTech = () => {
               lineHeight: 1.2,
             }}
           >
-            Why BlueBull Tech?
+            {t('whyBlueBull.title')}
           </Typography>
           
           <Box
