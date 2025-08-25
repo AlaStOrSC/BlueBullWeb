@@ -1,14 +1,17 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import Separator from "../../../../assets/Separator.png";
+import AxionLogo from "../../../../assets/AXION (2).png";
+import AleaLogo from "../../../../assets/ALEA (2).png";
+import NextStepsLogo from "../../../../assets/NEXT STEPS (2).png";
+import UltraLogo from "../../../../assets/ULTA PLUS (2) 1.png";
+import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 const strategicPartners = [
-  { id: 1, name: "Partner 1" },
-  { id: 2, name: "Partner 2" },
-  { id: 3, name: "Partner 3" },
-  { id: 4, name: "Partner 4" },
-  { id: 5, name: "Partner 5" },
-  { id: 6, name: "Partner 6" },
+  { id: 1, name: "Axion", logo: AxionLogo },
+  { id: 2, name: "Alea", logo: AleaLogo },
+  { id: 3, name: "Next Steps", logo: NextStepsLogo },
+  { id: 4, name: "Ultra", logo: UltraLogo },
 ];
 
 export const StrategicPartners = () => {
@@ -17,8 +20,8 @@ export const StrategicPartners = () => {
       sx={{ 
         width: "100%", 
         textAlign: "center",
-        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 }, // Neutralizar padding del contenedor padre
-        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 }, // Aplicar nuestro propio padding balanceado
+        mx: { xs: "-4px", sm: "-8px", md: "-12px", lg: 0 },
+        px: { xs: "4px", sm: "8px", md: "12px", lg: 0 },
       }}
     >
       <Stack spacing={{ xs: 6, md: 8 }} alignItems="center">
@@ -48,53 +51,153 @@ export const StrategicPartners = () => {
           />
         </Stack>
 
-        {/* Partner Logos */}
-        <Grid 
-          container 
-          spacing={{ xs: 2, md: 3 }} 
-          justifyContent="center"
-          sx={{ 
-            maxWidth: "80rem",
-            px: 0, // Sin padding horizontal
-            mx: 0, // Sin margin horizontal
+        {/* Mobile Carousel (xs) */}
+        <Box
+          sx={{
+            display: { xs: "block", sm: "none" },
             width: "100%",
-            position: "relative", // Agregar position relative
-            left: { xs: "-5px", md: "-7px", lg: 0 }, // Reducir el ajuste hacia la izquierda
+            overflow: "hidden",
           }}
         >
-          {strategicPartners.map((partner) => (
-            <Grid item xs={6} sm={4} md={2} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              overflowX: "auto",
+              gap: 2,
+              px: 2,
+              py: 1,
+              scrollBehavior: "smooth",
+              "&::-webkit-scrollbar": {
+                height: "4px",
+              },
+              "&::-webkit-scrollbar-track": {
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderRadius: "2px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "rgba(255, 255, 255, 0.3)",
+                borderRadius: "2px",
+                "&:hover": {
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                },
+              },
+            }}
+          >
+            {strategicPartners.map((partner) => (
               <Box
+                key={partner.id}
                 sx={{
-                  backgroundColor: "#282729",
-                  height: { xs: "3rem", md: "4.4rem" },
-                  borderRadius: "0.5rem",
+                  minWidth: "200px",
+                  height: "80px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  transition: "transform 0.3s ease, background-color 0.3s ease",
-                  mx: "auto", // Centrado automático
-                  width: "100%", // Usar todo el ancho disponible
-                  "&:hover": {
-                    transform: "translateY(-0.25rem)",
-                    backgroundColor: "#3a3a3c",
-                  },
+                  p: 2,
                 }}
               >
-                <Typography
+                <Box
+                  component="img"
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
                   sx={{
-                    color: "white",
-                    fontFamily: "Montserrat, Helvetica",
-                    fontWeight: 500,
-                    fontSize: { xs: "0.75rem", md: "1rem" },
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
                   }}
-                >
-                  {partner.name}
-                </Typography>
+                />
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
+        {/* Tablet Grid (sm) */}
+        <Grid 
+          container 
+          spacing={2} 
+          justifyContent="center"
+          sx={{ 
+            display: { xs: "none", sm: "flex", md: "none" },
+            maxWidth: "60rem",
+            width: "100%",
+          }}
+        >
+          {strategicPartners.map((partner) => (
+            <Grid item xs={6} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
+              <Box
+                sx={{
+                  height: "100px",
+                  width: "100%",
+                  maxWidth: "250px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  p: 2,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  sx={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
               </Box>
             </Grid>
           ))}
         </Grid>
+
+        {/* Desktop Grid (md+) */}
+        <Grid 
+          container 
+          spacing={4} 
+          justifyContent="center"
+          sx={{ 
+            display: { xs: "none", sm: "none", md: "flex" },
+            maxWidth: "80rem",
+            width: "100%",
+          }}
+        >
+          {strategicPartners.map((partner) => (
+            <Grid item md={3} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
+              <Box
+                sx={{
+                  height: { md: "120px", lg: "140px" },
+                  width: "100%",
+                  maxWidth: "300px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  p: 3,
+                }}
+              >
+                <Box
+                  component="img"
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  sx={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "auto",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
+                />
+              </Box>
+            </Grid>
+          ))}
+        </Grid>
+
+        {/* Read More Button */}
+        <Stack spacing={{ xs: 4, md: 6 }} alignItems="center" sx={{ mt: { xs: 4, md: 6 } }}>
+          <ReadMoreButton />
+        </Stack>
       </Stack>
     </Box>
   );

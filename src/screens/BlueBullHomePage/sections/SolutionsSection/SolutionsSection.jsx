@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import Separator from "../../../../assets/Separator.png";
 import GraphicIcon from "../../../../assets/GraphicIcon.png";
 import MessageIcon from "../../../../assets/MessageIcon.png";
 import PorcentageIcon from "../../../../assets/PorcentageIcon.png";
 import HeartIcon from "../../../../assets/HeartIcon.png";
+import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 const solutionsData = [
   {
@@ -233,36 +234,11 @@ export const SolutionsSection = () => {
             We're agile, bold, and battle-tested
           </Typography>
 
-          <Button
-            variant="outlined"
+          <ReadMoreButton 
             sx={{
-              borderRadius: "0.32rem",
-              border: "0.1875rem solid white",
-              width: "244.5px",
-              height: "63.5px",
               transform: { xs: "translateX(10px)", sm: "translateX(15px)", lg: "translateX(0)" }, // Mover ligeramente a la derecha
-              "&:hover": {
-                border: "0.1875rem solid #00bfff",
-                backgroundColor: "rgba(0, 191, 255, 0.1)",
-                "& .MuiTypography-root": {
-                  color: "#00bfff",
-                },
-              },
             }}
-          >
-            <Typography
-              sx={{
-                fontFamily: "Montserrat, Helvetica",
-                fontWeight: 700,
-                color: "white",
-                fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
-                textTransform: "none",
-                transition: "color 0.3s ease",
-              }}
-            >
-              READ MORE
-            </Typography>
-          </Button>
+          />
         </Stack>
       </Stack>
     </Box>

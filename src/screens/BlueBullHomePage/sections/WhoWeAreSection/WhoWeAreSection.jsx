@@ -1,27 +1,6 @@
 import React from "react";
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import Separator from "../../../../assets/Separator.png";
-import Vision from "../../../../assets/Vision.png";
-import Mission from "../../../../assets/Mission.png";
-import Culture from "../../../../assets/Culture.png";
-
-const teamData = [
-  {
-    icon: Vision,
-    title: "Vision",
-    description: "Our goal is to be the leading digital force in iGaming and customer acquisition, known for fearless creativity and results",
-  },
-  {
-    icon: Mission,
-    title: "Mission",
-    description: "To engage, retain, and excite players with personalized, innovative campaigns that make every experience count",
-  },
-  {
-    icon: Culture,
-    title: "Culture & values",
-    description: "Creativity meets execution speed & agility data-driven decisions accountability & ownership. Work Hard, Play Fair",
-  },
-];
 
 export const WhoWeAreSection = () => {
   return (
@@ -72,92 +51,6 @@ export const WhoWeAreSection = () => {
         >
           We combine data-driven strategy, creative storytelling and performance tech to drive player engagement and business growth
         </Typography>
-
-        {/* Team Cards */}
-        <Grid 
-          container 
-          spacing={{ xs: 2, md: 4, lg: 6 }} 
-          justifyContent="center"
-          sx={{ 
-            mt: { xs: 4, md: 6 },
-            px: 0,
-            mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
-            width: "100%",
-            position: "relative",
-            left: { xs: 0, lg: "-16px" }, // Mover más hacia la izquierda en desktop
-          }}
-        >
-          {teamData.map((item, index) => (
-            <Grid item xs={12} md={4} key={index} sx={{ display: "flex", justifyContent: "center" }}>
-              <Stack
-                spacing={{ xs: 3, md: 4 }}
-                alignItems="center"
-                sx={{
-                  maxWidth: "28rem",
-                  textAlign: "center",
-                  px: 0, // Eliminar padding horizontal
-                  mx: 0, // Eliminar margin horizontal
-                  width: "100%", // Usar todo el ancho disponible
-                }}
-              >
-                <Box
-                  sx={{
-                    width: { xs: "4rem", md: "5rem" },
-                    height: { xs: "4rem", md: "5rem" },
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Box
-                    component="img"
-                    src={item.icon}
-                    alt={`${item.title} icon - representing our company's ${item.title.toLowerCase()}`}
-                    sx={{
-                      maxWidth: "100%",
-                      maxHeight: "100%",
-                      width: "auto",
-                      height: "auto",
-                      objectFit: "contain", // Mantener proporciones originales
-                    }}
-                  />
-                </Box>
-
-                <Typography
-                  variant="h4"
-                  sx={{
-                    fontFamily: "Montserrat, Helvetica",
-                    fontWeight: 700,
-                    color: "white",
-                    fontSize: { xs: "1.5rem", md: "2rem", lg: "2.5rem" },
-                    lineHeight: 1.2,
-                    textAlign: "center",
-                    width: "100%",
-                    mx: "auto", // Centrado automático
-                  }}
-                >
-                  {item.title}
-                </Typography>
-
-                <Typography
-                  sx={{
-                    fontFamily: "Montserrat, Helvetica",
-                    fontWeight: 500,
-                    color: "white",
-                    fontSize: { xs: "1rem", md: "1.25rem", lg: "1.375rem" },
-                    lineHeight: 1.6,
-                    textAlign: "center",
-                    width: "100%",
-                    mx: "auto", // Centrado automático
-                    px: { xs: 1, md: 0 }, // Padding horizontal mínimo en móvil
-                  }}
-                >
-                  {item.description}
-                </Typography>
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
       </Stack>
     </Box>
   );
