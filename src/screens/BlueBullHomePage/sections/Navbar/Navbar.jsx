@@ -21,8 +21,34 @@ export const Navbar = () => {
   const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const isSmallDesktop = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [scrollbarWidth, setScrollbarWidth] = React.useState(0);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Detectar el ancho de la barra de scroll
+  React.useEffect(() => {
+    const detectScrollbarWidth = () => {
+      // Crear un div temporal para medir
+      const outer = document.createElement('div');
+      outer.style.visibility = 'hidden';
+      outer.style.overflow = 'scroll';
+      outer.style.msOverflowStyle = 'scrollbar';
+      document.body.appendChild(outer);
+
+      const inner = document.createElement('div');
+      outer.appendChild(inner);
+
+      const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+      document.body.removeChild(outer);
+
+      setScrollbarWidth(scrollbarWidth);
+    };
+
+    detectScrollbarWidth();
+    window.addEventListener('resize', detectScrollbarWidth);
+    
+    return () => window.removeEventListener('resize', detectScrollbarWidth);
+  }, []);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -104,7 +130,7 @@ export const Navbar = () => {
         sx={{
           top: 0,
           left: 0,
-          width: "100%", // Usar 100% completo en lugar de calc()
+          width: `calc(100% - ${scrollbarWidth}px)`, // Usar medición dinámica
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(10px)",
           boxShadow: "none",

@@ -99,7 +99,7 @@ export const MainMarketsSection = () => {
             boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
             cursor: "pointer",
             transition: "all 0.3s ease", // Transición suave
-            animation: "pulse 2s infinite", // Animación de pulso
+            animation: "pulse 4s infinite", // Animación de pulso más lenta (era 2s, ahora 4s)
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
@@ -107,9 +107,9 @@ export const MainMarketsSection = () => {
                 boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(1.2)", // Escala más grande
+                transform: "scale(2.4)", // Doble del crecimiento anterior (era 1.2, ahora 2.4)
                 opacity: 0.9,
-                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
+                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
               },
               "100%": {
                 transform: "scale(1)",
@@ -140,7 +140,7 @@ export const MainMarketsSection = () => {
             boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
             cursor: "pointer",
             transition: "all 0.3s ease", // Transición suave
-            animation: "pulse 2s infinite 0.5s", // Animación de pulso con delay
+            animation: "pulse 4s infinite 1s", // Animación de pulso más lenta con delay (era 2s, ahora 4s)
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
@@ -148,9 +148,9 @@ export const MainMarketsSection = () => {
                 boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(1.2)", // Escala más grande
+                transform: "scale(2.4)", // Doble del crecimiento anterior (era 1.2, ahora 2.4)
                 opacity: 0.9,
-                boxShadow: "0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(255, 255, 255, 0.4)", // Brillo más intenso
+                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
               },
               "100%": {
                 transform: "scale(1)",
