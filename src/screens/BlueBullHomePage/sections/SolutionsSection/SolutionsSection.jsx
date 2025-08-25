@@ -122,17 +122,6 @@ export const SolutionsSection = () => {
                       WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
                       WebkitMaskComposite: "xor",
                     },
-                    "&:hover": {
-                      "& .solution-icon": {
-                        filter: "brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(3044%) hue-rotate(182deg) brightness(101%) contrast(101%)",
-                      },
-                      "& .solution-title": {
-                        color: "#01beff",
-                      },
-                      "& .solution-description": {
-                        color: "#01beff",
-                      },
-                    },
                   }}
                 >
                   <Box

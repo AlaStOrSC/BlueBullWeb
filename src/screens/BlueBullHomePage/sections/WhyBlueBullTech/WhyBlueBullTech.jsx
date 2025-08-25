@@ -111,7 +111,7 @@ export const WhyBlueBullTech = () => {
                     fontFamily: "Montserrat, Helvetica",
                     fontWeight: 600,
                     color: "white",
-                    fontSize: { xs: "1.1rem", md: "1.5rem", lg: "1.875rem" }, // Reducido ligeramente
+                    fontSize: { xs: "1.1rem", md: "1.5rem", lg: "1.575rem" }, // Reducido ligeramente
                     lineHeight: { xs: 1.3, md: 1.4, lg: 1.5 }, // Línea más espaciada
                     textAlign: "center",
                     whiteSpace: "pre-line",
