@@ -154,14 +154,14 @@ export const Navbar = () => {
         <Toolbar
           sx={{
             height: "100%",
-            maxWidth: "1650px",
+            maxWidth: "113.25rem",
             width: "100%",
             mx: "auto",
             px: { 
-              xs: 2, 
-              md: 3, 
-              lg: 4, 
-              xl: 4 
+              xs: "4vw", 
+              md: "3vw", 
+              lg: "2.5vw", 
+              xl: "2vw"
             },
             justifyContent: "space-between",
           }}
