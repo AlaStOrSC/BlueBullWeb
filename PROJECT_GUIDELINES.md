@@ -230,12 +230,48 @@ const spacing = {
 - [ ] Component is reusable with different props
 
 ### **Git Commit Standards:**
+
+#### **🎯 CRITICAL RULE: Keep commits concise and descriptive**
+
 ```bash
-# Format: type: description
-feat: add new Solutions page with responsive design
-fix: correct navbar spacing on mobile devices
-style: improve card centering in Solutions section
-refactor: extract reusable ImageAndTextCard component
+# ✅ PREFERRED - Short and clear
+feat: Charity page done, full responsive
+fix: navbar spacing on mobile
+style: center cards in Solutions
+refactor: extract ImageAndTextCard component
+docs: update PROJECT_GUIDELINES
+perf: optimize image loading
+```
+
+```bash
+# ❌ AVOID - Overly verbose commits
+feat: Complete comprehensive Charity page with interactive carousel, responsive design, multiple sections including charity causes partnership showcase with Fundación Olivares, merch section with interactive product carousel for charitable sales, implemented charity causes section with split layout...
+```
+
+#### **📝 Commit Format Rules:**
+- **Maximum 50 characters** for commit title
+- **Use conventional commits**: `type: description`
+- **Be specific but concise**: Focus on WHAT was done, not HOW
+- **Use present tense**: "add feature" not "added feature"
+- **No periods** at the end of commit messages
+
+#### **🏷️ Commit Types:**
+- **feat**: New feature or page
+- **fix**: Bug fix
+- **style**: UI/styling changes
+- **refactor**: Code restructuring
+- **docs**: Documentation updates
+- **perf**: Performance improvements
+- **test**: Adding or updating tests
+
+#### **✅ Good Examples:**
+```bash
+feat: Solutions page complete
+fix: mobile navbar overflow
+style: improve card alignment
+refactor: create reusable button
+docs: add component guidelines
+perf: lazy load images
 ```
 
 ---
@@ -325,6 +361,7 @@ const { t } = useTranslation();
 4. Create components without barrel exports
 5. Use `mx: "auto"` alone for centering grids
 6. Ignore mobile-first approach
+7. **Write verbose commit messages** (max 50 chars)
 
 ### **✅ Always Do:**
 1. Use clamp() for all measurements
@@ -332,7 +369,7 @@ const { t } = useTranslation();
 3. Wrap grids in flex containers for perfect centering
 4. Follow component folder structure
 5. Add proper prop validation
-6. Write descriptive commit messages
+6. **Write concise, descriptive commits** (e.g., "feat: Charity page done, full responsive")
 
 ---
 
@@ -347,7 +384,7 @@ Before merging any code, verify:
 - [ ] **Performance**: Images optimized, no unnecessary re-renders
 - [ ] **Code Quality**: Clean, readable, properly commented
 - [ ] **Testing**: Component tested across different screen sizes
-- [ ] **Git**: Descriptive commit message following standards
+- [ ] **Git**: Concise commit message (max 50 chars, follows conventional format)
 
 ---
 
