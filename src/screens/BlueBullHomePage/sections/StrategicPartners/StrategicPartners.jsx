@@ -198,7 +198,7 @@ export const StrategicPartners = () => {
 
         {/* Read More Button */}
         <Stack spacing={{ xs: 4, md: 6 }} alignItems="center" sx={{ mt: { xs: 4, md: 6 } }}>
-          <ReadMoreButton />
+          <ReadMoreButton text={t('solutions.readMore')} />
         </Stack>
       </Stack>
     </Box>

@@ -1,18 +1,23 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
 
-export const ReadMoreButton = ({ text, onClick, sx = {} }) => {
-  const { t } = useTranslation();
-  const buttonText = text || t('solutions.readMore');
+export const ReadMoreButton = ({ 
+  text = "Read More", 
+  onClick, 
+  sx = {},
+  variant = "outlined",
+  fullWidth = false,
+  ...props 
+}) => {
   return (
     <Button
-      variant="outlined"
+      variant={variant}
       onClick={onClick}
+      fullWidth={fullWidth}
       sx={{
         borderRadius: "0.32rem",
         border: "0.1875rem solid white",
-        width: { xs: "15.28rem", sm: "20rem", md: "15.28rem" },
+        width: fullWidth ? "100%" : { xs: "15.28rem", sm: "20rem", md: "15.28rem" },
         height: { xs: "3.975rem", sm: "5rem", md: "3.975rem" },
         "&:hover": {
           border: "0.1875rem solid #00bfff",
@@ -23,6 +28,7 @@ export const ReadMoreButton = ({ text, onClick, sx = {} }) => {
         },
         ...sx,
       }}
+      {...props}
     >
       <Typography
         sx={{
@@ -34,7 +40,7 @@ export const ReadMoreButton = ({ text, onClick, sx = {} }) => {
           transition: "color 0.3s ease",
         }}
       >
-        {buttonText}
+        {text}
       </Typography>
     </Button>
   );

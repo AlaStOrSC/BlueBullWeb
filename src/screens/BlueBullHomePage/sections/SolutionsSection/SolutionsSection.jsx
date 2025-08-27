@@ -91,10 +91,10 @@ export const SolutionsSection = () => {
             sx={{ 
               maxWidth: "80rem",
               px: 0,
-              mx: { xs: 0, lg: "-24px" }, // Margin negativo más agresivo para desktop
+              mx: { xs: 0, lg: "-24px" }, 
               width: "100%",
               position: "relative",
-              left: { xs: 0, lg: "-16px" }, // Mover más hacia la izquierda en desktop
+              left: { xs: 0, lg: "-16px" },
             }}
           >
             {solutionsData.map((solution, index) => (
@@ -108,7 +108,7 @@ export const SolutionsSection = () => {
                     position: "relative",
                     backgroundColor: "transparent",
                     transition: "color 0.3s ease",
-                    mx: "auto", // Centrado automático
+                    mx: "auto", 
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -226,6 +226,7 @@ export const SolutionsSection = () => {
           </Typography>
 
           <ReadMoreButton 
+            text={t('solutions.readMore')}
             sx={{
               transform: { xs: "translateX(10px)", sm: "translateX(15px)", lg: "translateX(0)" }, // Mover ligeramente a la derecha
             }}
