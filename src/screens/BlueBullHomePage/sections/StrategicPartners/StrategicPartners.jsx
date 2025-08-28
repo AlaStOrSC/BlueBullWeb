@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
-import AxionLogo from "../../../../assets/AXION (2).png";
-import AleaLogo from "../../../../assets/ALEA (2).png";
-import NextStepsLogo from "../../../../assets/NEXT STEPS (2).png";
-import UltraLogo from "../../../../assets/ULTA PLUS (2) 1.png";
+import AxionLogo from "../../../../assets/PartnersIcons/AxionGamingIcon.png";
+import AleaLogo from "../../../../assets/PartnersIcons/AleaIcon.png";
+import NextStepsLogo from "../../../../assets/PartnersIcons/NextStepIcon.png";
+import UltraLogo from "../../../../assets/PartnersIcons/UltraPlusIcon.png";
 import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 const strategicPartners = [
@@ -90,7 +90,7 @@ export const StrategicPartners = () => {
                 key={partner.id}
                 sx={{
                   minWidth: "200px",
-                  height: "80px",
+                  height: "160px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -129,7 +129,7 @@ export const StrategicPartners = () => {
             <Grid item xs={6} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 sx={{
-                  height: "100px",
+                  height: "200px",
                   width: "100%",
                   maxWidth: "250px",
                   display: "flex",
@@ -170,7 +170,7 @@ export const StrategicPartners = () => {
             <Grid item md={3} key={partner.id} sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 sx={{
-                  height: { md: "120px", lg: "140px" },
+                  height: { md: "240px", lg: "280px" },
                   width: "100%",
                   maxWidth: "300px",
                   display: "flex",

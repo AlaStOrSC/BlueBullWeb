@@ -8,23 +8,34 @@ import { PartnerCard } from "../../components/PartnerCard";
 import { TestimonialCard } from "../../components/TestimonialCard";
 import BackgroundImage from "../../assets/background-gradient.png";
 import PlaceHolderImg from "../../assets/PlaceHolderImg.png";
-import GraphicIcon from "../../assets/GraphicIcon.png";
-import HeartIcon from "../../assets/HeartIcon.png";
-import PorcentageIcon from "../../assets/PorcentageIcon.png";
-import ALEA from "../../assets/ALEA (2).png";
-import AXION from "../../assets/AXION (2).png";
-import ULTA from "../../assets/ULTA PLUS (2) 1.png";
-import NEXT from "../../assets/NEXT STEPS (2).png";
+import ALEA from "../../assets/PartnersIcons/AleaIcon.png";
+import AXION from "../../assets/PartnersIcons/AxionGamingIcon.png";
+import ULTA from "../../assets/PartnersIcons/UltraPlusIcon.png";
+import NEXT from "../../assets/PartnersIcons/NextStepIcon.png";
+// Solution Icons
+import CasinoIcon from "../../assets/SolutionIcons/CasinoIcon.png";
+import LiveCasinoIcon from "../../assets/SolutionIcons/LiveCasinoIcon.png";
+import SportBookIcon from "../../assets/SolutionIcons/SportBookIcon.png";
+import ScratchCardIcon from "../../assets/SolutionIcons/ScratchCardIcon.png";
+import LottoIcon from "../../assets/SolutionIcons/LottoIcon.png";
+import GraphicIcon from "../../assets/SolutionIcons/GraphicIcon.png";
+import HeartIcon from "../../assets/SolutionIcons/HeartIcon.png";
+import PorcentageIcon from "../../assets/SolutionIcons/PorcentageIcon.png";
+import BuzonIcon from "../../assets/SolutionIcons/BuzonIcon.png";
+import TickIcon from "../../assets/SolutionIcons/TickIcon.png";
+import PaymentIcon from "../../assets/SolutionIcons/PaymentIcon.png";
+import MobileIcon from "../../assets/SolutionIcons/MobileIcon.png";
+import ApiIcon from "../../assets/SolutionIcons/ApiIcon.png";
 
 export const SolutionsPage = () => {
   const { t } = useTranslation();
 
   const productsData = [
-    { id: "casino", name: "Casino", icon: "🎰" },
-    { id: "live-casino", name: "Live Casino", icon: "🎲" },
-    { id: "sportsbook", name: "Sportsbook", icon: "⚽" },
-    { id: "scratchcards", name: "Scratchcards", icon: "🎫" },
-    { id: "lotto", name: "Lotto", icon: "🎱" }
+    { id: "casino", name: "Casino", icon: CasinoIcon },
+    { id: "live-casino", name: "Live Casino", icon: LiveCasinoIcon },
+    { id: "sportsbook", name: "Sportsbook", icon: SportBookIcon },
+    { id: "scratchcards", name: "Scratchcards", icon: ScratchCardIcon },
+    { id: "lotto", name: "Lotto", icon: LottoIcon }
   ];
 
   const solutionsData = [
@@ -48,31 +59,31 @@ export const SolutionsPage = () => {
     },
     {
       id: "solution-4",
-      icon: GraphicIcon,
+      icon: BuzonIcon,
       title: "Risk Management",
       description: "Comprehensive risk assessment and fraud prevention systems for secure operations."
     },
     {
       id: "solution-5",
-      icon: HeartIcon,
+      icon: TickIcon,
       title: "Compliance Solutions",
       description: "Regulatory compliance tools ensuring adherence to local and international gaming laws."
     },
     {
       id: "solution-6",
-      icon: PorcentageIcon,
+      icon: PaymentIcon,
       title: "Payment Integration",
       description: "Seamless payment gateway integration supporting multiple currencies and methods."
     },
     {
       id: "solution-7",
-      icon: GraphicIcon,
+      icon: MobileIcon,
       title: "Mobile Optimization",
       description: "Mobile-first solutions ensuring optimal performance across all devices and platforms."
     },
     {
       id: "solution-8",
-      icon: HeartIcon,
+      icon: ApiIcon,
       title: "API Integration",
       description: "Robust API solutions for seamless integration with existing systems and third-party services."
     }
@@ -232,21 +243,28 @@ Major sporting events`}
                   maxWidth: "12rem"
                 }}
               >
-                <Typography
+                <Box
+                  component="img"
+                  src={product.icon}
+                  alt={product.name}
                   sx={{
-                    fontSize: { 
-                      xs: "clamp(1.5rem, 5vw, 2rem)", 
-                      sm: "clamp(2rem, 4vw, 2.5rem)", 
-                      md: "clamp(2.2rem, 3vw, 3rem)" 
+                    width: { 
+                      xs: "clamp(2.5rem, 8vw, 4rem)", 
+                      sm: "clamp(3rem, 6vw, 4.5rem)", 
+                      md: "clamp(3.5rem, 5vw, 5rem)" 
+                    },
+                    height: { 
+                      xs: "clamp(2.5rem, 8vw, 4rem)", 
+                      sm: "clamp(3rem, 6vw, 4.5rem)", 
+                      md: "clamp(3.5rem, 5vw, 5rem)" 
                     },
                     mb: { 
                       xs: "clamp(0.3rem, 1.5vw, 0.5rem)", 
                       md: "clamp(0.5rem, 1vw, 1rem)" 
-                    }
+                    },
+                    objectFit: "contain"
                   }}
-                >
-                  {product.icon}
-                </Typography>
+                />
                 <Typography
                   variant="h3"
                   sx={{
@@ -272,7 +290,7 @@ Major sporting events`}
 
         <StandardSection
           title="Solutions"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description=""
         />
 
         <Box

@@ -26,7 +26,7 @@ export const PartnerCard = ({
         alt={`${name} logo`}
         sx={{
           maxWidth: "100%",
-          maxHeight: description ? "60px" : "100%",
+          maxHeight: description ? "120px" : "100%",
           width: "auto",
           height: "auto",
           objectFit: "contain",

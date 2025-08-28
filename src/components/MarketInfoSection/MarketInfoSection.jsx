@@ -36,7 +36,10 @@ export const MarketInfoSection = ({
           mb: {
             xs: "2rem",
             md: 0
-          }
+          },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start"
         }}
       >
         {/* Title */}
@@ -181,10 +184,6 @@ export const MarketInfoSection = ({
             lineHeight: {
               xs: 1.5,
               md: 1.6
-            },
-            pt: {
-              xs: 0,
-              md: "2rem"
             },
             whiteSpace: "pre-line"
           }}

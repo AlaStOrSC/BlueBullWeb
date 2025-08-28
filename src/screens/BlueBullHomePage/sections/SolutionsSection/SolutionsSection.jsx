@@ -2,10 +2,10 @@ import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Separator from "../../../../assets/Separator.png";
-import GraphicIcon from "../../../../assets/GraphicIcon.png";
-import MessageIcon from "../../../../assets/MessageIcon.png";
-import PorcentageIcon from "../../../../assets/PorcentageIcon.png";
-import HeartIcon from "../../../../assets/HeartIcon.png";
+import GraphicIcon from "../../../../assets/SolutionIcons/GraphicIcon.png";
+import BuzonIcon from "../../../../assets/SolutionIcons/BuzonIcon.png";
+import PorcentageIcon from "../../../../assets/SolutionIcons/PorcentageIcon.png";
+import HeartIcon from "../../../../assets/SolutionIcons/HeartIcon.png";
 import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 export const SolutionsSection = () => {
@@ -20,7 +20,7 @@ export const SolutionsSection = () => {
     {
       title: t('solutions.acquisition.title'),
       description: t('solutions.acquisition.description'),
-      icon: MessageIcon,
+      icon: BuzonIcon,
     },
     {
       title: t('solutions.promotions.title'),
