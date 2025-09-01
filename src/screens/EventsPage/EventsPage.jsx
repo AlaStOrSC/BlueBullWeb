@@ -3,29 +3,29 @@ import { Box, Container } from "@mui/material";
 import { EventCard } from "../../components/EventCard";
 import backgroundGradient from "../../assets/background-gradient.png";
 
+// Importar imágenes del evento de casino
+import CasinoEvent1 from "../../assets/events/casino-event/CasinoEvent1.jpg";
+import CasinoEvent2 from "../../assets/events/casino-event/CasinoEvent2.jpg";
+import CasinoEvent3 from "../../assets/events/casino-event/CasinoEvent3.jpg";
+import CasinoEvent4 from "../../assets/events/casino-event/CasinoEvent4.jpg";
+import CasinoEvent5 from "../../assets/events/casino-event/CasinoEvent5.jpg";
+import CasinoEvent6 from "../../assets/events/casino-event/CasinoEvent6.jpg";
+import CasinoEvent7 from "../../assets/events/casino-event/CasinoEvent7.jpg";
+
 // Datos de eventos ficticios para Past Events
 const pastEvents = [
   {
     id: 1,
-    title: "BlueBull Tech Summit 2024 - Madrid",
+    title: "BlueBull Casino Grand Opening - Madrid",
     date: "March 15-16, 2024",
     gallery: [
-      "https://picsum.photos/800/600?random=11",
-      "https://picsum.photos/800/600?random=12",
-      "https://picsum.photos/800/600?random=13",
-      "https://picsum.photos/800/600?random=14",
-      "https://picsum.photos/800/600?random=15",
-      "https://picsum.photos/800/600?random=16",
-      "https://picsum.photos/800/600?random=17",
-      "https://picsum.photos/800/600?random=18",
-      "https://picsum.photos/800/600?random=19",
-      "https://picsum.photos/800/600?random=20",
-      "https://picsum.photos/800/600?random=21",
-      "https://picsum.photos/800/600?random=22",
-      "https://picsum.photos/800/600?random=23",
-      "https://picsum.photos/800/600?random=24",
-      "https://picsum.photos/800/600?random=25",
-      "https://picsum.photos/800/600?random=26"
+      CasinoEvent1,
+      CasinoEvent2,
+      CasinoEvent3,
+      CasinoEvent4,
+      CasinoEvent5,
+      CasinoEvent6,
+      CasinoEvent7
     ]
   },
   {
