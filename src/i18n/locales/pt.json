@@ -1,0 +1,92 @@
+{
+  "navbar": {
+    "home": "INÍCIO",
+    "about": "SOBRE NÓS",
+    "solutions": "SOLUÇÕES",
+    "caseStudies": "CASOS DE ESTUDO",
+    "events": "EVENTOS",
+    "careers": "CARREIRAS",
+    "charity": "CARIDADE",
+    "contactUs": "FALE CONOSCO"
+  },
+  "hero": {
+    "title": "UM PARCEIRO\nCOM FORÇA",
+    "subtitle": "NOS MERCADOS LATAM E UE",
+    "description": "Uma empresa ousada e de rápido crescimento\nem iGaming e marketing digital\nbaseada no sul da Espanha",
+    "caseStudiesButton": "VER CASOS DE ESTUDO"
+  },
+  "aboutUs": {
+    "title": "Sobre Nós",
+    "whoWeAreTitle": "Quem somos?",
+    "whoWeAreDescription": "Combinamos estratégia baseada em dados, narrativa criativa e tecnologia de performance para impulsionar o engajamento dos jogadores e o crescimento do negócio",
+    "vision": {
+      "title": "Visão",
+      "description": "Nosso objetivo é ser a força digital líder em iGaming e aquisição de clientes, conhecidos por criatividade corajosa e resultados"
+    },
+    "mission": {
+      "title": "Missão",
+      "description": "Envolver, reter e emocionar jogadores com campanhas personalizadas e inovadoras que fazem cada experiência contar"
+    },
+    "culture": {
+      "title": "Cultura e valores",
+      "description": "Criatividade encontra velocidade de execução e agilidade, decisões baseadas em dados, responsabilidade e propriedade. Trabalhe duro, jogue limpo"
+    }
+  },
+  "whyBlueBull": {
+    "title": "Por que BlueBull Tech?",
+    "latamMarkets": "Mercados LATAM\nprimeiro",
+    "fullyPlatform": "Completamente\nagnóstico de plataforma",
+    "iGaming": "iGaming\nserviços gerenciados"
+  },
+  "solutions": {
+    "title": "Soluções",
+    "subtitle": "Na BlueBull, especializamo-nos em integrar perfeitamente com o seu stack tecnológico existente para fornecer serviços gerenciados de alto desempenho adaptados para o crescimento",
+    "ctaText": "Somos ágeis, ousados e testados em batalha",
+    "marketing360": {
+      "title": "Gestão de Marketing 360°",
+      "description": "Da estratégia à execução: digital, afiliados, retenção, multicanal"
+    },
+    "acquisition": {
+      "title": "Aquisição e CRM",
+      "description": "Configuração de campanhas, automação de jornadas, segmentação de clientes, email/SMS"
+    },
+    "promotions": {
+      "title": "Promoções e campanhas",
+      "description": "Calendários personalizados, promos diárias/semanais/mensais, cashback e torneios"
+    },
+    "socialMedia": {
+      "title": "Redes Sociais e Conteúdo",
+      "description": "Calendários personalizados, promos diárias/semanais/mensais, cashback e torneios"
+    },
+    "readMore": "Ler mais"
+  },
+  "benefits": {
+    "title": "Benefícios",
+    "dataFirst": "Abordagem data-first",
+    "globalReach": "Alcance global com expertise local",
+    "customSolutions": "Soluções personalizadas para suas necessidades"
+  },
+  "globalPresence": {
+    "title": "Presença Global"
+  },
+  "mainMarkets": {
+    "title": "Mercados Principais"
+  },
+  "strategicPartners": {
+    "title": "Parceiros Estratégicos"
+  },
+  "ourTeam": {
+    "title": "Nossa Equipe"
+  },
+  "footer": {
+    "contactsTitle": "Contatos",
+    "blueBullLtd": "Blue Bull Ltd",
+    "allRightsReserved": "2025 Todos os direitos reservados.",
+    "contactInfo": {
+      "email": "Conecte-se conosco por email\npara oportunidades de parceria",
+      "linkedin": "Siga-nos no LinkedIn\npara atualizações da empresa",
+      "instagram": "Junte-se a nós no Instagram\npara conteúdo exclusivo",
+      "location": "Visite nossa sede\nno sul da Espanha"
+    }
+  }
+}

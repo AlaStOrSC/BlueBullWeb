@@ -1,0 +1,1 @@
+export { ImageAndTextCard } from "./ImageAndTextCard";

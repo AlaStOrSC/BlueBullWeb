@@ -1,0 +1,1 @@
+export { HeroImageContent } from "./HeroImageContent";

@@ -1,0 +1,102 @@
+import React from "react";
+import { Box, Typography } from "@mui/material";
+
+export const SolutionCard = ({ 
+  id,
+  icon, 
+  iconAlt, 
+  title, 
+  description 
+}) => {
+  return (
+    <Box
+      className="solution-card"
+      sx={{
+        width: "237px",
+        height: "274px",
+        borderRadius: "1.09rem",
+        position: "relative",
+        backgroundColor: "transparent",
+        transition: "color 0.3s ease",
+        mx: "auto", 
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: "1.09rem",
+          padding: "3px",
+          background: "linear-gradient(180deg, rgba(111,141,247,1) 0%, rgba(84,107,186,1) 28%, rgba(18,36,99,1) 88%)",
+          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          maskComposite: "xor",
+          WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          WebkitMaskComposite: "xor",
+        },
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "1.25rem",
+        }}
+      >
+        <Box
+          sx={{
+            width: "3.5rem",
+            height: "3.5rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            mb: 1.5,
+          }}
+        >
+          <Box
+            component="img"
+            src={icon}
+            alt={iconAlt}
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </Box>
+
+        <Typography
+          variant="h3"
+          sx={{
+            fontFamily: "Montserrat, Helvetica",
+            fontWeight: 700,
+            fontSize: "1.125rem",
+            lineHeight: 1.4,
+            color: "#ffffff",
+            textAlign: "center",
+            mb: 1,
+          }}
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          sx={{
+            fontFamily: "Montserrat, Helvetica",
+            fontWeight: 400,
+            fontSize: "0.875rem",
+            lineHeight: 1.5,
+            color: "#cccccc",
+            textAlign: "center",
+            flex: 1,
+          }}
+        >
+          {description}
+        </Typography>
+      </Box>
+    </Box>
+  );
+};

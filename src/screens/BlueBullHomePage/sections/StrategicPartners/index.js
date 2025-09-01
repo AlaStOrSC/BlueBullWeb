@@ -1,0 +1,1 @@
+export { StrategicPartners } from "./StrategicPartners";
