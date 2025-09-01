@@ -4,6 +4,7 @@ import { MainLayout } from '../components/MainLayout';
 import { BlueBullHomePage } from '../screens/BlueBullHomePage';
 import { AboutUsPage } from '../screens/AboutUsPage';
 import { SolutionsPage } from '../screens/SolutionsPage';
+import { EventsPage } from '../screens/EventsPage';
 import { CaseStudiesPage } from '../screens/CaseStudiesPage';
 import { CareersPage } from '../screens/CareersPage';
 import { CharityPage } from '../screens/CharityPage';
@@ -17,6 +18,7 @@ export const AppRouter = () => {
           <Route index element={<BlueBullHomePage />} />
           <Route path={ROUTES.ABOUT} element={<AboutUsPage />} />
           <Route path={ROUTES.SOLUTIONS} element={<SolutionsPage />} />
+          <Route path={ROUTES.EVENTS} element={<EventsPage />} />
           <Route path={ROUTES.CASE_STUDIES} element={<CaseStudiesPage />} />
           <Route path={ROUTES.CAREERS} element={<CareersPage />} />
           <Route path={ROUTES.CHARITY} element={<CharityPage />} />
