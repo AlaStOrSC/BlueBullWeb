@@ -305,11 +305,8 @@ const EventItemCard = ({ event, onShowMore }) => {
         >
           <ReadMoreButton
             text="Show More"
+            scale={1.2}
             onClick={() => onShowMore(event)}
-            sx={{
-              width: { xs: "10rem", md: "12rem" },
-              height: { xs: "2.5rem", md: "3rem" }
-            }}
           />
         </Box>
       </Box>

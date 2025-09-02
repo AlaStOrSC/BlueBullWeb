@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Separator from "../../../../assets/Separator.png";
 import AxionLogo from "../../../../assets/PartnersIcons/AxionGamingIcon.png";
 import AleaLogo from "../../../../assets/PartnersIcons/AleaIcon.png";
@@ -17,6 +18,17 @@ const strategicPartners = [
 
 export const StrategicPartners = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleReadMore = () => {
+    navigate('/solutions#strategic-partners');
+    setTimeout(() => {
+      const element = document.getElementById('strategic-partners');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
   return (
     <Box 
       sx={{ 
@@ -198,7 +210,7 @@ export const StrategicPartners = () => {
 
         {/* Read More Button */}
         <Stack spacing={{ xs: 4, md: 6 }} alignItems="center" sx={{ mt: { xs: 4, md: 6 } }}>
-          <ReadMoreButton text={t('solutions.readMore')} />
+          <ReadMoreButton text={t('solutions.readMore')} scale={1.2} onClick={handleReadMore} />
         </Stack>
       </Stack>
     </Box>

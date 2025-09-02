@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Separator from "../../../../assets/Separator.png";
 import GraphicIcon from "../../../../assets/SolutionIcons/GraphicIcon.png";
 import BuzonIcon from "../../../../assets/SolutionIcons/BuzonIcon.png";
@@ -10,6 +11,17 @@ import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 export const SolutionsSection = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleReadMore = () => {
+    navigate('/solutions#our-services');
+    setTimeout(() => {
+      const element = document.getElementById('our-services');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const solutionsData = [
     {
@@ -227,8 +239,10 @@ export const SolutionsSection = () => {
 
           <ReadMoreButton 
             text={t('solutions.readMore')}
+            scale={1.2}
+            onClick={handleReadMore}
             sx={{
-              transform: { xs: "translateX(10px)", sm: "translateX(15px)", lg: "translateX(0)" }, // Mover ligeramente a la derecha
+              transform: { xs: "translateX(10px)", sm: "translateX(15px)", lg: "translateX(0)" },
             }}
           />
         </Stack>

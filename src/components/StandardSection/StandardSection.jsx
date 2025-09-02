@@ -8,10 +8,12 @@ export const StandardSection = ({
   titleColor = "#ffffff",
   descriptionColor = "#ffffff",
   showSeparator = true,
-  customStyles = {}
+  customStyles = {},
+  id
 }) => {
   return (
     <Box
+      id={id}
       sx={{
         textAlign: "center",
         mb: {

@@ -174,10 +174,7 @@ export const TestimonialCard = ({
           <ReadMoreButton
             text="Read More"
             onClick={() => onReadMore && onReadMore(id)}
-            sx={{
-              width: { xs: "12rem", sm: "14rem", md: "12rem" },
-              height: { xs: "3rem", sm: "3.5rem", md: "3rem" }
-            }}
+            scale={1.2}
           />
         </Box>
       </CardContent>

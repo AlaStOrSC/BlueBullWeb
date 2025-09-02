@@ -1,9 +1,15 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export const AboutUsSection = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleCaseStudiesClick = () => {
+    navigate('/case-studies');
+  };
   return (
     <Box
       sx={{
@@ -85,6 +91,7 @@ export const AboutUsSection = () => {
 
           <Button
             variant="outlined"
+            onClick={handleCaseStudiesClick}
             sx={{
               height: "69px",
               px: "50px",

@@ -1,9 +1,15 @@
 import React from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export const AboutHeaderInfo = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleCaseStudiesClick = () => {
+    navigate('/case-studies');
+  };
   
   return (
     <Box
@@ -79,6 +85,7 @@ export const AboutHeaderInfo = () => {
 
         <Button
           variant="outlined"
+          onClick={handleCaseStudiesClick}
           sx={{
             height: "clamp(3rem, 2vw + 2rem, 4.3125rem)", // Escalado continuo del botón
             px: { xs: 3, md: 6 },

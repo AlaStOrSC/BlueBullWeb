@@ -113,6 +113,7 @@ Here, your ideas matter, your voice is heard, and your work shapes the future of
           <ReadMoreButton
             onClick={handleSeeOpenRoles}
             text="SEE OPEN ROLES"
+            scale={1.5}
             sx={{
               mb: { xs: "2rem", md: "3rem", lg: "4rem" }
             }}
@@ -270,6 +271,7 @@ We move quickly, support each other, and celebrate wins as a team. Work-life bal
           <ReadMoreButton
             onClick={handleSeeOpenRoles}
             text="SEE OPEN ROLES"
+            scale={1.5}
           />
         </Box>
       </Container>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import MexicoPopUp from "../../assets/MexicoPopUp.png";
 import { ReadMoreButton } from "../ReadMoreButton";
 
@@ -9,6 +10,11 @@ export const PopUpCard = ({
   subtitle = "Leading iGaming Hub", 
   description = "Explore opportunities in one of Latin America's fastest-growing gaming markets"
 }) => {
+  const navigate = useNavigate();
+
+  const handleReadMore = () => {
+    navigate('/case-studies');
+  };
   return (
     <Box
       sx={{
@@ -182,7 +188,7 @@ export const PopUpCard = ({
           {description}
         </Typography>
 
-        <ReadMoreButton />
+        <ReadMoreButton scale={1} onClick={handleReadMore} />
       </Box>
     </Box>
   );

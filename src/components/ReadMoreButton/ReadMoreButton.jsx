@@ -7,6 +7,7 @@ export const ReadMoreButton = ({
   sx = {},
   variant = "outlined",
   fullWidth = false,
+  scale = 1,
   ...props 
 }) => {
   return (
@@ -17,8 +18,20 @@ export const ReadMoreButton = ({
       sx={{
         borderRadius: "0.32rem",
         border: "0.1875rem solid white",
-        width: fullWidth ? "100%" : { xs: "5rem", sm: "5.5rem", md: "6.5rem", lg: "7rem", xl: "10rem" },
-        height: { xs: "1.5rem", sm: "1.6rem", md: "1.8rem", lg: "2rem", xl: "3rem" },
+        width: fullWidth ? "100%" : { 
+          xs: `${5 * scale}rem`, 
+          sm: `${5.5 * scale}rem`, 
+          md: `${6.5 * scale}rem`, 
+          lg: `${7 * scale}rem`, 
+          xl: `${10 * scale}rem` 
+        },
+        height: { 
+          xs: `${1.5 * scale}rem`, 
+          sm: `${1.6 * scale}rem`, 
+          md: `${1.8 * scale}rem`, 
+          lg: `${2 * scale}rem`, 
+          xl: `${3 * scale}rem` 
+        },
         "&:hover": {
           border: "0.1875rem solid #00bfff",
           backgroundColor: "rgba(0, 191, 255, 0.1)",
@@ -35,7 +48,13 @@ export const ReadMoreButton = ({
           fontFamily: "Montserrat, Helvetica",
           fontWeight: 700,
           color: "white",
-          fontSize: { xs: "0.45rem", sm: "0.5rem", md: "0.55rem", lg: "0.6rem", xl: "0.85rem" },
+          fontSize: { 
+            xs: `${0.45 * scale}rem`, 
+            sm: `${0.5 * scale}rem`, 
+            md: `${0.55 * scale}rem`, 
+            lg: `${0.6 * scale}rem`, 
+            xl: `${0.85 * scale}rem` 
+          },
           textTransform: "none",
           transition: "color 0.3s ease",
         }}

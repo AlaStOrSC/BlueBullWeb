@@ -1,10 +1,17 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Separator from "../../../../assets/Separator.png";
+import { ReadMoreButton } from "../../../../components/ReadMoreButton";
 
 export const WhoWeAreSection = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleReadMore = () => {
+    navigate('/about');
+  };
   return (
     <Box 
       sx={{ 
@@ -53,6 +60,8 @@ export const WhoWeAreSection = () => {
         >
           {t('aboutUs.whoWeAreDescription')}
         </Typography>
+        
+        <ReadMoreButton scale={1.2} onClick={handleReadMore} />
       </Stack>
     </Box>
   );

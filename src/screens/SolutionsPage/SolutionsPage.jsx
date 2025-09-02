@@ -194,20 +194,53 @@ export const SolutionsPage = () => {
       >
         <StandardSection
           title="Our Services"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description=""
+          id="our-services"
         />
 
-        <ImageAndTextCard
-          image={PlaceHolderImg}
-          imageAlt="Our Services"
-          title="Mexico is the second largest iGaming market in Latin America, after Brazil."
-          description={`Estimated to generate over $1.5 billion USD annually, combining land-based and online operations.
-Over 75% of online bets are placed via mobile devices.
-Strong demand for:
--Sports betting (football, boxing, lucha libre, NFL)
--Online slots and classic casino games
-Major sporting events`}
-        />
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
+          }}
+        >
+          <Grid 
+            container 
+            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} 
+            justifyContent="center"
+            alignItems="stretch"
+            sx={{ 
+              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "85%", xl: "80rem" },
+              px: { xs: "1rem", sm: "2rem", md: "3rem" }
+            }}
+          >
+            {solutionsData.map((solution) => (
+              <Grid 
+                item 
+                xs={12} 
+                sm={6} 
+                md={4}
+                lg={3} 
+                key={solution.id} 
+                sx={{ 
+                  display: "flex", 
+                  justifyContent: "center",
+                  alignItems: "stretch"
+                }}
+              >
+                <SolutionCard
+                  id={solution.id}
+                  icon={solution.icon}
+                  iconAlt={solution.title}
+                  title={solution.title}
+                  description={solution.description}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
 
         <StandardSection
           title="Our Products"
@@ -292,57 +325,9 @@ Major sporting events`}
         </Grid>
 
         <StandardSection
-          title="Solutions"
-          description=""
-        />
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
-          }}
-        >
-          <Grid 
-            container 
-            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} 
-            justifyContent="center"
-            alignItems="stretch"
-            sx={{ 
-              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "85%", xl: "80rem" },
-              px: { xs: "1rem", sm: "2rem", md: "3rem" }
-            }}
-          >
-            {solutionsData.map((solution) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={6} 
-                md={4}
-                lg={3} 
-                key={solution.id} 
-                sx={{ 
-                  display: "flex", 
-                  justifyContent: "center",
-                  alignItems: "stretch"
-                }}
-              >
-                <SolutionCard
-                  id={solution.id}
-                  icon={solution.icon}
-                  iconAlt={solution.title}
-                  title={solution.title}
-                  description={solution.description}
-                />
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
-
-        <StandardSection
           title="Strategic Partners"
           description=""
+          id="strategic-partners"
         />
 
         <Box
