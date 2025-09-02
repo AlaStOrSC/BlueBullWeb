@@ -26,6 +26,9 @@ import TickIcon from "../../assets/SolutionIcons/TickIcon.png";
 import PaymentIcon from "../../assets/SolutionIcons/PaymentIcon.png";
 import MobileIcon from "../../assets/SolutionIcons/MobileIcon.png";
 import ApiIcon from "../../assets/SolutionIcons/ApiIcon.png";
+import CrownIcon from "../../assets/SolutionIcons/CrownIcon.png";
+import SportsBook2Icon from "../../assets/SolutionIcons/SportsBook2Icon.png";
+import CodingIcon from "../../assets/SolutionIcons/CodingIcon.png";
 
 export const SolutionsPage = () => {
   const { t } = useTranslation();
@@ -42,51 +45,45 @@ export const SolutionsPage = () => {
     {
       id: "solution-1",
       icon: GraphicIcon,
-      title: "Data Analytics",
-      description: "Advanced analytics and reporting tools for comprehensive player insights and performance optimization."
+      title: "360º Marketing engagement",
+      description: "From strategy to execution: digital, affiliate, retention, cross-channel"
     },
     {
       id: "solution-2", 
-      icon: HeartIcon,
-      title: "Player Engagement",
-      description: "Innovative engagement solutions designed to enhance player retention and satisfaction."
+      icon: BuzonIcon,
+      title: "Acquisition & CRM",
+      description: "Campaign setup, journey automation, customer segmentation, email/SMS"
     },
     {
       id: "solution-3",
       icon: PorcentageIcon,
-      title: "Revenue Optimization",
-      description: "Strategic tools and insights to maximize revenue potential across all gaming verticals."
+      title: "Promotions & Campaigns",
+      description: "Custom calendars, daily/weekly/monthly promos, cashback and tournaments"
     },
     {
       id: "solution-4",
-      icon: BuzonIcon,
-      title: "Risk Management",
-      description: "Comprehensive risk assessment and fraud prevention systems for secure operations."
+      icon: HeartIcon,
+      title: "Social Media & Content",
+      description: "Multilingual calendars, design, community engagement, influencer outreach"
     },
     {
       id: "solution-5",
-      icon: TickIcon,
-      title: "Compliance Solutions",
-      description: "Regulatory compliance tools ensuring adherence to local and international gaming laws."
+      icon: CrownIcon,
+      title: "VIP and retention services",
+      description: "Tier management, event planning, loyalty programs, personal account handling"
     },
     {
       id: "solution-6",
-      icon: PaymentIcon,
-      title: "Payment Integration",
-      description: "Seamless payment gateway integration supporting multiple currencies and methods."
+      icon: SportsBook2Icon,
+      title: "Casino & sportsbook operators ",
+      description: "Game releases, odds management, lobby curation, bonus setup, segmentation"
     },
     {
       id: "solution-7",
-      icon: MobileIcon,
-      title: "Mobile Optimization",
-      description: "Mobile-first solutions ensuring optimal performance across all devices and platforms."
+      icon: CodingIcon,
+      title: "Front-end & Web management",
+      description: "UX optimization, landing pages, banners, SEO, real-time updates"
     },
-    {
-      id: "solution-8",
-      icon: ApiIcon,
-      title: "API Integration",
-      description: "Robust API solutions for seamless integration with existing systems and third-party services."
-    }
   ];
 
   const partnersData = [
@@ -208,12 +205,12 @@ export const SolutionsPage = () => {
         >
           <Grid 
             container 
-            spacing={{ xs: 2, sm: 2, md: 3, lg: 4, xl: 5 }} // Reducido spacing para dar más espacio a las cards
+            spacing={{ xs: 2, sm: 2, md: 3, lg: 3, xl: 4 }} // Reducido spacing para dar más espacio a las cards
             justifyContent="center"
             alignItems="stretch"
             sx={{ 
-              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "90%", xl: "85rem" }, // Aumentado maxWidth
-              px: { xs: "1rem", sm: "2rem", md: "3rem" }
+              maxWidth: { xs: "100%", sm: "95%", md: "95%", lg: "95%", xl: "90rem" }, // Aumentado maxWidth para más espacio
+              px: { xs: "0.5rem", sm: "1rem", md: "1.5rem", lg: "1rem", xl: "0.5rem" } // Reducido padding horizontal
             }}
           >
             {solutionsData.map((solution) => (

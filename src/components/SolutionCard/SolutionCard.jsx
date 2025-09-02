@@ -13,9 +13,9 @@ export const SolutionCard = ({
       className="solution-card"
       sx={{
         width: "100%", // Usar 100% del espacio disponible del Grid item
-        maxWidth: "260px", // Máximo 260px (10% más que los 237px originales)
-        minWidth: "220px", // Mínimo para mantener consistencia
-        height: "301px", // Aumentado 10% (274px * 1.1 = 301px)
+        maxWidth: "280px", // Aumentado a 280px para aprovechar mejor el espacio
+        minWidth: "240px", // Aumentado el mínimo también
+        height: "301px", // Mantenemos la altura aumentada
         borderRadius: "1.09rem",
         position: "relative",
         backgroundColor: "transparent",
