@@ -120,16 +120,19 @@ export const SolutionsPage = () => {
     {
       id: "testimonial-solutions-1",
       name: "Elena Rodriguez",
+      avatar: PlaceHolderImg,
       testimonial: "The solutions provided by BlueBull have transformed our platform capabilities. Their technical expertise and innovative approach have significantly improved our operational efficiency and player satisfaction."
     },
     {
       id: "testimonial-solutions-2",
       name: "Marcus Thompson", 
+      avatar: PlaceHolderImg,
       testimonial: "BlueBull's comprehensive solutions suite has been instrumental in our market expansion. Their deep understanding of regulatory requirements and local market dynamics made our launch seamless."
     },
     {
       id: "testimonial-solutions-3",
       name: "Sofia Chen",
+      avatar: PlaceHolderImg,
       testimonial: "Working with BlueBull's solutions team has elevated our gaming platform to new heights. Their data-driven approach and cutting-edge technology have dramatically increased our player engagement metrics."
     }
   ];
@@ -213,10 +216,10 @@ Major sporting events`}
 
         <Grid 
           container 
-          spacing={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+          spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
           justifyContent="center"
           alignItems="stretch"
-          sx={{ mb: { xs: "4rem", md: "6rem", lg: "8rem" } }}
+          sx={{ mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" } }}
         >
           {productsData.map((product) => (
             <Grid 
@@ -298,12 +301,12 @@ Major sporting events`}
             display: "flex",
             justifyContent: "center",
             width: "100%",
-            mb: { xs: "4rem", md: "6rem", lg: "8rem" }
+            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
           }}
         >
           <Grid 
             container 
-            spacing={{ xs: 2, sm: 3, md: 4, lg: 5 }} 
+            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} 
             justifyContent="center"
             alignItems="stretch"
             sx={{ 
@@ -347,12 +350,12 @@ Major sporting events`}
             display: "flex",
             justifyContent: "center",
             width: "100%",
-            mb: { xs: "4rem", md: "6rem", lg: "8rem" }
+            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
           }}
         >
           <Grid 
             container 
-            spacing={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
             justifyContent="center"
             alignItems="stretch"
             sx={{ 
@@ -395,17 +398,17 @@ Major sporting events`}
             display: "flex",
             justifyContent: "center",
             width: "100%",
-            mb: { xs: "4rem", md: "6rem", lg: "8rem" }
+            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
           }}
         >
           <Grid 
             container 
-            spacing={{ xs: 2, sm: 3, md: 4, lg: 5 }}
+            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
             justifyContent="center"
             alignItems="stretch"
             sx={{ 
-              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "85%" },
-              px: { xs: "1rem", sm: "2rem" }
+              maxWidth: "100%",
+              px: { xs: "0.5rem", sm: "1rem" }
             }}
           >
             {testimonialsData.map((testimonial) => (
@@ -413,6 +416,7 @@ Major sporting events`}
                 item 
                 xs={12} 
                 sm={6} 
+                md={4}
                 lg={4} 
                 key={testimonial.id}
                 sx={{ 
@@ -424,6 +428,7 @@ Major sporting events`}
                 <TestimonialCard
                   id={testimonial.id}
                   name={testimonial.name}
+                  avatar={testimonial.avatar}
                   testimonial={testimonial.testimonial}
                   onReadMore={handleReadMore}
                 />

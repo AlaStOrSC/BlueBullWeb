@@ -176,12 +176,12 @@ export const MainMarketsSection = () => {
           <Box
             sx={{
               position: "absolute",
-              width: { xs: "81%", sm: "69%", md: "65%", lg: "38rem" }, // Tablet: ajustado para coincidir con popup más pequeño
-              height: { xs: "auto", md: "auto", lg: "39rem" },
+              width: { xs: "81%", sm: "69%", md: "65%", lg: "26.37rem", xl: "38rem" }, // lg: 10% más pequeño que el popup (29.3rem * 0.9), xl: tamaño original
+              height: { xs: "auto", md: "auto", lg: "27.315rem", xl: "39rem" },
               top: { xs: "5%", sm: "calc(5% - 150px)", md: "3%", lg: "0.5rem" }, // Tablet: 150px más arriba
               left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha como el popup
               transform: "translateX(-50%)",
-              maxWidth: "36rem",
+              maxWidth: { lg: "26.37rem", xl: "36rem" },
               backgroundColor: { xs: "rgba(0, 0, 0, 0.6)", sm: "rgba(0, 0, 0, 0.6)", md: "rgba(0, 0, 0, 0.4)", lg: "rgba(0, 0, 0, 0.4)" }, // Más opaco en móvil y tablet
               backdropFilter: { xs: "blur(8px)", sm: "blur(8px)", md: "blur(6px)", lg: "blur(6px)" }, // Más blur en móvil y tablet
               borderRadius: "12px",
@@ -212,12 +212,12 @@ export const MainMarketsSection = () => {
           className="popup-image"
           sx={{
             position: "absolute",
-            width: { xs: "76.5%", sm: "65%", md: "60%", lg: "36.625rem" }, // Tablet: 15% más pequeño que móvil (76.5% -> 65%)
-            height: { xs: "auto", lg: "37.9375rem" },
+            width: { xs: "76.5%", sm: "65%", md: "60%", lg: "29.3rem", xl: "36.625rem" }, // lg: 20% más pequeño, xl: tamaño original
+            height: { xs: "auto", lg: "30.35rem", xl: "37.9375rem" },
             top: { xs: "8%", sm: "calc(8% - 150px)", md: "5%", lg: "1.1875rem" }, // Tablet: 150px más arriba
             left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha en móvil y tablet
             transform: "translateX(-50%)",
-            maxWidth: "36.625rem",
+            maxWidth: { lg: "29.3rem", xl: "36.625rem" },
             opacity: showPopup ? 1 : 0,
             visibility: showPopup ? "visible" : "hidden",
             transition: "opacity 0.3s ease, visibility 0.3s ease",

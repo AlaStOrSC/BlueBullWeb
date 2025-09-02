@@ -7,6 +7,7 @@ import { MarketInfoSection } from "../../components/MarketInfoSection";
 import BackgroundImage from "../../assets/background-gradient.png";
 import YoapuestoBanner from "../../assets/Banners/YoapuestoBanner.png";
 import NvivoBanner from "../../assets/Banners/24nvivoBanner.png";
+import PlaceHolderImg from "../../assets/PlaceHolderImg.png";
 
 export const CaseStudiesPage = () => {
   const { t } = useTranslation();
@@ -16,16 +17,19 @@ export const CaseStudiesPage = () => {
     {
       id: "testimonial-1",
       name: "Carlos Rodriguez",
+      avatar: PlaceHolderImg,
       testimonial: "BlueBull's innovative approach to iGaming technology has transformed our platform's performance. Their expertise in data-driven solutions and player engagement strategies has significantly boosted our business growth."
     },
     {
       id: "testimonial-2", 
       name: "Maria Santos",
+      avatar: PlaceHolderImg,
       testimonial: "The team at BlueBull delivered exceptional results for our Latin American expansion. Their deep understanding of local markets and regulatory compliance made our launch seamless and successful."
     },
     {
       id: "testimonial-3",
       name: "Diego Martinez",
+      avatar: PlaceHolderImg,
       testimonial: "Working with BlueBull has been a game-changer for our mobile gaming platform. Their technical excellence and creative storytelling have elevated our brand and increased player retention dramatically."
     }
   ];
@@ -102,13 +106,13 @@ export const CaseStudiesPage = () => {
         />
 
         {/* Case Study Items */}
-        <Box sx={{ mb: { xs: "4rem", md: "6rem", lg: "8rem" } }}>
+        <Box sx={{ mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" } }}>
           {/* Case Study 1 */}
           <Grid 
             container 
-            spacing={{ xs: 3, md: 4, lg: 6.9 }}
+            spacing={{ xs: 3, sm: 4, md: 4, lg: 6.9, xl: 7 }}
             sx={{ 
-              mb: { xs: "3rem", md: "4rem", lg: "6rem" },
+              mb: { xs: "3rem", sm: "3.5rem", md: "4rem", lg: "6rem", xl: "8rem" },
               alignItems: "center",
               py: {
                 xs: "3rem",      // ~48px
@@ -154,7 +158,7 @@ export const CaseStudiesPage = () => {
                       xl: "clamp(2.2rem, 2vw, 2.6rem)"
                     },
                     color: "#00bfff",
-                    mb: { xs: "1rem", md: "1.5rem" },
+                    mb: { xs: "1rem", sm: "1.2rem", md: "1.5rem", lg: "1.8rem", xl: "2rem" },
                     lineHeight: 1.2
                   }}
                 >
@@ -184,7 +188,7 @@ export const CaseStudiesPage = () => {
           {/* Case Study 2 */}
           <Grid 
             container 
-            spacing={{ xs: 3, md: 4, lg: 6.9 }}
+            spacing={{ xs: 3, sm: 4, md: 4, lg: 6.9, xl: 7 }}
             sx={{ 
               alignItems: "center",
               py: {
@@ -211,7 +215,7 @@ export const CaseStudiesPage = () => {
                       xl: "clamp(2.2rem, 2vw, 2.6rem)"
                     },
                     color: "#00bfff",
-                    mb: { xs: "1rem", md: "1.5rem" },
+                    mb: { xs: "1rem", sm: "1.2rem", md: "1.5rem", lg: "1.8rem", xl: "2rem" },
                     lineHeight: 1.2
                   }}
                 >
@@ -267,14 +271,15 @@ export const CaseStudiesPage = () => {
 
         <Grid 
           container 
-          spacing={{ xs: 3, sm: 4, md: 4, lg: 6 }}
-          sx={{ mb: { xs: "4rem", md: "6rem", lg: "8rem" } }}
+          spacing={{ xs: 3, sm: 4, md: 4, lg: 6, xl: 6 }}
+          sx={{ mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" } }}
         >
           {testimonials.map((testimonial) => (
-            <Grid item xs={12} sm={6} lg={4} key={testimonial.id}>
+            <Grid item xs={12} sm={6} md={4} lg={4} key={testimonial.id}>
               <TestimonialCard
                 id={testimonial.id}
                 name={testimonial.name}
+                avatar={testimonial.avatar}
                 testimonial={testimonial.testimonial}
                 onReadMore={handleReadMore}
               />
@@ -294,14 +299,16 @@ export const CaseStudiesPage = () => {
           title="iGaming in Mexico - Current Legal Status"
           subtitle="Partially Regulated Market"
           description="Governed by the Federal Gaming and Raffles Law (1947) and its regulation (2004). Only allowed with a license issued by SEGOB (Ministry of the Interior). Key Insights on the Mexican iGaming Market"
-          rightContent={`Mexico is the second largest iGaming market in Latin America, after Brazil.
-Estimated to generate over $1.5 billion USD annually, combining land-based and online operations.
+          rightContent={`Mexico iGaming Market Overview
+• 2nd largest iGaming market in Latin America (after Brazil).
+• Estimated annual revenue: over $1.5 billion USD, combining land-based and online operations.
 
-Over 75% of online bets are placed via mobile devices.
-Strong demand for:
--Sports betting (football, boxing, lucha libre, NFL)
--Online slots and classic casino games
-Major sporting events`}
+Key Insights
+• Over 75% of online bets are placed via mobile devices.
+• Strong demand for:
+• Sports betting: football, boxing, lucha libre, NFL
+• Online slots & classic casino games
+• High engagement during major sporting events.`}
         />
 
         {/* Argentina Market Info */}
@@ -310,13 +317,20 @@ Major sporting events`}
           title="iGaming in Argentina - Current Legal Status"
           subtitle="Fragmented and provincially regulated market"
           description="No national iGaming law — each province regulates independently. Licences are issued by local gambling authorities, not at federal level. The City and Province of Buenos Aires have the most advanced online gambling frameworks"
-          rightContent={`Top 3 iGaming market in LATAM, with high engagement in regulated provinces.
-Buenos Aires (City & Province) account for over 80% of licensed activity.
-Mobile-first: ~70% of bets placed via smartphones; desktop still used for casino games.
-Strong player loyalty and repeated betting patterns.
-Popular verticals: Football betting (Liga Profesional, Copa de la Liga, national team), slots with local themes and live casino.
-Preferred payment methods: Mercado Pago, bank transfers, cash vouchers.
-Traffic peaks during Superclásicos, Libertadores, and Argentina NT matches.`}
+          rightContent={`Argentina iGaming Market Overview
+• Top 3 in LATAM, driven by regulated provinces.
+• Buenos Aires: 80%+ of licensed activity.
+• Mobile-first: ~70% bets via smartphones (desktop mainly for casino).
+• High player loyalty and repeat betting.
+
+Popular Verticals
+• Football (Liga Profesional, Copa de la Liga, NT matches).
+• Local-themed slots.
+• Live casino.
+
+Payments & Traffic
+• Mercado Pago, bank transfers, cash vouchers.
+• Peaks during Superclásicos & Libertadores.`}
         />
       </Container>
     </Box>
