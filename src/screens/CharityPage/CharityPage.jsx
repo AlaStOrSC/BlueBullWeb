@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Box, Container, Grid, Typography, IconButton } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { useTranslation } from "react-i18next";
@@ -10,20 +10,68 @@ import PlusIcon from "../../assets/PlusIcon.png";
 import FundOlivares from "../../assets/FundOlivares.png";
 import ArrowSeparator from "../../assets/ArrowSeparator.png";
 
+// Import Fundación Olivares Merch images
+import BolsaFO from "../../assets/FundacionOlivaresMerch/BolsaFO.jpg";
+import CuadroFO from "../../assets/FundacionOlivaresMerch/CuadroFO.jpg";
+import LibroFO from "../../assets/FundacionOlivaresMerch/LibroFO.jpg";
+import GorraFO from "../../assets/FundacionOlivaresMerch/GorraFO.jpg";
+import Libro2FO from "../../assets/FundacionOlivaresMerch/Libro2FO.jpeg";
+import MascarillaFO from "../../assets/FundacionOlivaresMerch/MascarillaFO.jpg";
+import OsoFO from "../../assets/FundacionOlivaresMerch/OsoFO.jpg";
+
 export const CharityPage = () => {
   const { t } = useTranslation();
   const carouselRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Placeholder images for merch carousel (using Lorem Picsum)
+  // Fundación Olivares Merch with real images and links
   const merchImages = [
-    { id: 1, src: "https://picsum.photos/300/300?random=1", alt: "BlueBull Merch 1" },
-    { id: 2, src: "https://picsum.photos/300/300?random=2", alt: "BlueBull Merch 2" },
-    { id: 3, src: "https://picsum.photos/300/300?random=3", alt: "BlueBull Merch 3" },
-    { id: 4, src: "https://picsum.photos/300/300?random=4", alt: "BlueBull Merch 4" },
-    { id: 5, src: "https://picsum.photos/300/300?random=5", alt: "BlueBull Merch 5" },
-    { id: 6, src: "https://picsum.photos/300/300?random=6", alt: "BlueBull Merch 6" }
+    { 
+      id: 1, 
+      src: BolsaFO, 
+      alt: "Bolsa de Tela Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/bolsa-de-tela/"
+    },
+    { 
+      id: 2, 
+      src: CuadroFO, 
+      alt: "Cuadros ColoresconAlma Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/cuadros-coloresconalma-copia/"
+    },
+    { 
+      id: 3, 
+      src: LibroFO, 
+      alt: "Libro Echamos un Partido Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/echamos-un-partido/"
+    },
+    { 
+      id: 4, 
+      src: GorraFO, 
+      alt: "Gorra Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/gorra/"
+    },
+    { 
+      id: 5, 
+      src: Libro2FO, 
+      alt: "Libro Vive Gilipollas Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/libro-vive-gilipollas/"
+    },
+    { 
+      id: 6, 
+      src: MascarillaFO, 
+      alt: "Mascarilla Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/mascarilla/"
+    },
+    { 
+      id: 7, 
+      src: OsoFO, 
+      alt: "Oso Timoteo Fundación Olivares",
+      link: "https://www.fundacionolivares.org/producto/oso-timoteo/"
+    }
   ];
+
+  const handleMerchClick = (link) => {
+    window.open(link, "_blank");
+  };
 
   const handleVisitWebsite = () => {
     window.open("https://www.fundacionolivares.org/", "_blank");
@@ -31,25 +79,20 @@ export const CharityPage = () => {
 
   const scrollCarousel = (direction) => {
     if (carouselRef.current) {
-      const scrollAmount = 320; // Width of each item + gap
-      const newPosition = direction === 'left' 
-        ? carouselRef.current.scrollLeft - scrollAmount
-        : carouselRef.current.scrollLeft + scrollAmount;
+      const container = carouselRef.current;
+      const cardWidth = 320; // Width of each item + gap
       
-      carouselRef.current.scrollTo({
-        left: newPosition,
-        behavior: 'smooth'
-      });
-
-      // Update current slide for visual feedback
-      const maxSlides = merchImages.length - 3; // Show 3 items at once
-      setCurrentSlide(prev => {
-        if (direction === 'left') {
-          return Math.max(0, prev - 1);
-        } else {
-          return Math.min(maxSlides, prev + 1);
-        }
-      });
+      if (direction === 'left') {
+        container.scrollBy({
+          left: -cardWidth,
+          behavior: 'smooth'
+        });
+      } else {
+        container.scrollBy({
+          left: cardWidth,
+          behavior: 'smooth'
+        });
+      }
     }
   };
 
@@ -274,44 +317,24 @@ export const CharityPage = () => {
             >
               <IconButton
                 onClick={() => scrollCarousel('left')}
-                disabled={currentSlide === 0}
                 sx={{
                   color: "#ffffff",
                   border: "2px solid #ffffff",
                   "&:hover": {
                     backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  },
-                  "&:disabled": {
-                    color: "rgba(255, 255, 255, 0.3)",
-                    border: "2px solid rgba(255, 255, 255, 0.3)",
                   }
                 }}
               >
                 <ArrowBackIos />
               </IconButton>
 
-              <Typography
-                sx={{
-                  color: "#ffffff",
-                  fontSize: { xs: "0.9rem", md: "1rem" },
-                  fontWeight: 500
-                }}
-              >
-                {currentSlide + 1} / {merchImages.length - 2}
-              </Typography>
-
               <IconButton
                 onClick={() => scrollCarousel('right')}
-                disabled={currentSlide >= merchImages.length - 3}
                 sx={{
                   color: "#ffffff",
                   border: "2px solid #ffffff",
                   "&:hover": {
                     backgroundColor: "rgba(255, 255, 255, 0.1)",
-                  },
-                  "&:disabled": {
-                    color: "rgba(255, 255, 255, 0.3)",
-                    border: "2px solid rgba(255, 255, 255, 0.3)",
                   }
                 }}
               >
@@ -337,6 +360,7 @@ export const CharityPage = () => {
               {merchImages.map((item) => (
                 <Box
                   key={item.id}
+                  onClick={() => handleMerchClick(item.link)}
                   sx={{
                     flexShrink: 0,
                     width: { xs: "250px", sm: "280px", md: "300px" },
@@ -344,9 +368,25 @@ export const CharityPage = () => {
                     borderRadius: "clamp(0.5rem, 2vw, 1rem)",
                     overflow: "hidden",
                     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
-                    transition: "transform 0.3s ease",
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                    position: "relative",
                     "&:hover": {
-                      transform: "scale(1.05)"
+                      transform: "scale(1.05)",
+                      boxShadow: "0 8px 30px rgba(0, 191, 255, 0.4)",
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        backgroundColor: "rgba(0, 191, 255, 0.1)",
+                        pointerEvents: "none"
+                      }
+                    },
+                    "&:active": {
+                      transform: "scale(0.98)"
                     }
                   }}
                 >
@@ -357,7 +397,12 @@ export const CharityPage = () => {
                     sx={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover"
+                      objectFit: "contain", // Cambiado de "cover" a "contain" para mostrar imagen completa
+                      backgroundColor: "rgba(255, 255, 255, 0.05)", // Fondo sutil para imágenes que no llenan el espacio
+                      transition: "filter 0.3s ease",
+                      "&:hover": {
+                        filter: "brightness(1.1)"
+                      }
                     }}
                   />
                 </Box>

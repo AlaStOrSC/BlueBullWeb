@@ -8,22 +8,43 @@ import InstagramIcon from "../../../assets/InstagramIcon.png";
 import GoogleMapsIcon from "../../../assets/GoogleMapsIcon.png";
 
 export const Footer = () => {
+  const handleLinkedInClick = () => {
+    window.open("https://www.linkedin.com/company/bluebull-tech/posts/?feedView=all", "_blank");
+  };
+
+  const handleEmailClick = () => {
+    window.open("mailto:business@bluebulltech.io", "_blank");
+  };
+
+  const handleInstagramClick = () => {
+    // Puedes agregar la URL de Instagram aquí cuando esté disponible
+    console.log("Instagram clicked");
+  };
+
+  const handleMapsClick = () => {
+    window.open("https://maps.google.com/?q=Av+de+los+Canos+52+Pueblo+Nuevo+Cadiz+Spain", "_blank");
+  };
+
   const contactData = [
     {
       icon: EmailIcon,
       text: "business@bluebulltech.io",
+      onClick: handleEmailClick,
     },
     {
       icon: LinkedinIcon,
       text: "Blue Bull",
+      onClick: handleLinkedInClick,
     },
     {
       icon: InstagramIcon,
       text: "@bluebulltech",
+      onClick: handleInstagramClick,
     },
     {
       icon: GoogleMapsIcon,
-      text: "2 Oliver Street\nLondon\nWC1A 2BX\nUnited Kingdom",
+      text: "Av de los Canos 52\nPueblo Nuevo\nCadiz\nSpain",
+      onClick: handleMapsClick,
     },
   ];
 
@@ -68,6 +89,7 @@ export const Footer = () => {
                 }}
               >
                 <Box
+                  onClick={contact.onClick}
                   sx={{
                     width: { xs: "3.5rem", sm: "4.5rem", md: "5.5rem", lg: "6.4375rem" },
                     height: { xs: "3rem", sm: "4rem", md: "5rem", lg: "5.75rem" },
@@ -75,6 +97,17 @@ export const Footer = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     mb: { xs: "0.75rem", md: "1rem" },
+                    cursor: "pointer",
+                    borderRadius: "0.5rem",
+                    transition: "all 0.3s ease",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      transform: "scale(1.1)",
+                      boxShadow: "0 4px 15px rgba(0, 191, 255, 0.3)",
+                    },
+                    "&:active": {
+                      transform: "scale(0.95)",
+                    },
                   }}
                 >
                   <Box
@@ -87,6 +120,10 @@ export const Footer = () => {
                       width: "auto",
                       height: "auto",
                       objectFit: "contain",
+                      transition: "filter 0.3s ease",
+                      "&:hover": {
+                        filter: "brightness(1.2)",
+                      },
                     }}
                   />
                 </Box>

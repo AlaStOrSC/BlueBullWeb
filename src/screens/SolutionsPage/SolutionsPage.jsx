@@ -208,11 +208,11 @@ export const SolutionsPage = () => {
         >
           <Grid 
             container 
-            spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} 
+            spacing={{ xs: 2, sm: 2, md: 3, lg: 4, xl: 5 }} // Reducido spacing para dar más espacio a las cards
             justifyContent="center"
             alignItems="stretch"
             sx={{ 
-              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "85%", xl: "80rem" },
+              maxWidth: { xs: "100%", sm: "95%", md: "90%", lg: "90%", xl: "85rem" }, // Aumentado maxWidth
               px: { xs: "1rem", sm: "2rem", md: "3rem" }
             }}
           >

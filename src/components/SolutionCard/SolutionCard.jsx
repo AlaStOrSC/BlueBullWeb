@@ -12,8 +12,10 @@ export const SolutionCard = ({
     <Box
       className="solution-card"
       sx={{
-        width: "237px",
-        height: "274px",
+        width: "100%", // Usar 100% del espacio disponible del Grid item
+        maxWidth: "260px", // Máximo 260px (10% más que los 237px originales)
+        minWidth: "220px", // Mínimo para mantener consistencia
+        height: "301px", // Aumentado 10% (274px * 1.1 = 301px)
         borderRadius: "1.09rem",
         position: "relative",
         backgroundColor: "transparent",
@@ -46,6 +48,7 @@ export const SolutionCard = ({
           padding: "1.25rem",
         }}
       >
+        {/* Icono con altura fija para consistencia */}
         <Box
           sx={{
             width: "3.5rem",
@@ -54,6 +57,7 @@ export const SolutionCard = ({
             alignItems: "center",
             justifyContent: "center",
             mb: 1.5,
+            flexShrink: 0, // No se reduce
           }}
         >
           <Box
@@ -68,30 +72,44 @@ export const SolutionCard = ({
           />
         </Box>
 
-        <Typography
-          variant="h3"
+        {/* Título con altura fija para alineación */}
+        <Box
           sx={{
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 700,
-            fontSize: "1.125rem",
-            lineHeight: 1.4,
-            color: "#ffffff",
-            textAlign: "center",
+            height: "3.5rem", // Altura fija para que todos los títulos estén alineados
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             mb: 1,
+            flexShrink: 0, // No se reduce
           }}
         >
-          {title}
-        </Typography>
+          <Typography
+            variant="h3"
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 700,
+              fontSize: "1.035rem", // Reducido 8% (1.125rem * 0.92 = 1.035rem)
+              lineHeight: 1.4,
+              color: "#ffffff",
+              textAlign: "center",
+            }}
+          >
+            {title}
+          </Typography>
+        </Box>
 
+        {/* Descripción que ocupa el espacio restante */}
         <Typography
           sx={{
             fontFamily: "Montserrat, Helvetica",
             fontWeight: 400,
-            fontSize: "0.875rem",
+            fontSize: "0.805rem", // Reducido 8% (0.875rem * 0.92 = 0.805rem)
             lineHeight: 1.5,
             color: "#cccccc",
             textAlign: "center",
-            flex: 1,
+            flex: 1, // Ocupa el espacio restante
+            display: "flex",
+            alignItems: "flex-start", // Texto comienza desde arriba
           }}
         >
           {description}
