@@ -3,6 +3,7 @@ import { Box, Container } from "@mui/material";
 import { TitleAndImageCard } from "../../components/TitleAndImageCard";
 import backgroundGradient from "../../assets/background-gradient.png";
 import Lucasbb1 from "../../assets/Lucasbb1.png";
+import PlaceHolderImg from "../../assets/PlaceHolderImg.png";
 import BbMission1 from "../../assets/BbMission1.png";
 import BbMission2 from "../../assets/BbMission2.png";
 import BbVision1 from "../../assets/BbVision1.png";
@@ -90,7 +91,7 @@ export const AboutUsPage = () => {
         <TitleAndImageCard
           title="About us"
           description="We combine data-driven strategy, creative storytelling and performance tech to drive player engagement and business growth"
-          leftContent={Lucasbb1}
+          leftContent={PlaceHolderImg}
           leftContentType="image"
           rightContent="Blue Bull Technology was born in 2025 with over 50 years of combined marketing and iGaming expertise already on board. 
 

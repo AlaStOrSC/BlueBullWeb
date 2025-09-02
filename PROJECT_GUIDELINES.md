@@ -14,6 +14,7 @@ BlueBull Web is a modern, responsive website for a gaming technology company. Th
 - **Performance optimization**
 - **Internationalization support**
 - **Professional code standards**
+- **🚫 NO COMMENTS IN CODE - Self-documenting code is mandatory**
 
 ---
 
@@ -155,6 +156,43 @@ ComponentName.propTypes = {
   prop2: PropTypes.string,
 };
 ```
+
+---
+
+## 🚫 **CODE CLEANLINESS RULES**
+
+### **🔥 CRITICAL: NO COMMENTS POLICY**
+
+**ABSOLUTELY PROHIBITED:**
+- **NO comments in code** - Code must be self-documenting
+- **NO /* block comments */ in JSX or JavaScript**
+- **NO // line comments** 
+- **NO explanatory comments** - Use descriptive names instead
+
+```javascript
+// ❌ WRONG - Comments are forbidden
+<Box sx={{ mt: "2rem" /* margin top for spacing */ }}>
+  {/* User profile section */}
+  <UserProfile />
+</Box>
+
+// ✅ CORRECT - Self-documenting code
+<Box sx={{ mt: "2rem" }}>
+  <UserProfile />
+</Box>
+```
+
+**WHY NO COMMENTS:**
+- **Clean code**: Comments clutter the code and reduce readability
+- **Self-documenting**: Variable and function names should explain purpose
+- **Maintenance**: Comments become outdated, code stays current
+- **Professional standard**: Industry best practice for production code
+
+**INSTEAD OF COMMENTS:**
+- Use descriptive variable names
+- Use meaningful component names
+- Use clear function names
+- Break complex logic into smaller, named functions
 
 ---
 

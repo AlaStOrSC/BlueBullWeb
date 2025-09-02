@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
 import { Box, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { PopUpCard } from "../../../../components/PopUpCard";
 import WorldmapImage from "../../../../assets/WorldMap.png";
 import Separator from "../../../../assets/Separator.png";
-import PopUpImage from "../../../../assets/Pop-Up.png";
 
 export const MainMarketsSection = () => {
   const { t } = useTranslation();
@@ -36,7 +36,12 @@ export const MainMarketsSection = () => {
     // Cuando salga del popup, ocultarlo después de un breve delay
     timeoutRef.current = setTimeout(() => {
       setShowPopup(false);
-    }, 500);
+    }, 500); // Pequeño delay para mejor UX
+  };
+
+  const handleLearnMore = () => {
+    console.log("Learn more clicked for Mexico market");
+    // Aquí puedes agregar la lógica para navegar o mostrar más información
   };
 
   return (
@@ -109,7 +114,7 @@ export const MainMarketsSection = () => {
                 boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(2.4)", // Doble del crecimiento anterior (era 1.2, ahora 2.4)
+                transform: "scale(2.4)",
                 opacity: 0.9,
                 boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
               },
@@ -120,10 +125,10 @@ export const MainMarketsSection = () => {
               },
             },
             "&:hover": {
-              backgroundColor: "#00bfff", // Azul en hover
-              transform: "scale(1.4)", // Crece al hacer hover
-              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
-              animation: "none", // Detiene la animación en hover
+              backgroundColor: "#00bfff",
+              transform: "scale(1.4)",
+              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)",
+              animation: "none", 
             },
           }}
           onMouseEnter={handlePointHover}
@@ -135,14 +140,14 @@ export const MainMarketsSection = () => {
             position: "absolute",
             width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
             height: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
-            backgroundColor: "white", // Color blanco por defecto
+            backgroundColor: "white", 
             borderRadius: "50%",
-            top: { xs: "70%", sm: "84%", md: "70%", lg: "72%" }, // Posición específica para cada tamaño
-            left: { xs: "27%", sm: "31%", md: "28%", lg: "29%" }, // Posición específica para cada tamaño
-            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
+            top: { xs: "70%", sm: "84%", md: "70%", lg: "72%" }, 
+            left: { xs: "27%", sm: "31%", md: "28%", lg: "29%" }, 
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", 
             cursor: "pointer",
-            transition: "all 0.3s ease", // Transición suave
-            animation: "pulse 4s infinite 1s", // Animación de pulso más lenta con delay (era 2s, ahora 4s)
+            transition: "all 0.3s ease", 
+            animation: "pulse 4s infinite 1s", 
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
@@ -150,7 +155,7 @@ export const MainMarketsSection = () => {
                 boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(2.4)", // Doble del crecimiento anterior (era 1.2, ahora 2.4)
+                transform: "scale(2.4)", 
                 opacity: 0.9,
                 boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
               },
@@ -161,39 +166,35 @@ export const MainMarketsSection = () => {
               },
             },
             "&:hover": {
-              backgroundColor: "#00bfff", // Azul en hover
-              transform: "scale(1.4)", // Crece al hacer hover
-              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)", // Sombra azul en hover
-              animation: "none", // Detiene la animación en hover
+              backgroundColor: "#00bfff", 
+              transform: "scale(1.4)", 
+              boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)",
+              animation: "none",
             },
           }}
         />
 
        
 
-        {/* Fondo con blur solo para el área del popup */}
+        {/* PopUp Card Component */}
         {showPopup && (
           <Box
             sx={{
               position: "absolute",
-              width: { xs: "81%", sm: "69%", md: "65%", lg: "26.37rem", xl: "38rem" }, // lg: 10% más pequeño que el popup (29.3rem * 0.9), xl: tamaño original
-              height: { xs: "auto", md: "auto", lg: "27.315rem", xl: "39rem" },
-              top: { xs: "5%", sm: "calc(5% - 150px)", md: "3%", lg: "0.5rem" }, // Tablet: 150px más arriba
-              left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha como el popup
+              top: { xs: "5%", sm: "calc(5% - 150px)", md: "3%", lg: "1rem", xl: "1.5rem" },
+              left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" },
               transform: "translateX(-50%)",
-              maxWidth: { lg: "26.37rem", xl: "36rem" },
-              backgroundColor: { xs: "rgba(0, 0, 0, 0.6)", sm: "rgba(0, 0, 0, 0.6)", md: "rgba(0, 0, 0, 0.4)", lg: "rgba(0, 0, 0, 0.4)" }, // Más opaco en móvil y tablet
-              backdropFilter: { xs: "blur(8px)", sm: "blur(8px)", md: "blur(6px)", lg: "blur(6px)" }, // Más blur en móvil y tablet
-              borderRadius: "12px",
-              zIndex: 998,
-              transition: "opacity 0.3s ease",
-              animation: "popupPulse 2s ease-in-out infinite", // Misma animación que la card
+              zIndex: 999,
+              opacity: showPopup ? 1 : 0,
+              visibility: showPopup ? "visible" : "hidden",
+              transition: "opacity 0.3s ease, visibility 0.3s ease",
+              animation: showPopup ? "popupPulse 2s ease-in-out infinite" : "none",
               "@keyframes popupPulse": {
                 "0%": {
                   transform: "translateX(-50%) scale(1)",
                 },
                 "50%": {
-                  transform: "translateX(-50%) scale(1.05)", // Crece un poco
+                  transform: "translateX(-50%) scale(1.02)",
                 },
                 "100%": {
                   transform: "translateX(-50%) scale(1)",
@@ -202,42 +203,15 @@ export const MainMarketsSection = () => {
             }}
             onMouseEnter={handlePopupHover}
             onMouseLeave={handlePopupLeave}
-          />
+          >
+            <PopUpCard
+              title="Mexico Market"
+              subtitle="Leading iGaming Hub"
+              description="Explore opportunities in one of Latin America's fastest-growing gaming markets with over 120 million potential players"
+              onReadMore={handleLearnMore}
+            />
+          </Box>
         )}
-
-        <Box
-          component="img"
-          src={PopUpImage}
-          alt="Global Presence information popup displaying market details"
-          className="popup-image"
-          sx={{
-            position: "absolute",
-            width: { xs: "76.5%", sm: "65%", md: "60%", lg: "29.3rem", xl: "36.625rem" }, // lg: 20% más pequeño, xl: tamaño original
-            height: { xs: "auto", lg: "30.35rem", xl: "37.9375rem" },
-            top: { xs: "8%", sm: "calc(8% - 150px)", md: "5%", lg: "1.1875rem" }, // Tablet: 150px más arriba
-            left: { xs: "35%", sm: "35%", md: "30%", lg: "30%" }, // Desplazado a la derecha en móvil y tablet
-            transform: "translateX(-50%)",
-            maxWidth: { lg: "29.3rem", xl: "36.625rem" },
-            opacity: showPopup ? 1 : 0,
-            visibility: showPopup ? "visible" : "hidden",
-            transition: "opacity 0.3s ease, visibility 0.3s ease",
-            zIndex: 999,
-            animation: showPopup ? "popupPulse 2s ease-in-out infinite" : "none", // Animación de pulso solo cuando está visible
-            "@keyframes popupPulse": {
-              "0%": {
-                transform: "translateX(-50%) scale(1)",
-              },
-              "50%": {
-                transform: "translateX(-50%) scale(1.05)", // Crece un poco
-              },
-              "100%": {
-                transform: "translateX(-50%) scale(1)",
-              },
-            },
-          }}
-          onMouseEnter={handlePopupHover}
-          onMouseLeave={handlePopupLeave}
-        />
       </Box>
     </Box>
   );
