@@ -9,7 +9,7 @@ import { LanguageSwitcher } from "../../LanguageSwitcher";
 
 export const Navbar = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg')); // Cambiado de 'md' a 'lg'
+  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // Cambiado de 'lg' a 'md'
   const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const isSmallDesktop = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -201,7 +201,7 @@ export const Navbar = () => {
                 sx={{
                   alignItems: "center",
                   height: "100%",
-                  display: { xs: "none", lg: "flex" }, // Mostrar solo en lg y xl
+                  display: { xs: "none", md: "flex" }, // Mostrar a partir de md en lugar de lg
                 }}
               >
                 {navigationItems.map((item) => (
