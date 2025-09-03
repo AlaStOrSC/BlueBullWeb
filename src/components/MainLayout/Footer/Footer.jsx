@@ -77,7 +77,7 @@ export const Footer = () => {
           alignItems="stretch"
         >
           {contactData.map((contact, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
+            <Grid item xs={6} sm={6} md={3} key={index}>
               <Stack 
                 alignItems="center" 
                 spacing={{ xs: 1.5, md: 2 }}

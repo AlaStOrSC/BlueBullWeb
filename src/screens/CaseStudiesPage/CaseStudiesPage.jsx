@@ -266,7 +266,7 @@ export const CaseStudiesPage = () => {
         {/* SECTION 2: Testimonials */}
         <StandardSection
           title="Testimonials"
-          description="We combine data-driven strategy, creative storytelling and performance tech to drive player engagement and business growth"
+          description="Success stories from industry leaders who have experienced the transformative power of BlueBull's strategic expertise and cutting-edge technology solutions."
         />
 
         <Grid 

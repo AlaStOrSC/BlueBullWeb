@@ -241,7 +241,7 @@ export const SolutionsPage = () => {
 
         <StandardSection
           title="Our Products"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Comprehensive gaming solutions designed to enhance player experience and drive operator success across multiple verticals in the iGaming ecosystem."
         />
 
         <Grid 
@@ -372,7 +372,7 @@ export const SolutionsPage = () => {
 
         <StandardSection
           title="Testimonials"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          description="Real feedback from our partners and clients who have experienced the impact of BlueBull's innovative solutions and exceptional service delivery."
         />
 
         <Box
