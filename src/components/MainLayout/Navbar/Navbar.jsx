@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import BlueBullLogo from "../../../assets/BlueBullLogo.png";
 import { ROUTES } from "../../../routes/routes";
 import { LanguageSwitcher } from "../../LanguageSwitcher";
+import { createPreloadHandler, useRoutePreloader } from "../../../utils/preloader";
 
 export const Navbar = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md')); // Cambiado de 'lg' a 'md'
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const isTablet = useMediaQuery(theme.breakpoints.between('md', 'lg'));
   const isSmallDesktop = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -17,13 +18,14 @@ export const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { preloadRelated } = useRoutePreloader();
 
   const navigationItems = [
     { id: "home", label: t('navbar.home'), route: ROUTES.HOME },
     { id: "about", label: t('navbar.about'), route: ROUTES.ABOUT },
     { id: "solutions", label: t('navbar.solutions'), route: ROUTES.SOLUTIONS },
     { id: "case-studies", label: t('navbar.caseStudies'), route: ROUTES.CASE_STUDIES },
-    { id: "events", label: t('navbar.events'), route: "/events" },
+    { id: "events", label: t('navbar.events'), route: ROUTES.EVENTS },
     { id: "careers", label: t('navbar.careers'), route: ROUTES.CAREERS },
     { id: "charity", label: t('navbar.charity'), route: ROUTES.CHARITY },
   ];
@@ -31,7 +33,6 @@ export const Navbar = () => {
   // Detectar el ancho de la barra de scroll
   React.useEffect(() => {
     const detectScrollbarWidth = () => {
-      // Crear un div temporal para medir
       const outer = document.createElement('div');
       outer.style.visibility = 'hidden';
       outer.style.overflow = 'scroll';
@@ -52,6 +53,16 @@ export const Navbar = () => {
     
     return () => window.removeEventListener('resize', detectScrollbarWidth);
   }, []);
+
+  // Precargar rutas relacionadas cuando cambia la página actual
+  React.useEffect(() => {
+    // Pequeño delay para no interferir con la carga inicial
+    const timer = setTimeout(() => {
+      preloadRelated(location.pathname);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname, preloadRelated]);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -76,6 +87,7 @@ export const Navbar = () => {
           <Button
             key={item.id}
             onClick={() => handleNavigation(item.route)}
+            {...createPreloadHandler(item.route)}
             sx={{
               color: isActive(item.route) ? "#00bfff" : "#ffffff",
               fontFamily: "Montserrat, Helvetica",
@@ -93,6 +105,8 @@ export const Navbar = () => {
         ))}
         <Button
           variant="outlined"
+          onClick={() => handleNavigation(ROUTES.CONTACT)}
+          {...createPreloadHandler(ROUTES.CONTACT)}
           sx={{
             height: { xs: "3rem", md: "4.3125rem" },
             px: { xs: 3, md: 6 },
@@ -208,6 +222,7 @@ export const Navbar = () => {
                   <Button
                     key={item.id}
                     onClick={() => handleNavigation(item.route)}
+                    {...createPreloadHandler(item.route)}
                     sx={{
                       color: isActive(item.route) ? "#00bfff" : "#ffffff",
                       fontFamily: "Montserrat, Helvetica",
@@ -238,6 +253,8 @@ export const Navbar = () => {
 
               <Button
                 variant="outlined"
+                onClick={() => handleNavigation(ROUTES.CONTACT)}
+                {...createPreloadHandler(ROUTES.CONTACT)}
                 sx={{
                   border: "0.25rem solid white",
                   borderRadius: "0.35rem",

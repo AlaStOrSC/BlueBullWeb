@@ -11,37 +11,31 @@ export const MainMarketsSection = () => {
   const timeoutRef = useRef(null);
 
   const handlePointHover = () => {
-    // Mostrar el popup inmediatamente
     setShowPopup(true);
     
-    // Limpiar cualquier timeout anterior
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
     
-    // Ocultar después de 5 segundos
     timeoutRef.current = setTimeout(() => {
       setShowPopup(false);
     }, 5000);
   };
 
   const handlePopupHover = () => {
-    // Si el usuario hace hover sobre el popup, mantenerlo visible
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
   };
 
   const handlePopupLeave = () => {
-    // Cuando salga del popup, ocultarlo después de un breve delay
     timeoutRef.current = setTimeout(() => {
       setShowPopup(false);
-    }, 500); // Pequeño delay para mejor UX
+    }, 500);
   };
 
   const handleLearnMore = () => {
     console.log("Learn more clicked for Mexico market");
-    // Aquí puedes agregar la lógica para navegar o mostrar más información
   };
 
   return (
@@ -59,7 +53,7 @@ export const MainMarketsSection = () => {
           fontFamily: "Montserrat, Helvetica",
           fontWeight: 600,
           color: "white",
-          fontSize: { xs: "1.8rem", md: "2.7rem", lg: "3.375rem" }, // Reducido 10%
+          fontSize: { xs: "1.8rem", md: "2.7rem", lg: "3.375rem" },
           lineHeight: 1.2,
           mb: 2,
         }}
@@ -85,7 +79,7 @@ export const MainMarketsSection = () => {
           height: { xs: "20rem", md: "30rem", lg: "44rem" },
           mx: "auto",
           mt: { xs: 4, md: 8 },
-          backgroundImage: `url(${WorldmapImage})`, // Tu nueva imagen del mapa
+          backgroundImage: `url(${WorldmapImage})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",

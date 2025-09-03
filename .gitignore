@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Personal development notes (not for public repo)
+TECHNICAL_CHALLENGES_LOG.md

@@ -394,11 +394,12 @@ export const CharityPage = () => {
                     component="img"
                     src={item.src}
                     alt={item.alt}
+                    loading="lazy"
                     sx={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "contain", // Cambiado de "cover" a "contain" para mostrar imagen completa
-                      backgroundColor: "rgba(255, 255, 255, 0.05)", // Fondo sutil para imágenes que no llenan el espacio
+                      objectFit: "contain",
+                      backgroundColor: "rgba(255, 255, 255, 0.05)",
                       transition: "filter 0.3s ease",
                       "&:hover": {
                         filter: "brightness(1.1)"

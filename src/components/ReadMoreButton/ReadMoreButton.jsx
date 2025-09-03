@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Typography } from "@mui/material";
+import { createPreloadHandler } from "../../utils/preloader";
 
 export const ReadMoreButton = ({ 
   text = "Read More", 
@@ -8,13 +9,18 @@ export const ReadMoreButton = ({
   variant = "outlined",
   fullWidth = false,
   scale = 1,
+  preloadRoute = null, // Nueva prop para preloading
   ...props 
 }) => {
+  // Crear handlers de preloading si se proporciona una ruta
+  const preloadHandlers = preloadRoute ? createPreloadHandler(preloadRoute) : {};
+
   return (
     <Button
       variant={variant}
       onClick={onClick}
       fullWidth={fullWidth}
+      {...preloadHandlers}
       sx={{
         borderRadius: "0.32rem",
         border: "0.1875rem solid white",

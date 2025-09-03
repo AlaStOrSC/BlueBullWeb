@@ -44,12 +44,13 @@ export const BlueBullHomePage = () => {
             position: "absolute",
             backgroundColor: "rgba(59, 130, 246, 0.1)",
             borderRadius: "50%",
-            filter: "blur(8rem)",
+            filter: "blur(4rem)",
             width: { xs: "70vw", md: "50vw", lg: "35vw" },
             height: { xs: "35vh", md: "25vh", lg: "18vh" },
             top: "65%",
             left: "5%",
             transform: "rotate(165deg)",
+            willChange: "transform",
           }}
         />
 

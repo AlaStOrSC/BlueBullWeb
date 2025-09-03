@@ -1,1 +1,1 @@
-export { CharityPage } from "./CharityPage";
+export { CharityPage as default } from "./CharityPage";

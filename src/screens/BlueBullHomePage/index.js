@@ -1,1 +1,1 @@
-export { BlueBullHomePage } from "./BlueBullHomePage";
+export { BlueBullHomePage as default } from "./BlueBullHomePage";
