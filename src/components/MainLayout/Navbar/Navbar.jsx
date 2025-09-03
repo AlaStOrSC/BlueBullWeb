@@ -30,7 +30,6 @@ export const Navbar = () => {
     { id: "charity", label: t('navbar.charity'), route: ROUTES.CHARITY },
   ];
 
-  // Detectar el ancho de la barra de scroll
   React.useEffect(() => {
     const detectScrollbarWidth = () => {
       const outer = document.createElement('div');
@@ -54,9 +53,7 @@ export const Navbar = () => {
     return () => window.removeEventListener('resize', detectScrollbarWidth);
   }, []);
 
-  // Precargar rutas relacionadas cuando cambia la página actual
   React.useEffect(() => {
-    // Pequeño delay para no interferir con la carga inicial
     const timer = setTimeout(() => {
       preloadRelated(location.pathname);
     }, 1000);
@@ -71,11 +68,10 @@ export const Navbar = () => {
   const handleNavigation = (route) => {
     navigate(route);
     if (isMobile) {
-      setMobileOpen(false); // Cerrar drawer en mobile después de navegar
+      setMobileOpen(false);
     }
   };
 
-  // Función para determinar si un item está activo
   const isActive = (route) => {
     return location.pathname === route;
   };
@@ -152,7 +148,7 @@ export const Navbar = () => {
         sx={{
           top: 0,
           left: 0,
-          width: `calc(100% - ${scrollbarWidth}px)`, // Usar medición dinámica
+          width: `calc(100% - ${scrollbarWidth}px)`,
           backgroundColor: "rgba(0, 0, 0, 0.1)",
           backdropFilter: "blur(10px)",
           boxShadow: "none",
@@ -215,7 +211,7 @@ export const Navbar = () => {
                 sx={{
                   alignItems: "center",
                   height: "100%",
-                  display: { xs: "none", md: "flex" }, // Mostrar a partir de md en lugar de lg
+                  display: { xs: "none", md: "flex" },
                 }}
               >
                 {navigationItems.map((item) => (

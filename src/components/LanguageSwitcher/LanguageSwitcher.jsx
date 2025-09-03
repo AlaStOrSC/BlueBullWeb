@@ -12,7 +12,6 @@ import {
 import { useTranslation } from 'react-i18next';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-// Importar las banderas
 import ESFlag from '../../assets/FlagIcons/ES.png';
 import PTFlag from '../../assets/FlagIcons/PR.png';
 import UKFlag from '../../assets/FlagIcons/UK.png';

@@ -8,7 +8,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest --watch",
+    "test:components": "vitest run src/test/*test.jsx",
+    "test:integration": "vitest run src/test/*.integration.test.jsx",
+    "test:accessibility": "vitest run src/test/Performance.test.jsx"
   },
   "dependencies": {
     "@emotion/react": "11.11.4",
@@ -25,10 +33,18 @@
   },
   "devDependencies": {
     "@animaapp/vite-plugin-screen-graph": "^0.1.5",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "4.3.4",
+    "@vitest/coverage-v8": "^3.2.4",
     "esbuild": "0.24.0",
     "gh-pages": "^6.3.0",
     "globals": "15.12.0",
-    "vite": "6.0.4"
+    "jest-axe": "^10.0.0",
+    "jsdom": "^26.1.0",
+    "vite": "6.0.4",
+    "vitest": "^3.2.4"
   }
 }

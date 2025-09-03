@@ -15,11 +15,10 @@ export const BlueBullHomePage = () => {
       className="blue-bull-home-page"
       sx={{
         background: `url(${backgroundGradient})`,
-        backgroundSize: '100%', // Tamaño original
-        backgroundPosition: 'top center', // Muestra la parte superior
+        backgroundSize: '100%',
+        backgroundPosition: 'top center',
         backgroundRepeat: 'no-repeat',
-        // Mantiene el fondo fijo al hacer scroll
-        backgroundColor: '#010815', // Fallback color
+        backgroundColor: '#010815',
         minHeight: "100vh",
         width: "100%",
         overflow: "hidden",

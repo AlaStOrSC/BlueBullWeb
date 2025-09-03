@@ -1,4 +1,3 @@
-// Sistema de preloading inteligente para mejorar UX
 import { ROUTES } from '../routes/routes';
 
 class RoutePreloader {
@@ -7,19 +6,15 @@ class RoutePreloader {
     this.preloadPromises = new Map();
   }
 
-  // Precargar una ruta específica
   preload(routePath) {
-    // Si ya está precargada, no hacer nada
     if (this.preloadedRoutes.has(routePath)) {
       return Promise.resolve();
     }
 
-    // Si ya está en proceso de precarga, devolver la promesa existente
     if (this.preloadPromises.has(routePath)) {
       return this.preloadPromises.get(routePath);
     }
 
-    // Mapeo de rutas a sus imports lazy - usando ROUTES para consistencia
     const routeImports = {
       [ROUTES.HOME]: () => import('../screens/BlueBullHomePage'),
       [ROUTES.ABOUT]: () => import('../screens/AboutUsPage'),
@@ -34,10 +29,9 @@ class RoutePreloader {
     const importFunction = routeImports[routePath];
     
     if (!importFunction) {
-      return Promise.resolve(); // Ruta no encontrada
+      return Promise.resolve();
     }
     
-    // Crear la promesa de precarga
     const preloadPromise = importFunction()
       .then(() => {
         this.preloadedRoutes.add(routePath);
@@ -52,12 +46,10 @@ class RoutePreloader {
     return preloadPromise;
   }
 
-  // Precargar múltiples rutas (para estrategias más avanzadas)
   preloadMultiple(routes) {
     return Promise.all(routes.map(route => this.preload(route)));
   }
 
-  // Precargar rutas relacionadas basado en la ruta actual
   preloadRelated(currentRoute) {
     const relatedRoutes = {
       [ROUTES.HOME]: [ROUTES.ABOUT, ROUTES.SOLUTIONS], 
@@ -74,13 +66,11 @@ class RoutePreloader {
     return this.preloadMultiple(related);
   }
 
-  // Limpiar cache si es necesario (para desarrollo)
   clearCache() {
     this.preloadedRoutes.clear();
     this.preloadPromises.clear();
   }
 
-  // Obtener estadísticas de precarga (para debugging)
   getStats() {
     return {
       preloaded: Array.from(this.preloadedRoutes),
@@ -90,10 +80,10 @@ class RoutePreloader {
   }
 }
 
-// Instancia singleton
+
 export const routePreloader = new RoutePreloader();
 
-// Hook personalizado para usar en componentes
+
 export const useRoutePreloader = () => {
   return {
     preload: (route) => routePreloader.preload(route),
@@ -102,8 +92,8 @@ export const useRoutePreloader = () => {
   };
 };
 
-// Función helper para crear handlers de hover con preloading
+
 export const createPreloadHandler = (route) => ({
   onMouseEnter: () => routePreloader.preload(route),
-  onFocus: () => routePreloader.preload(route), // También en focus para accesibilidad
+  onFocus: () => routePreloader.preload(route), 
 });

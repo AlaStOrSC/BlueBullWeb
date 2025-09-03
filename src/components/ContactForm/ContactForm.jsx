@@ -143,10 +143,7 @@ export const ContactForm = () => {
     setStatus('loading');
     
     try {
-      // Aquí iría la integración con EmailJS
-      // await emailjs.send(serviceId, templateId, formData, publicKey);
       
-      // Simulación para demo
       await new Promise(resolve => setTimeout(resolve, 2000));
       
       setStatus('success');
@@ -157,7 +154,6 @@ export const ContactForm = () => {
         message: ''
       });
       
-      // Reset status after 5 seconds
       setTimeout(() => setStatus('idle'), 5000);
       
     } catch (error) {
@@ -194,7 +190,7 @@ export const ContactForm = () => {
           position: "relative", 
           zIndex: 2,
           pt: { 
-            xs: "clamp(6rem, 8vw, 8rem)",     // Padding top para navbar
+            xs: "clamp(6rem, 8vw, 8rem)",
             sm: "clamp(6.5rem, 8vw, 8.5rem)", 
             md: "clamp(7rem, 8vw, 9rem)",
             lg: "clamp(7.5rem, 8vw, 9.5rem)",
@@ -223,18 +219,18 @@ export const ContactForm = () => {
             position: "relative",
             width: "100%",
             maxWidth: { 
-              xs: "100%",    // Mobile: 100%
-              sm: "95%",     // 95%
-              md: "90%",     // 90%  
-              lg: "85%",     // 85%
-              xl: "80%"      // Base: 80%
+              xs: "100%",
+              sm: "95%",
+              md: "90%",
+              lg: "85%",
+              xl: "80%"
             },
             p: { 
-              xs: "clamp(1.2rem, 2vw, 2.1rem)",   // ~60% de xl
-              sm: "clamp(1.44rem, 2vw, 2.52rem)", // ~72% de xl
-              md: "clamp(1.68rem, 2vw, 2.94rem)", // ~84% de xl
-              lg: "clamp(2.4rem, 2vw, 3.36rem)",  // ~96% de xl
-              xl: "clamp(3rem, 2vw, 3.5rem)"      // Base 100%
+              xs: "clamp(1.2rem, 2vw, 2.1rem)",
+              sm: "clamp(1.44rem, 2vw, 2.52rem)",
+              md: "clamp(1.68rem, 2vw, 2.94rem)",
+              lg: "clamp(2.4rem, 2vw, 3.36rem)",
+              xl: "clamp(3rem, 2vw, 3.5rem)"
             },
             mx: "auto",
             "&::before": {
@@ -257,11 +253,11 @@ export const ContactForm = () => {
           <Box sx={{ 
             textAlign: 'center', 
             mb: { 
-              xs: "clamp(0.6rem, 1.8vw, 1.8rem)",   // ~60% de xl
-              sm: "clamp(0.72rem, 1.8vw, 2.16rem)", // ~72% de xl  
-              md: "clamp(0.84rem, 1.8vw, 2.52rem)", // ~84% de xl
-              lg: "clamp(0.96rem, 1.8vw, 2.88rem)", // ~96% de xl
-              xl: "clamp(2rem, 1.8vw, 3rem)"        // Base 100%
+              xs: "clamp(0.6rem, 1.8vw, 1.8rem)",
+              sm: "clamp(0.72rem, 1.8vw, 2.16rem)",
+              md: "clamp(0.84rem, 1.8vw, 2.52rem)",
+              lg: "clamp(0.96rem, 1.8vw, 2.88rem)",
+              xl: "clamp(2rem, 1.8vw, 3rem)"
             } 
           }}>
             <Typography
@@ -270,11 +266,11 @@ export const ContactForm = () => {
                 fontFamily: "Montserrat, Helvetica",
                 fontWeight: 700,
                 fontSize: {
-                  xs: "clamp(1.26rem, 1.8vw, 1.62rem)",   // ~60% de xl
-                  sm: "clamp(1.51rem, 1.8vw, 1.94rem)",   // ~72% de xl
-                  md: "clamp(1.76rem, 1.8vw, 2.27rem)",   // ~84% de xl
-                  lg: "clamp(2.02rem, 1.8vw, 2.59rem)",   // ~96% de xl
-                  xl: "clamp(2.1rem, 1.8vw, 2.7rem)"      // Base 100%
+                  xs: "clamp(1.26rem, 1.8vw, 1.62rem)",
+                  sm: "clamp(1.51rem, 1.8vw, 1.94rem)",
+                  md: "clamp(1.76rem, 1.8vw, 2.27rem)",
+                  lg: "clamp(2.02rem, 1.8vw, 2.59rem)",
+                  xl: "clamp(2.1rem, 1.8vw, 2.7rem)"
                 },
                 color: "#ffffff",
                 letterSpacing: {
@@ -282,9 +278,9 @@ export const ContactForm = () => {
                   md: "0.08em"
                 },
                 mb: {
-                  xs: "0.48rem",  // ~60% de xl
-                  md: "0.6rem",   // ~72% de xl
-                  lg: "0.72rem"   // ~84% de xl
+                  xs: "0.48rem",
+                  md: "0.6rem",
+                  lg: "0.72rem"
                 },
                 lineHeight: {
                   xs: 1.2,
@@ -301,9 +297,9 @@ export const ContactForm = () => {
                 display: "flex",
                 justifyContent: "center",
                 mb: {
-                  xs: "0.48rem",  // ~60% de xl
-                  md: "0.6rem",   // ~72% de xl  
-                  lg: "0.72rem"   // ~84% de xl
+                  xs: "0.48rem",
+                  md: "0.6rem",
+                  lg: "0.72rem"
                 }
               }}
             >
@@ -325,11 +321,11 @@ export const ContactForm = () => {
                 fontFamily: "Montserrat, Helvetica",
                 fontWeight: 400,
                 fontSize: {
-                  xs: "clamp(0.47rem, 1.08vw, 0.65rem)",   // ~60% de xl
-                  sm: "clamp(0.56rem, 1.08vw, 0.78rem)",   // ~72% de xl
-                  md: "clamp(0.66rem, 1.08vw, 0.91rem)",   // ~84% de xl
-                  lg: "clamp(0.75rem, 1.08vw, 1.04rem)",   // ~96% de xl
-                  xl: "clamp(0.78rem, 1.08vw, 1.08rem)"    // Base 100%
+                  xs: "clamp(0.47rem, 1.08vw, 0.65rem)",
+                  sm: "clamp(0.56rem, 1.08vw, 0.78rem)",
+                  md: "clamp(0.66rem, 1.08vw, 0.91rem)",
+                  lg: "clamp(0.75rem, 1.08vw, 1.04rem)",
+                  xl: "clamp(0.78rem, 1.08vw, 1.08rem)"
                 },
                 color: 'rgba(255, 255, 255, 0.8)',
                 lineHeight: 1.6,
@@ -376,11 +372,11 @@ export const ContactForm = () => {
 
           {/* Form Fields */}
           <Grid container spacing={{ 
-            xs: 1.2,    // ~60% de xl
-            sm: 1.44,   // ~72% de xl
-            md: 1.68,   // ~84% de xl  
-            lg: 1.92,   // ~96% de xl
-            xl: 2       // Base 100%
+            xs: 1.2,
+            sm: 1.44,
+            md: 1.68,
+            lg: 1.92,
+            xl: 2
           }}>
             <Grid item xs={12} sm={6}>
               <StyledTextField
@@ -466,11 +462,11 @@ export const ContactForm = () => {
           <Box sx={{ 
             textAlign: 'center', 
             mt: { 
-              xs: "clamp(0.6rem, 1.8vw, 1.8rem)",   // ~60% de xl
-              sm: "clamp(0.72rem, 1.8vw, 2.16rem)", // ~72% de xl
-              md: "clamp(0.84rem, 1.8vw, 2.52rem)", // ~84% de xl
-              lg: "clamp(0.96rem, 1.8vw, 2.88rem)", // ~96% de xl
-              xl: "clamp(2rem, 1.8vw, 3rem)"        // Base 100%
+              xs: "clamp(0.6rem, 1.8vw, 1.8rem)",
+              sm: "clamp(0.72rem, 1.8vw, 2.16rem)",
+              md: "clamp(0.84rem, 1.8vw, 2.52rem)",
+              lg: "clamp(0.96rem, 1.8vw, 2.88rem)",
+              xl: "clamp(2rem, 1.8vw, 3rem)"
             } 
           }}>
             <ReadMoreButton

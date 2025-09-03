@@ -9,10 +9,9 @@ export const ReadMoreButton = ({
   variant = "outlined",
   fullWidth = false,
   scale = 1,
-  preloadRoute = null, // Nueva prop para preloading
+  preloadRoute = null,
   ...props 
 }) => {
-  // Crear handlers de preloading si se proporciona una ruta
   const preloadHandlers = preloadRoute ? createPreloadHandler(preloadRoute) : {};
 
   return (

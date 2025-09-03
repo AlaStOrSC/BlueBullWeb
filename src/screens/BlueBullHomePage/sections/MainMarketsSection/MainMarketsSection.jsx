@@ -91,16 +91,16 @@ export const MainMarketsSection = () => {
         <Box
           sx={{
             position: "absolute",
-            width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" }, // Tamaño progresivo: móvil, tablet, desktop pequeño, desktop grande
+            width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
             height: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
-            backgroundColor: "white", // Color blanco por defecto
+            backgroundColor: "white",
             borderRadius: "50%",
-            top: { xs: "46%", sm: "46.5%", md: "47%", lg: "48%" }, // Posición específica para cada tamaño: móvil, tablet, desktop pequeño, desktop grande
-            left: { xs: "15%", sm: "20.5%", md: "16%", lg: "17%" }, // Posición específica para cada tamaño
-            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", // Sombra blanca
+            top: { xs: "46%", sm: "46.5%", md: "47%", lg: "48%" },
+            left: { xs: "15%", sm: "20.5%", md: "16%", lg: "17%" },
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
             cursor: "pointer",
-            transition: "all 0.3s ease", // Transición suave
-            animation: "pulse 4s infinite", // Animación de pulso más lenta (era 2s, ahora 4s)
+            transition: "all 0.3s ease",
+            animation: "pulse 4s infinite",
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
@@ -110,7 +110,7 @@ export const MainMarketsSection = () => {
               "50%": {
                 transform: "scale(2.4)",
                 opacity: 0.9,
-                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
+                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)",
               },
               "100%": {
                 transform: "scale(1)",
@@ -122,7 +122,7 @@ export const MainMarketsSection = () => {
               backgroundColor: "#00bfff",
               transform: "scale(1.4)",
               boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)",
-              animation: "none", 
+              animation: "none",
             },
           }}
           onMouseEnter={handlePointHover}
@@ -134,14 +134,14 @@ export const MainMarketsSection = () => {
             position: "absolute",
             width: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
             height: { xs: "6px", sm: "8px", md: "10px", lg: "16px" },
-            backgroundColor: "white", 
+            backgroundColor: "white",
             borderRadius: "50%",
-            top: { xs: "70%", sm: "84%", md: "70%", lg: "72%" }, 
-            left: { xs: "27%", sm: "31%", md: "28%", lg: "29%" }, 
-            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)", 
+            top: { xs: "70%", sm: "84%", md: "70%", lg: "72%" },
+            left: { xs: "27%", sm: "31%", md: "28%", lg: "29%" },
+            boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
             cursor: "pointer",
-            transition: "all 0.3s ease", 
-            animation: "pulse 4s infinite 1s", 
+            transition: "all 0.3s ease",
+            animation: "pulse 4s infinite 1s",
             "@keyframes pulse": {
               "0%": {
                 transform: "scale(1)",
@@ -149,9 +149,9 @@ export const MainMarketsSection = () => {
                 boxShadow: "0 0 8px rgba(255, 255, 255, 0.6)",
               },
               "50%": {
-                transform: "scale(2.4)", 
+                transform: "scale(2.4)",
                 opacity: 0.9,
-                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)", // Brillo mucho más intenso
+                boxShadow: "0 0 25px rgba(255, 255, 255, 1), 0 0 35px rgba(255, 255, 255, 0.8), 0 0 45px rgba(255, 255, 255, 0.6)",
               },
               "100%": {
                 transform: "scale(1)",
@@ -160,8 +160,8 @@ export const MainMarketsSection = () => {
               },
             },
             "&:hover": {
-              backgroundColor: "#00bfff", 
-              transform: "scale(1.4)", 
+              backgroundColor: "#00bfff",
+              transform: "scale(1.4)",
               boxShadow: "0 0 20px rgba(0, 191, 255, 0.8)",
               animation: "none",
             },

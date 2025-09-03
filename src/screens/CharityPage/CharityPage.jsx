@@ -10,7 +10,6 @@ import PlusIcon from "../../assets/PlusIcon.png";
 import FundOlivares from "../../assets/FundOlivares.png";
 import ArrowSeparator from "../../assets/ArrowSeparator.png";
 
-// Import Fundación Olivares Merch images
 import BolsaFO from "../../assets/FundacionOlivaresMerch/BolsaFO.jpg";
 import CuadroFO from "../../assets/FundacionOlivaresMerch/CuadroFO.jpg";
 import LibroFO from "../../assets/FundacionOlivaresMerch/LibroFO.jpg";
@@ -23,7 +22,6 @@ export const CharityPage = () => {
   const { t } = useTranslation();
   const carouselRef = useRef(null);
 
-  // Fundación Olivares Merch with real images and links
   const merchImages = [
     { 
       id: 1, 
@@ -80,7 +78,7 @@ export const CharityPage = () => {
   const scrollCarousel = (direction) => {
     if (carouselRef.current) {
       const container = carouselRef.current;
-      const cardWidth = 320; // Width of each item + gap
+      const cardWidth = 320;
       
       if (direction === 'left') {
         container.scrollBy({

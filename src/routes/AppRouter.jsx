@@ -4,7 +4,6 @@ import { Box, CircularProgress } from '@mui/material';
 import { MainLayout } from '../components/MainLayout';
 import { ROUTES } from './routes';
 
-// Lazy loading para todas las páginas
 const BlueBullHomePage = lazy(() => import('../screens/BlueBullHomePage'));
 const AboutUsPage = lazy(() => import('../screens/AboutUsPage'));
 const SolutionsPage = lazy(() => import('../screens/SolutionsPage'));
@@ -14,7 +13,6 @@ const CareersPage = lazy(() => import('../screens/CareersPage'));
 const CharityPage = lazy(() => import('../screens/CharityPage'));
 const ContactPage = lazy(() => import('../screens/ContactPage'));
 
-// Loading component optimizado
 const PageLoader = () => {
   return (
     <Box
@@ -23,7 +21,7 @@ const PageLoader = () => {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '50vh',
-        backgroundColor: '#010815', // Mismo color que el fondo de la app
+        backgroundColor: '#010815',
         position: 'relative',
         zIndex: 1
       }}
