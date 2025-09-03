@@ -8,6 +8,7 @@ import { EventsPage } from '../screens/EventsPage';
 import { CaseStudiesPage } from '../screens/CaseStudiesPage';
 import { CareersPage } from '../screens/CareersPage';
 import { CharityPage } from '../screens/CharityPage';
+import { ContactPage } from '../screens/ContactPage';
 import { ROUTES } from './routes';
 
 export const AppRouter = () => {
@@ -22,6 +23,7 @@ export const AppRouter = () => {
           <Route path={ROUTES.CASE_STUDIES} element={<CaseStudiesPage />} />
           <Route path={ROUTES.CAREERS} element={<CareersPage />} />
           <Route path={ROUTES.CHARITY} element={<CharityPage />} />
+          <Route path={ROUTES.CONTACT} element={<ContactPage />} />
           {/* Futuras rutas */}
           <Route path="*" element={<BlueBullHomePage />} /> {/* Fallback */}
         </Route>
