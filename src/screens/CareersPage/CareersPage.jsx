@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { StandardSection } from "../../components/StandardSection";
 import { SolutionCard } from "../../components/SolutionCard";
 import { ReadMoreButton } from "../../components/ReadMoreButton";
+import { VacancyList } from "../../components/VacancyList";
 import BackgroundImage from "../../assets/background-gradient.png";
 import PlaceHolderImg from "../../assets/PlaceHolderImg.png";
 import BlueTick from "../../assets/BlueTick.png";
@@ -260,6 +261,17 @@ We move quickly, support each other, and celebrate wins as a team. Work-life bal
           title="Ready to make your mark & take charge?"
           description="Check out our open roles and join the charge at Blue Bull Tech."
         />
+
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            mb: { xs: "4rem", sm: "5rem", md: "6rem", lg: "8rem", xl: "10rem" }
+          }}
+        >
+          <VacancyList />
+        </Box>
 
         <Box
           sx={{
