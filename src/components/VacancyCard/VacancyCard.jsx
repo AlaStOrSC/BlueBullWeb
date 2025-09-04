@@ -21,10 +21,9 @@ export const VacancyCard = ({
       sx={{
         width: "100%",
         maxWidth: "280px",
-        minWidth: "240px",
         height: "100%",
-        minHeight: "400px",
         borderRadius: "1.09rem",
+        marginBottom: "1rem",
         position: "relative",
         backgroundColor: "transparent",
         transition: "color 0.3s ease",
@@ -50,134 +49,146 @@ export const VacancyCard = ({
         sx={{
           width: "100%",
           height: "100%",
-          display: "grid",
-          gridTemplateRows: "auto auto auto 1fr 1fr 1fr auto",
-          gridTemplateAreas: `
-            "title"
-            "separator"
-            "category"
-            "office"
-            "experience"
-            "spacer"
-            "button"
-          `,
+          display: "flex",
+          flexDirection: "column",
           alignItems: "center",
-          justifyItems: "center",
-          padding: "1.25rem",
-          gap: "0.8rem",
+          padding: "0.85rem",
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            gridArea: "title",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 700,
-            fontSize: {
-              xs: "1.1rem",
-              md: "1.25rem"
-            },
-            lineHeight: 1.2,
-            color: "#00bfff",
-            textAlign: "center",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100%",
-            width: "100%",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: "vertical",
-            display: "-webkit-box",
-          }}
-        >
-          {name}
-        </Typography>
-
+        {/* Título con altura fija */}
         <Box
-          component="img"
-          src={Separator}
-          alt="Separator"
           sx={{
-            gridArea: "separator",
-            width: "2.5rem",
-            height: "0.25rem",
-          }}
-        />
-
-        <Typography
-          variant="h2"
-          sx={{
-            gridArea: "category",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 600,
-            fontSize: {
-              xs: "0.9rem",
-              md: "1rem"
-            },
-            lineHeight: 1.3,
-            color: "#ffffff",
-            textAlign: "center",
+            height: "4rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: "100%",
-            width: "100%",
+            mb: 1,
+            flexShrink: 0,
           }}
         >
-          {recruitingCategory} • {schedule}
-        </Typography>
+          <Typography
+            variant="h1"
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 700,
+              fontSize: "1.25rem",
+              lineHeight: 1.2,
+              color: "#00bfff",
+              textAlign: "center",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              display: "-webkit-box",
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: "vertical",
+            }}
+          >
+            {name}
+          </Typography>
+        </Box>
 
-        <Typography
-          variant="h2"
+        {/* Separador con altura fija */}
+        <Box
           sx={{
-            gridArea: "office",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 600,
-            fontSize: {
-              xs: "0.9rem",
-              md: "1rem"
-            },
-            lineHeight: 1.3,
-            color: "#ffffff",
-            textAlign: "center",
+            height: "0rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: "100%",
-            width: "100%",
+            mb: 0.5,
+            flexShrink: 0,
           }}
         >
-          {office}
-        </Typography>
+          <Box
+            component="img"
+            src={Separator}
+            alt="Separator"
+            sx={{
+              width: "2.5rem",
+              height: "0.25rem",
+            }}
+          />
+        </Box>
 
-        <Typography
-          variant="h2"
+        {/* Área de contenido flexible */}
+        <Box
           sx={{
-            gridArea: "experience",
-            fontFamily: "Montserrat, Helvetica",
-            fontWeight: 600,
-            fontSize: {
-              xs: "0.9rem",
-              md: "1rem"
-            },
-            lineHeight: 1.3,
-            color: "#ffffff",
-            textAlign: "center",
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
+            gap: "0.8rem",
+            flex: 1,
             justifyContent: "center",
-            height: "100%",
-            width: "100%",
+            mb: 3.5,
           }}
         >
-          Years of experience: {yearsOfExperience}
-        </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 600,
+              fontSize: "1rem",
+              lineHeight: 1.3,
+              color: "#ffffff",
+              textAlign: "center",
+            }}
+          >
+            {recruitingCategory} • {schedule}
+          </Typography>
 
-        <Box sx={{ gridArea: "spacer" }} />
+          <Box
+            component="img"
+            src={Separator}
+            alt="Separator"
+            sx={{
+              width: "1.25rem",
+              height: "0.125rem",
+            }}
+          />
 
-        <Box sx={{ gridArea: "button" }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 600,
+              fontSize: "1rem",
+              lineHeight: 1.3,
+              color: "#ffffff",
+              textAlign: "center",
+            }}
+          >
+            {office}
+          </Typography>
+
+          <Box
+            component="img"
+            src={Separator}
+            alt="Separator"
+            sx={{
+              width: "1.25rem",
+              height: "0.125rem",
+            }}
+          />
+
+          <Typography
+            variant="h2"
+            sx={{
+              fontFamily: "Montserrat, Helvetica",
+              fontWeight: 600,
+              fontSize: "1rem",
+              lineHeight: 1.3,
+              color: "#ffffff",
+              textAlign: "center",
+            }}
+          >
+            Years of experience: {yearsOfExperience}
+          </Typography>
+        </Box>
+
+        {/* Botón con altura fija */}
+        <Box
+          sx={{
+            flexShrink: 0,
+          }}
+        >
           <ReadMoreButton 
             text="Apply" 
             onClick={handleApply}

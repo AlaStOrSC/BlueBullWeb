@@ -13,7 +13,8 @@ import 'swiper/css/pagination';
 export const VacancyList = () => {
   const { data: vacancies, isLoading, error } = useVacancies();
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('lg')); // xs, sm, md
+  const isSliderView = useMediaQuery(theme.breakpoints.down('lg')); // xs, sm, md
+  const isMdOrLarger = useMediaQuery(theme.breakpoints.up('md')); // md, lg, xl
 
   if (isLoading) {
     return (
@@ -84,8 +85,8 @@ export const VacancyList = () => {
 
   console.log('Rendering vacancies:', vacancies);
 
-  // Render slider for small screens (xs, sm, md)
-  if (isSmallScreen) {
+  // Render slider for small/medium screens (xs, sm, md)
+  if (isSliderView) {
     return (
       <Box sx={{ width: "100%", px: { xs: "1rem", sm: "2rem" } }}>
         <Swiper
@@ -93,7 +94,7 @@ export const VacancyList = () => {
           spaceBetween={20}
           slidesPerView={1}
           centeredSlides={true}
-          navigation={true}
+          navigation={isMdOrLarger} // Solo mostrar arrows en md
           pagination={{ 
             clickable: true,
             bulletClass: 'swiper-pagination-bullet',
@@ -112,7 +113,7 @@ export const VacancyList = () => {
               slidesPerView: 1.5,
               spaceBetween: 20,
             },
-            768: {
+            960: {
               slidesPerView: 2,
               spaceBetween: 25,
             },
@@ -151,21 +152,20 @@ export const VacancyList = () => {
   return (
     <Grid 
       container 
-      spacing={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
+      spacing={{ xs: 3, md: 4, lg: 5 }}
       justifyContent="center"
       alignItems="stretch"
       sx={{ 
         maxWidth: "100%",
-        px: { xs: "0.5rem", sm: "1rem" }
+        px: { xs: "1rem", sm: "2rem" }
       }}
     >
       {vacancies.map((vacancy) => (
         <Grid 
           item 
-          xs={12} 
-          sm={6} 
-          md={4}
-          lg={3} 
+          xs={12}
+          md={6} 
+          lg={4}
           key={vacancy.id}
           sx={{ 
             display: "flex", 
