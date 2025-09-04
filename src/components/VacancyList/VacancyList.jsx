@@ -83,9 +83,6 @@ export const VacancyList = () => {
     );
   }
 
-  console.log('Rendering vacancies:', vacancies);
-
-  // Render slider for small/medium screens (xs, sm, md)
   if (isSliderView) {
     return (
       <Box sx={{ width: "100%", px: { xs: "1rem", sm: "2rem" } }}>

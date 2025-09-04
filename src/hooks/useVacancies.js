@@ -27,14 +27,12 @@ const parseXMLPositions = (xmlString) => {
       };
     }).filter(position => position.id && position.name);
   } catch (error) {
-    console.error('Error parsing XML:', error);
     return [];
   }
 };
 
 const fetchVacancies = async () => {
   try {
-    console.log('Fetching vacancies from API...');
     const response = await fetch('https://blue-bull-technology.jobs.personio.de/xml?language=es', {
       method: 'GET',
       headers: {
@@ -47,18 +45,15 @@ const fetchVacancies = async () => {
     }
     
     const xmlText = await response.text();
-    console.log('XML Response received');
     
     if (!xmlText || xmlText.trim() === '') {
       throw new Error('Empty response from API');
     }
     
     const positions = parseXMLPositions(xmlText);
-    console.log('Parsed positions:', positions);
     
     return positions;
   } catch (error) {
-    console.error('Error fetching vacancies:', error);
     return [];
   }
 };
